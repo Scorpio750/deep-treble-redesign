@@ -7,7 +7,7 @@
         <div class="whitefill blackglow">
           <center><h2><span class='text-danger'>Deep Treble</span> Contact Us</h2></center>
           <div class='whitespace'></div>
-          <center><p> We need some super cool text here that will get all the ppl looking for gigs to send us some super cool gig fan mail stuff. </p></center>
+          <center><p>If you are looking for a group to sing at an event or have any questions at all for us, please send us an email!</p></center>
 <!-- Do not change the code! -->
 <center>
 <a id="foxyform_embed_link_519653" href="http://www.foxyform.com/">foxyform</a>
