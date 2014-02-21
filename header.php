@@ -24,7 +24,7 @@
   <div class='row undermargin'>
     <div class='facebook col-xs-6 col-sm-2 col-sm-offset-1'><center><a href='https://www.facebook.com/rudeeptreble'><img border='0' class='topfive' src='pics/facebook.png'></a></center></div>
     <div class='twitter col-xs-6 col-sm-2'><center><a href='http://www.twitter.com/deeptreble'><img class='topfive' src='pics/twitter.png'></a></center></div>
-    <div class='logo col-xs-12 col-sm-2'><center><a href='testfront.php'><img class='topfive' src='pics/logo.png'></a></center></div>
+    <div class='logo col-xs-12 col-sm-2'><center><a href='index.php'><img class='topfive' src='pics/logo.png'></a></center></div>
     <div class='instagram col-xs-6 col-sm-2'><center><a href='http://www.instagram.com/deeptreble'><img class='topfive' src='pics/instagram.png'></a></center></div>
     <div class='youtube col-xs-6 col-sm-2'><center><a href='https://www.youtube.com/rudeeptreble'><img class='topfive' src='pics/youtube.png'></a></center></div>
   </div>
