@@ -88,8 +88,9 @@
             <div class='col-sm-8'>
               <center><h2><span class='text-danger'>Deep Treble</span> Homepage</h2></center>
               <h4>Sixteen years ago, a few good men and women embarked upon a journey that would change their lives (and hundreds of others) forever. That's right, it's the 16th anniversary of Deep Treble, Rutgers University's first contemporary A Cappella group! Winners of multiple ICCA Awards over the years, Deep Treble is ecstatic to be able to continue to entertain audiences worldwide with their variety of song selection and invigorating choreography. If you want to contact Deep Treble in regards to a performance, please do so at <a href='mailto:rudeeptreble@gmail.com'>rudeeptreble@gmail.com</a>! We love performing, and if we're available, we'd love to sing for you, too!</h4>
-            <h4>This year we are hosting ICCA's!  You can buy tickets at <a href="http://www.ticketalternative.com/Events/26049.aspx">ticketalternative.com</a>.
               <h4>In this website, you can explore the current members and alumni profiles as well as view some of the most up to date information about us. Enjoy!</h4>
+            <h3>Updates</h3>
+            <h4>Our concert is on May 2nd in Voorhees Hall room 105!  Tickets will be on sale soon! Please <a href='contact.php'>contact us</a> with any questions.</h4>
             </div>
           </div>
         </div>
