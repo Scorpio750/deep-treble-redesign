@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="third_party/ICanHaz.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Wrap the contents of the page so that if the page is shorter than the height of the browser, it will let the footer stick to the bottom. -->
+    <div class='wrap'>
+
+      <!-- Include the header of the website, which is shared throughout. -->
+      <header></header>
+
+      <!-- The glow and white fill of the content of the page -->
+      <div class='container'>
+        <div id="actualContent" class="whitefill blackglow">
+          <center><h2><span class='text-danger'>Deep Treble</span> Members</h2></center>
+          <script id="members" type="text/html">
+            <div class='row'>
+              {{#members}}
+                <center><h3>{{voice}}</h3></center>
+                {{#people}}
+                  <div class="no-margin media col-sm-4 {{#getClass}}{{/getClass}}">
+                    <a class="pull-left" href="#">
+                      <img src="{{#getImage}}{{/getImage}}" class="media-object" data-src="holder.js/100x100" alt="100x100" style="width: 100px; height: 100px;" color="black">
+                    </a>
+                    <div class="media-body">
+                      <h4 class="media-heading">{{name}}</h4>
+                      Class of {{year}}
+                      {{#formatPos}}{{position}}{{/formatPos}}
+                    </div>
+                  </div>
+                  {{#fixWhiteSpace}}{{/fixWhiteSpace}}
+                {{/people}}
+              {{/members}}
+            </div>
+            <div class='whitespace'></div>
+          </script>
+        </div>
+      </div>
+      <div id='push'></div>
+    </div>
+    <footer></footer>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        'use strict';
+
+        // Render our headers and footers.
+        $.get('header.html', function(data) {
+          var template = ich.addTemplate('header', data);
+          var node = ich.header({});
+          $('header').html(node);
+        });
+        $.get('footer.html', function(data) {
+          var template = ich.addTemplate('footer', data);
+          var node = ich.footer({});
+          $('footer').html(node);
+        });
+
+        
+        // TODO: replace hard-coded JSON with get request.
+        var isLeft = true;
+        var view = {
+
+          /** The set of members in DT along with their deets. */
+          members: [
+            {
+              voice: "Soprano",
+              people: [
+                {
+                  name: "Caitlyn Siehl",
+                  year: "2015"
+                }, {
+                  name: "Christiana Sara",
+                  year: "2016"
+                }, {
+                  name: "Connie Phung",
+                  year: "2015"
+                }, {
+                  name: "Lauren McGinley",
+                  year: "2016",
+                  position: "Musical Director"
+                }
+              ]
+            }, {
+              voice: "Alto",
+              people: [
+                {
+                  name: "Ariel Lee",
+                  year: "2015",
+                  position: "Business Manager"
+                }, {
+                  name: "Geralyn Williams",
+                  year: "2015",
+                  position: "Assistant Business Manager"
+                }, {
+                  name: "Katie Fuentes",
+                  year: "2015"
+                }, {
+                  name: "Rachel Battaglia",
+                  year: "2015",
+                  position: "Spain Ambassador"
+                }
+              ]
+            }, {
+              voice: "Tenor",
+              people: [
+                {
+                  name: "Eric Chi",
+                  year: "2015",
+                  position: "Historian"
+                }, {
+                  name: "Sy Adamowsky",
+                  year: "2016",
+                  position: "Treasurer"
+                }
+              ]
+            }, {
+              voice: "Bass",
+              people: [
+                {
+                  name: "Adam Coughlan",
+                  year: "2016",
+                  position: "Social Affairs Manager"
+                }, {
+                  name: "Christian Munoz",
+                  year: "2015"
+                }, {
+                  name: "Patrick Wu",
+                  year: "2015",
+                  position: "Assistant Musical Director"
+                }
+              ]
+            }
+          ],
+
+          /** Helper function to get the image of a member. */
+          getImage: function() {
+            return function(text, render) {
+              return 'images/members/' + this.name.replace(/ /g,'').toLowerCase() + '.png';
+            }
+          },
+
+          getClass: function() {
+            return function() {
+              if (this.isLeft === undefined) {
+                this.isLeft = isLeft;
+              } else {
+                isLeft = !isLeft;
+              }
+              return this.isLeft ? 'col-sm-offset-2' : '';
+            }
+          },
+
+          formatPos: function() {
+            return function(text, render) {
+              var pos = render(text);
+              return pos ? '<br>' + pos : '';
+            }
+          },
+
+          fixWhiteSpace: function() {
+            return function() {
+              if (this.isLeft === undefined) {
+                this.isLeft = isLeft;
+              } else {
+                isLeft = !isLeft;
+              }
+              return this.isLeft ? '' :
+                '</div><div class="whitespace"></div><div class="row">';
+            }
+          }
+        };
+
+        // Render the carousel.
+        var mem = ich.members(view);
+        $('#actualContent').append(mem);
+      });
+    </script>
+    <script src="js/background.js"></script>
+  </body>
+</html>

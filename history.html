@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <?php include "head.php"?>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="third_party/ICanHaz.min.js"></script>
+  </head>
   <body>
+
+    <!-- Wrap the contents of the page so that if the page is shorter than the height of the browser, it will let the footer stick to the bottom. -->
     <div class='wrap'>
-    <?php include "header.php"?>
+
+      <!-- Include the header of the website, which is shared throughout. -->
+      <header></header>
+
+      <!-- The glow and white fill of the content of the page -->
       <div class='container'>
-        <div class="whitefill blackglow">
-          <center><h2><span class='text-danger'>Deep Treble</span> History</h2></center>
+        <div id="actualContent" class="whitefill blackglow">
+          <center><h2><span class='text-danger'>Deep Treble</span> Members</h2></center>
 
 <br>
 <h3>Conception and early beginnings (1998-2001)</h3>
@@ -19,15 +31,29 @@ On December 13, 2008, Deep Treble celebrated its 10th anniversary in style. Firs
 The competition season of Spring 2009 proved to be one of Deep Treble’s hardest and triumphant. The competition set included two new songs, and DT’s membership included seven new members. Under the musical direction of Julia Fendler, DT overcame these difficult odds and placed second in the Mid Atlantic Quarterfinals at RPI, picking up an award for Best Arrangement by Alexandra Bancroft for her mash-up, “Unapologize.” Rutgers, once again, hosted Semifinals, and Christofer Peckhardt earned the award for Best Soloist of “Beautiful Child.” In 2011 and 2012, Deep Treble returned to the ICCAs and although they did make it to the Semi-Finals, they took home Best Soloist awards both years for "Rock Medley" Arranged by Galdriel Sevener '12 and sung by Tyler Picone '14, and a return of "Beautiful Child" arranged by Kenneth Feibush and also sung by Tyler Picone. The group also took home the award for best vocal percussion in 2011 awarded to Charles Salamone '12.<br>
 In May of 2013, Deep Treble celebrated their 15th anniversary in style where it all began, at Kirkpatrick Chapel where the first Deep Treble concert was performed. The group had a small get together beforehand to meet and socialize with alumni and performed several songs with alumni such as: "All These Things" "The Remedy" "Your Ex-Lover is Dead" "The Sign" and Unfaithful Apology".
 In such a short time, Deep Treble has established solid reputation at Rutgers and in the a cappella world. DT frequently performs at benefits, concerts, and events around campus and elsewhere. Its alumni have gone on to become lawyers, doctors, professional musicians and arrangers, and teachers, and still have time to appear at concerts to join for the encore. While the future is unknown, the prospects look bright with new members, invigorating songs, victorious competitions, and rocking albums.
-
           <div class='whitespace'></div>
         </div>
       </div>
       <div id='push'></div>
     </div>
-    <?php include "footer.php"?>
-    <!-- Javascript -->
-    <?php include "ready.php"?>
+    <footer></footer>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        'use strict';
+
+        // Render our headers and footers.
+        $.get('header.html', function(data) {
+          var template = ich.addTemplate('header', data);
+          var node = ich.header({});
+          $('header').html(node);
+        });
+        $.get('footer.html', function(data) {
+          var template = ich.addTemplate('footer', data);
+          var node = ich.footer({});
+          $('footer').html(node);
+        });
+      });
+    </script>
+    <script src="js/background.js"></script>
   </body>
 </html>
-

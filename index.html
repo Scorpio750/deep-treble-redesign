@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="third_party/ICanHaz.min.js"></script>
+  </head>
+  <body>
+
+    <!-- Wrap the contents of the page so that if the page is shorter than the height of the browser, it will let the footer stick to the bottom. -->
+    <div class='wrap'>
+
+      <!-- Include the header of the website, which is shared throughout. -->
+      <header></header>
+
+      <!-- The glow and white fill of the content of the page -->
+      <div class='container'>
+        <div id="actualContent" class="whitefill blackglow">
+
+          <!-- The image slider, takes files from server and serves them up in order -->
+          <script id="carousel" type="text/html">
+            <div id="myCarousel" class="carousel slide">
+              <ol class='carousel-indicators'>
+                {{#images}}
+                  <li data-target="#myCarousel" data-slide-to="{{index}}" class="{{#activeIfFirst}}{{index}}{{/activeIfFirst}}"></li>
+                {{/images}}
+              </ol>
+              <div class="carousel-inner">
+                {{#images}}
+                  <div class="item {{#activeIfFirst}}{{index}}{{/activeIfFirst}}">
+                    <a href="{{url}}" style="text-align:center;">
+                      <img style="border:0;" class="banner" src="images/slider/{{image}}"/>
+                    </a>
+                  </div>
+                {{/images}}
+              </div>
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+          </script>
+
+          <div class='row'>
+
+            <!-- Twitter bar -->
+            <div class='col-sm-4'><br>
+              <a class="twitter-timeline" href="https://twitter.com/DeepTreble" data-widget-id="400697437305569281" data-tweet-limit="3">Tweets by @DeepTreble</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </div>
+
+            <!-- Main content -->
+            <div class='col-sm-8'>
+              <center><h2><span class='text-danger'>Deep Treble</span> Homepage</h2></center>
+              <h4>Sixteen years ago, a few good men and women embarked upon a journey that would change their lives (and hundreds of others) forever. That's right, it's the 16th anniversary of Deep Treble, Rutgers University's first contemporary A Cappella group! Winners of multiple ICCA Awards over the years, Deep Treble is ecstatic to be able to continue to entertain audiences worldwide with their variety of song selection and invigorating choreography. If you want to contact Deep Treble in regards to a performance, please do so at <a href='mailto:rudeeptreble@gmail.com'>rudeeptreble@gmail.com</a>! We love performing, and if we're available, we'd love to sing for you, too!</h4>
+              <h4>In this website, you can explore the current members and alumni profiles as well as view some of the most up to date information about us. Enjoy!</h4>
+              <h3>Updates</h3>
+              <h4>Our concert is on May 2nd in Voorhees Hall room 105! Doors open at 7:30pm and the concert begins at 8pm. Buy tickets at the door $3 for students and $5 for general admission! Please <a href='contact.php'>contact us</a> with any questions.</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='push'></div>
+    </div>
+    <footer></footer>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        'use strict';
+
+        // Render our headers and footers.
+        $.get('header.html', function(data) {
+          var template = ich.addTemplate('header', data);
+          var node = ich.header({});
+          $('header').html(node);
+        });
+        $.get('footer.html', function(data) {
+          var template = ich.addTemplate('footer', data);
+          var node = ich.footer({});
+          $('footer').html(node);
+        });
+
+        
+        // TODO: replace hard-coded JSON with get request.
+        var view = {
+
+          /** The set of urls and images to be displayed on the carousel. */
+          images: [
+            {
+              index: 0,
+              url: 'members.html',
+              image: 'members.png'
+            }, {
+              index: 1,
+              url: 'history.html',
+              image: 'history.png'
+            }
+          ],
+
+          /** Helper function to set the first carousel image as "active" */
+          activeIfFirst: function() {
+            return function(text, render) {
+              return render(text) === '0' ? 'active' : '';
+            }
+          },
+        };
+
+        // Render the carousel.
+        var car = ich.carousel(view);
+        $('#actualContent').prepend(car);
+      });
+    </script>
+    <script src="js/background.js"></script>
+  </body>
+</html>
