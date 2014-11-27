@@ -110,5 +110,5 @@ body
   margin-top: 0px !important;
 }
 iframe[id^='twitter-widget-']{
-  width:100%;
+  width: 100% !important;
 }
