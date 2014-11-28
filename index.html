@@ -82,21 +82,7 @@
         });
 
         
-        // TODO: replace hard-coded JSON with get request.
         var view = {
-
-          /** The set of urls and images to be displayed on the carousel. */
-          images: [
-            {
-              index: 0,
-              url: 'members.html',
-              image: 'members.png'
-            }, {
-              index: 1,
-              url: 'history.html',
-              image: 'history.png'
-            }
-          ],
 
           /** Helper function to set the first carousel image as "active" */
           activeIfFirst: function() {
@@ -106,11 +92,17 @@
           },
         };
 
-        // Render the carousel.
-        var car = ich.carousel(view);
-        $('#actualContent').prepend(car);
+        $.getJSON('data/carousel.json', function(data) {
+          // Add carousel images to "view"
+          view.images = data;
+          // Render the carousel.
+          var car = ich.carousel(view);
+          $('#actualContent').prepend(car);
+        });
       });
     </script>
+
+    <!-- Include script that makes background fade -->
     <script src="js/background.js"></script>
   </body>
 </html>

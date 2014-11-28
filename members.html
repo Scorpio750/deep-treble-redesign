@@ -62,81 +62,8 @@
         });
 
         
-        // TODO: replace hard-coded JSON with get request.
         var isLeft = true;
         var view = {
-
-          /** The set of members in DT along with their deets. */
-          members: [
-            {
-              voice: "Soprano",
-              people: [
-                {
-                  name: "Caitlyn Siehl",
-                  year: "2015"
-                }, {
-                  name: "Christiana Sara",
-                  year: "2016"
-                }, {
-                  name: "Connie Phung",
-                  year: "2015"
-                }, {
-                  name: "Lauren McGinley",
-                  year: "2016",
-                  position: "Musical Director"
-                }
-              ]
-            }, {
-              voice: "Alto",
-              people: [
-                {
-                  name: "Ariel Lee",
-                  year: "2015",
-                  position: "Business Manager"
-                }, {
-                  name: "Geralyn Williams",
-                  year: "2015",
-                  position: "Assistant Business Manager"
-                }, {
-                  name: "Katie Fuentes",
-                  year: "2015"
-                }, {
-                  name: "Rachel Battaglia",
-                  year: "2015",
-                  position: "Spain Ambassador"
-                }
-              ]
-            }, {
-              voice: "Tenor",
-              people: [
-                {
-                  name: "Eric Chi",
-                  year: "2015",
-                  position: "Historian"
-                }, {
-                  name: "Sy Adamowsky",
-                  year: "2016",
-                  position: "Treasurer"
-                }
-              ]
-            }, {
-              voice: "Bass",
-              people: [
-                {
-                  name: "Adam Coughlan",
-                  year: "2016",
-                  position: "Social Affairs Manager"
-                }, {
-                  name: "Christian Munoz",
-                  year: "2015"
-                }, {
-                  name: "Patrick Wu",
-                  year: "2015",
-                  position: "Assistant Musical Director"
-                }
-              ]
-            }
-          ],
 
           /** Helper function to get the image of a member. */
           getImage: function() {
@@ -145,6 +72,10 @@
             }
           },
 
+          /**
+           * Helper function to get class for people on the left side when it's
+           * double-column layout.
+           */
           getClass: function() {
             return function() {
               if (this.isLeft === undefined) {
@@ -156,6 +87,7 @@
             }
           },
 
+          /** Helper function to get text for eboard position if it exists */
           formatPos: function() {
             return function(text, render) {
               var pos = render(text);
@@ -163,6 +95,10 @@
             }
           },
 
+          /** 
+           * Helper function to make trailing whitespace for people on the
+           * right side of the double column layout.
+           */
           fixWhiteSpace: function() {
             return function() {
               if (this.isLeft === undefined) {
@@ -176,9 +112,13 @@
           }
         };
 
-        // Render the carousel.
-        var mem = ich.members(view);
-        $('#actualContent').append(mem);
+        $.getJSON('data/members.json', function(data) {
+          // Add member data to the "view"
+          view.members = data;
+          // Render the members data.
+          var mem = ich.members(view);
+          $('#actualContent').append(mem);
+        });
       });
     </script>
     <script src="js/background.js"></script>
