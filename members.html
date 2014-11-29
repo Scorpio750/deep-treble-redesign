@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="third_party/ICanHaz.min.js"></script>
+    <script src="third_party/mustache.js"></script>
   </head>
   <body>
 
@@ -50,14 +50,10 @@
 
         // Render our headers and footers.
         $.get('header.html', function(data) {
-          var template = ich.addTemplate('header', data);
-          var node = ich.header({});
-          $('header').html(node);
+          $('header').html(data);
         });
         $.get('footer.html', function(data) {
-          var template = ich.addTemplate('footer', data);
-          var node = ich.footer({});
-          $('footer').html(node);
+          $('footer').html(data);
         });
 
         
@@ -129,9 +125,11 @@
         $.getJSON('data/members.json', function(data) {
           // Add member data to the "view"
           view.members = data;
-          // Render the members data.
-          var mem = ich.members(view);
-          $('#actualContent').append(mem);
+
+          // Render view
+          var template = $('#members').html();
+          var rendered = Mustache.render(template, view);
+          $('#actualContent').append(rendered);
         });
       });
     </script>

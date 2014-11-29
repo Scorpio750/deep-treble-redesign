@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="third_party/ICanHaz.min.js"></script>
+    <script src="third_party/mustache.js"></script>
   </head>
   <body>
 
@@ -70,14 +70,10 @@
 
         // Render our headers and footers.
         $.get('header.html', function(data) {
-          var template = ich.addTemplate('header', data);
-          var node = ich.header({});
-          $('header').html(node);
+          $('header').html(data);
         });
         $.get('footer.html', function(data) {
-          var template = ich.addTemplate('footer', data);
-          var node = ich.footer({});
-          $('footer').html(node);
+          $('footer').html(data);
         });
 
         
@@ -92,11 +88,14 @@
         };
 
         $.getJSON('data/carousel.json', function(data) {
-          // Add carousel images to "view"
+
+          // Add carousel to the "view"
           view.images = data;
-          // Render the carousel.
-          var car = ich.carousel(view);
-          $('#actualContent').prepend(car);
+
+          // Render view
+          var template = $('#carousel').html();
+          var rendered = Mustache.render(template, view);
+          $('#actualContent').prepend(rendered);
         });
 
         $.get('data/homepage.html', function(data) {

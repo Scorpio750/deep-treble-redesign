@@ -109,12 +109,10 @@
 
         // Render our headers and footers.
         $.get('header.html', function(data) {
-          var header = Mustache.render(data, {});
-          $('header').html(header);
+          $('header').html(data);
         });
         $.get('footer.html', function(data) {
-          var footer = Mustache.render(data, {});
-          $('footer').html(footer);
+          $('footer').html(data);
         });
 
         var view = {
