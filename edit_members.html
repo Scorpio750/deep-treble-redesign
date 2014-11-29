@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="third_party/mustache.js"></script>
+  </head>
+  <body>
+
+    <!-- Wrap the contents of the page so that if the page is shorter than the height of the browser, it will let the footer stick to the bottom. -->
+    <div class='wrap'>
+
+      <!-- Include the header of the website, which is shared throughout. -->
+      <header></header>
+
+      <!-- The glow and white fill of the content of the page -->
+      <div class='container'>
+        <div id="actualContent" class="whitefill blackglow">
+          <center><h2><span class='text-danger'>Deep Treble</span> Member Admin Page</h2></center>
+          <div class='whitespace'></div>
+          <div class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+            </div>
+
+            <input id="addMember" type=submit class="btn btn-default" value="Add New Member">
+            <div id="appendHere"></div>
+
+            <script id="panelRender" type="text/html">
+              {{#members}}
+                {{#people}}
+                  {{> panelTemplate}}
+                {{/people}}
+              {{/members}}
+            </script>
+
+
+            <script id="panelTemplate" type="text/html">
+              <div class="panel-group" role="tablist">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                      <a class="" data-toggle="collapse" href="#collapseListGroup-{{#shorten}}{{name}}{{/shorten}}" aria-expanded="true" aria-controls="collapseListGroup">
+                        {{name}}
+                      </a>
+                      <div class="delete" style="float:right;cursor:pointer;">Delete</div>
+                    </h4>
+                  </div>
+                  <div id="collapseListGroup-{{#shorten}}{{name}}{{/shorten}}" style="padding:15px;" class="panel-collapse collapse" role="tabpanel" aria-expanded="true" style="">
+                    <div class="form-group">
+                      <label for="inputVoice-{{#shorten}}{{name}}{{/shorten}}" class="col-sm-3 control-label">Voice Part</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputVoice-{{#shorten}}{{name}}{{/shorten}}" value="{{voice}}">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputName-{{#shorten}}{{name}}{{/shorten}}" class="col-sm-3 control-label">Name</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputName-{{#shorten}}{{name}}{{/shorten}}" value="{{name}}">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputYear-{{#shorten}}{{name}}{{/shorten}}" class="col-sm-3 control-label">Graduation year</label>
+                      <div class="col-sm-9">
+                        <input type="number" class="form-control" id="inputYear-{{#shorten}}{{name}}{{/shorten}}" value="{{year}}">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPosition-{{#shorten}}{{name}}{{/shorten}}" class="col-sm-3 control-label">Eboard position</label>
+                      <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputPosition-{{#shorten}}{{name}}{{/shorten}}" value="{{position}}">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputFile-{{#shorten}}{{name}}{{/shorten}}" class="col-sm-3 control-label">Member Photo</label>
+                      <div class="col-sm-9">
+                        <input type="file" id="inputFile-{{#shorten}}{{name}}{{/shorten}}">
+                        <p class="help-block">Only input a new file if you want to replace the old one.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </script>
+
+            <div class="whitespace"></div>
+            <input id="saveButton" type=submit class="btn btn-default" value="Save">
+
+          </form>
+        </div>
+      </div>
+      <div id='push'></div>
+    </div>
+    <footer></footer>
+    <script type="text/javascript">
+
+      function deleteCur(e) {
+        $(e.target).closest('.panel-group').remove();
+      }
+
+      $(document).ready(function() {
+        'use strict';
+
+        // Render our headers and footers.
+        $.get('header.html', function(data) {
+          var header = Mustache.render(data, {});
+          $('header').html(header);
+        });
+        $.get('footer.html', function(data) {
+          var footer = Mustache.render(data, {});
+          $('footer').html(footer);
+        });
+
+        var view = {
+          shorten: function() {
+            return function(text, render) {
+              return render(text).replace(/ /g,'').toLowerCase();
+            }
+          }
+        };
+
+        // Render the accordian widgets
+        $.getJSON('data/members.json', function(data) {
+
+          // Add member data to the "view"
+          view.members = data;
+
+          // Render view
+          var outer = $('#panelRender').html();
+          var inner = $('#panelTemplate').html();
+          var rendered = Mustache.render(outer, view, {panelTemplate: inner});
+          $('#appendHere').append(rendered);
+
+          // Setup button event listener for close buttons
+          var deleteButtons = document.body.querySelectorAll('.delete');
+          for (var i = 0; i < deleteButtons.length; ++i) {
+            deleteButtons[i].addEventListener('click', deleteCur);
+          }
+
+          // Setup button event listener for add member button
+          window.NEW_MEMBER_COUNT = 1;
+          var addButton = document.body.querySelector('#addMember');
+          addButton.addEventListener('click', function() {
+            var tem = $('#panelTemplate').html();
+            var newView = {shorten: view.shorten, name: 'New Member ' + window.NEW_MEMBER_COUNT};
+            window.NEW_MEMBER_COUNT += 1;
+            var newRend = Mustache.render(tem, newView);
+            $('#appendHere').prepend(newRend);
+              
+          });
+
+          // Setup save button.
+          var save = document.body.querySelector('#saveButton');
+          save.addEventListener('click', function() {
+
+            // Create data to be sent to the server.
+            var formData = new FormData();
+
+            // Skeleton of data sent to server.
+            var sendJSON = [
+              {voice: "Soprano", people: []},
+              {voice: "Alto", people: []},
+              {voice: "Tenor", people: []},
+              {voice: "Bass", people: []}
+            ];
+
+            // Enumeration to access correct skeleton value.
+            var enumVoice = {
+              Soprano: 0,
+              Alto: 1,
+              Tenor: 2,
+              Bass: 3
+            };
+
+            // Iterate over each accordian widget.
+            var allPeople = document.body.querySelectorAll('[id^=collapseListGroup-]');
+            for (var i = 0; i < allPeople.length; ++i) {
+              var person = allPeople[i];
+              var voice = person.querySelector('[id^=inputVoice]').value;
+              var name = person.querySelector('[id^=inputName]').value;
+              var year = person.querySelector('[id^=inputYear]').value;
+              var position = person.querySelector('[id^=inputPosition]').value;
+              var file = person.querySelector('[id^=inputFile]').files[0];
+              var voiceKey = voice[0].toUpperCase() + voice.substring(1);
+
+              // Create an object to add to the server packet.
+              sendJSON[enumVoice[voiceKey]].people.push({
+                voice: voiceKey,
+                name: name,
+                year: year,
+                position: position
+              });
+
+              // If there is a file, also add it separately to the packet.
+              if (file) {
+                formData.append(name.replace(/ /g,'').toLowerCase(), file);
+              }
+            }
+
+            // Add in password and data to the packet.
+            JSON.stringify(sendJSON);
+            formData.append('data', JSON.stringify(sendJSON));
+            formData.append('password', document.body.querySelector('#inputPassword').value);
+
+            // Send to server.
+            var req = new XMLHttpRequest();
+            req.open('POST', 'update_members.php');
+            req.onload = function(event) { alert(event.target.responseText); };
+            req.send(formData);
+          });
+        });
+      });
+    </script>
+    <script src="js/background.js"></script>
+  </body>
+</html>

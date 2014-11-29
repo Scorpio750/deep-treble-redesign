@@ -26,7 +26,7 @@
                 {{#people}}
                   <div class="no-margin media col-sm-4 {{#getClass}}{{/getClass}}">
                     <a class="pull-left" href="#">
-                      <img src="{{#getImage}}{{/getImage}}" class="media-object" data-src="holder.js/100x100" alt="100x100" style="width: 100px; height: 100px;" color="black">
+                      <img src="{{#getImage}}{{/getImage}}" class="media-object" onError="this.onerror=null;this.src='images/members/missing_photo';" data-src="holder.js/100x100" alt="100x100" style="width: 100px;height: 100px;" color="black">
                     </a>
                     <div class="media-body">
                       <h4 class="media-heading">{{name}}</h4>
@@ -36,6 +36,7 @@
                   </div>
                   {{#fixWhiteSpace}}{{/fixWhiteSpace}}
                 {{/people}}
+                {{#fixWhiteSpace2}}{{/fixWhiteSpace2}}
               {{/members}}
             </div>
             <div class='whitespace'></div>
@@ -68,7 +69,7 @@
           /** Helper function to get the image of a member. */
           getImage: function() {
             return function(text, render) {
-              return 'images/members/' + this.name.replace(/ /g,'').toLowerCase() + '.png';
+              return 'images/members/' + this.name.replace(/ /g,'').toLowerCase();
             }
           },
 
@@ -108,6 +109,21 @@
               }
               return this.isLeft ? '' :
                 '</div><div class="whitespace"></div><div class="row">';
+            }
+          },
+
+          /** 
+           * Helper function to make trailing whitespace for when there is a
+           * section ending with a person on the left side.
+           */
+          fixWhiteSpace2: function() {
+            return function() {
+              var ret = isLeft ?
+                '</div><div class="whitespace"></div><div class="row">' : '';
+              if (!isLeft) {
+                isLeft = !isLeft;
+              }
+              return ret;
             }
           }
         };
