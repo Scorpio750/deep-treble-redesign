@@ -25,9 +25,7 @@
                 <center><h3>{{voice}}</h3></center>
                 {{#people}}
                   <div class="no-margin media col-sm-4 {{#getClass}}{{/getClass}}">
-                    <a class="pull-left" href="#">
-                      <img src="{{#getImage}}{{/getImage}}" class="media-object" onError="this.onerror=null;this.src='images/members/missing_photo';" data-src="holder.js/100x100" alt="100x100" style="width: 100px;height: 100px;" color="black">
-                    </a>
+                    <img class="pull-left" src="{{#getImage}}{{/getImage}}" class="media-object" onError="this.onerror=null;this.src='images/members/missing_photo';" data-src="holder.js/100x100" alt="100x100" style="width: 100px;height: 100px;" color="black">
                     <div class="media-body">
                       <h4 class="media-heading">{{name}}</h4>
                       Class of {{year}}

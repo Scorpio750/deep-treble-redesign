@@ -29,6 +29,7 @@
             </div>
 
             <input id="addMember" type=submit class="btn btn-default" value="Add New Member">
+            <div class="whitespace"></div>
             <div id="appendHere"></div>
 
             <script id="panelRender" type="text/html">
@@ -151,6 +152,19 @@
             window.NEW_MEMBER_COUNT += 1;
             var newRend = Mustache.render(tem, newView);
             $('#appendHere').prepend(newRend);
+            
+            // Add event listener on the first delete button. This works because it was prepended.
+            var delButton = document.body.querySelector('.delete')
+            if (delButton) {
+              delButton.addEventListener('click', deleteCur);
+            }
+
+            // Open up the accordian
+            var acc = document.body.querySelector('[id^=collapseListGroup-]');
+            if (acc) {
+              acc.classList.remove('collapse');
+              acc.classList.add('in');
+            }
               
           });
 
@@ -186,7 +200,21 @@
               var year = person.querySelector('[id^=inputYear]').value;
               var position = person.querySelector('[id^=inputPosition]').value;
               var file = person.querySelector('[id^=inputFile]').files[0];
+              if (!voice) {
+                alert("No voice part entered");
+                return;
+              }
               var voiceKey = voice[0].toUpperCase() + voice.substring(1);
+
+              if (!name) {
+                alert("Empty name entered");
+                return;
+              }
+
+              if (enumVoice[voiceKey] === undefined) {
+                alert('Voice Part should be "Soprano", "Alto", "Tenor" or "Bass"');
+                return;
+              }
 
               // Create an object to add to the server packet.
               sendJSON[enumVoice[voiceKey]].people.push({
@@ -200,6 +228,19 @@
               if (file) {
                 formData.append(name.replace(/ /g,'').toLowerCase(), file);
               }
+            }
+
+            // Alphabetize names
+            for (var i = 0; i < sendJSON.length; ++i) {
+              sendJSON[i].people.sort(function (a, b) {
+                if (a.name > b.name) {
+                  return 1;
+                }
+                if (a.name < b.name) {
+                  return -1;
+                }
+                return 0;
+              });
             }
 
             // Add in password and data to the packet.
