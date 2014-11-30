@@ -114,8 +114,8 @@
            */
           fixWhiteSpace2: function() {
             return function() {
-              var ret = isLeft ?
-                '</div><div class="whitespace"></div><div class="row">' : '';
+              var ret = isLeft ? '' :
+                '</div><div class="whitespace"></div><div class="row">';
               if (!isLeft) {
                 isLeft = !isLeft;
               }
