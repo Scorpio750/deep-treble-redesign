@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Deep Treble, Rutgers Coed A Capella Group</title>
+    <title>Deep Treble - Members</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -14,14 +14,15 @@
     <!-- Wrap the contents of the page so that if the page is shorter than the height of the browser, it will let the footer stick to the bottom. -->
     <div class='wrap'>
 
-      <!-- Include the header of the website, which is shared throughout. -->
+      <!-- Include header, which is shared throughout the website. -->
       <header></header>
 
       <!-- The glow and white fill of the content of the page -->
       <div class='container'>
         <div id="actualContent" class="whitefill blackglow">
           <center><h2><span class='text-danger'>Deep Treble</span> Members</h2></center>
-          <script id="members" type="text/html">
+          
+		  <script id="members" type="text/html">
             <div class='row'>
               {{#members}}
                 <center><h3>{{voice}}</h3></center>
@@ -41,100 +42,22 @@
             </div>
             <div class='whitespace'></div>
           </script>
-        </div>
-      </div>
-      <div id='push'></div>
-    </div>
-    <footer></footer>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        'use strict';
-
-        // Render our headers and footers.
-        $.get('header.html', function(data) {
-          $('header').html(data);
-        });
-        $.get('footer.html', function(data) {
-          $('footer').html(data);
-        });
-
+          
+        </div> <!-- End of actualContent -->
         
-        var isLeft = true;
-        var view = {
-
-          /** Helper function to get the image of a member. */
-          getImage: function() {
-            return function(text, render) {
-              return 'images/members/' + this.name.replace(/ /g,'').toLowerCase();
-            }
-          },
-
-          /**
-           * Helper function to get class for people on the left side when it's
-           * double-column layout.
-           */
-          getClass: function() {
-            return function() {
-              if (this.isLeft === undefined) {
-                this.isLeft = isLeft;
-              } else {
-                isLeft = !isLeft;
-              }
-              return this.isLeft ? 'col-sm-offset-2' : '';
-            }
-          },
-
-          /** Helper function to get text for eboard position if it exists */
-          formatPos: function() {
-            return function(text, render) {
-              var pos = render(text);
-              return pos ? '<br>' + pos : '';
-            }
-          },
-
-          /** 
-           * Helper function to make trailing whitespace for people on the
-           * right side of the double column layout.
-           */
-          fixWhiteSpace: function() {
-            return function() {
-              if (this.isLeft === undefined) {
-                this.isLeft = isLeft;
-              } else {
-                isLeft = !isLeft;
-              }
-              return this.isLeft ? '' :
-                '</div><div class="row">';
-            }
-          },
-
-          /** 
-           * Helper function to make trailing whitespace for when there is a
-           * section ending with a person on the left side.
-           */
-          fixWhiteSpace2: function() {
-            return function() {
-              var ret = isLeft ? '' :
-                '</div><div class="whitespace"></div><div class="row">';
-              if (!isLeft) {
-                isLeft = !isLeft;
-              }
-              return ret;
-            }
-          }
-        };
-
-        $.getJSON('data/members.json', function(data) {
-          // Add member data to the "view"
-          view.members = data;
-
-          // Render view
-          var template = $('#members').html();
-          var rendered = Mustache.render(template, view);
-          $('#actualContent').append(rendered);
-        });
-      });
-    </script>
-    <script src="js/background.js"></script>
+      </div> <!-- End of container -->
+      
+      <!-- For sticking the footer the the bottom of the page -->
+      <div id='push'></div>
+      
+    </div> <!-- End of wrap -->
+    
+    <!-- Include footer, which is shared throughout website. -->
+    <footer></footer>
+   
   </body>
+  
+  <script src="js/members.js"></script>
+  <script src="js/main.js"></script>
+  
 </html>

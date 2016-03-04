@@ -1,20 +1,22 @@
 
-html
-{
+html{
   height:100%;
 }
-body
-{
+
+body{
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-image: url('bg.jpg');
+  background-image: url('images/bg.jpg');
   background-position: 50% -80px;
   background-size: cover;
   background-color: black;
 }
-@media(max-width:767px){body{background-position: 50% 50%;}}
-@media(min-width:1200px){body{background-position: 50% -110px;}}
+
+@media(max-width:767px){ body{background-position: 50% 50%;} }
+
+@media(min-width:1200px){ body{background-position: 50% -110px;} }
+
 .wrap 
 {
   min-height: 100%;
@@ -22,57 +24,55 @@ body
   height: 100%;
   margin: 0 auto -50px;
 }
-#push,
-#footer
-{
+
+#push, #footer {
   height: 50px;
 }
-#footer
-{
+
+#footer {
   background-color: #101010;
 }
-.whitefill
-{
+
+.whitefill {
   padding: 10px;
   background-color: white;
 } 
-.whitespace
-{
+
+.whitespace {
   width: 100%;
   height:10px;
 }
-.undermargin
-{
+
+.undermargin {
   width:100%;
   margin-bottom: 20px;
 }
-.blackglow
-{
+
+.blackglow {
   -moz-box-shadow: 0 0 10px 10px rgba(0,0,0,.7);
   -webkit-box-shadow: 0 0 10px 10px rgba(0,0,0,.7);
   box-shadow: 0 0 10px 10px rgba(0,0,0,.7);
 }
-.topfive
-{
+
+.topfive {
   max-width: 100%;
   height:auto;
 }
-.bottombar
-{   
+
+.bottombar {   
   padding: 20px;
   height: 60px;
   background-color: #101010;
 }
 
-.bgblack
-{
+.bgblack {
   z-index: -10;
   position: absolute;
   height: 128%;
   width: 100%;
 }
-.backgroundfade
-{
+
+.backgroundfade {
   z-index: -10;
   position: fixed;
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 52%, rgba(0,0,0,1) 100%); /* FF3.6+ */
@@ -84,10 +84,9 @@ body
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
   height: 100%;
   width: 100%;
-  
 }
-.backgroundfill
-{
+
+.backgroundfill {
   z-index: -10;
   position: fixed;
   background-color: black;
@@ -95,10 +94,11 @@ body
   width: 100%;
   height:100%;
 }
-.banner
-{
+
+.banner {
   width: 100%;
 }
+
 .hero-unit {
   padding: 30px;
   margin-bottom: 30px;
@@ -108,13 +108,14 @@ body
   background-color: #eeeeee;
   border:1px solid #cacaca;
   -webkit-border-radius: 10px;
-         -moz-border-radius: 10px;
-          border-radius: 10px;
- }
-.no-margin
-{
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.no-margin{
   margin-top: 0px !important;
 }
+
 iframe[id^='twitter-widget-']{
   width: 100% !important;
 }

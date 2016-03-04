@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Deep Treble A Cappella</title>
+    <title>Deep Treble</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -12,9 +12,9 @@
   <body>
 
     <!-- Wrap the contents of the page so that if the page is shorter than the height of the browser, it will let the footer stick to the bottom. -->
-    <div class='wrap'>
+   	<div class='wrap'>
 
-      <!-- Include the header of the website, which is shared throughout. -->
+      <!-- Include header, which is shared throughout the website. -->
       <header></header>
 
       <!-- The glow and white fill of the content of the page -->
@@ -48,7 +48,7 @@
           </script>
 
           <div class='row'>
-
+          
             <!-- Twitter bar -->
             <div class='col-sm-4'><br>
               <a class="twitter-timeline" href="https://twitter.com/DeepTreble" data-widget-id="400697437305569281" data-tweet-limit="3">Tweets by @DeepTreble</a>
@@ -58,55 +58,27 @@
             <!-- Main content -->
             <div class='col-sm-8'>
               <center><h2><span class='text-danger'>Deep Treble</span> Homepage</h2></center>
+              <!-- Include  -->
               <div id="appendIntroHere"></div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div id='push'></div>
-    </div>
-    <footer></footer>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        'use strict';
-
-        // Render our headers and footers.
-        $.get('header.html', function(data) {
-          $('header').html(data);
-        });
-        $.get('footer.html', function(data) {
-          $('footer').html(data);
-        });
-
+            
+          </div> <!-- End of row -->
+          
+        </div> <!-- End of actualContent -->
         
-        var view = {
-
-          /** Helper function to set the first carousel image as "active" */
-          activeIfFirst: function() {
-            return function(text, render) {
-              return render(text) === '0' ? 'active' : '';
-            }
-          },
-        };
-
-        $.getJSON('data/carousel.json', function(data) {
-
-          // Add carousel to the "view"
-          view.images = data;
-
-          // Render view
-          var template = $('#carousel').html();
-          var rendered = Mustache.render(template, view);
-          $('#actualContent').prepend(rendered);
-        });
-
-        $.get('data/homepage.html', function(data) {
-          $('#appendIntroHere').html(data);
-        });
-      });
-    </script>
-
-    <!-- Include script that makes background fade -->
-    <script src="js/background.js"></script>
+      </div> <!-- End of container -->
+      
+      <!-- For sticking the footer the the bottom of the page -->
+      <div id='push'></div>
+      
+    </div> <!-- End of wrap -->
+    
+    <!-- Include footer, which is shared throughout website. -->
+    <footer></footer>
+    
   </body>
+  
+  <script src="js/main.js" type="text/javascript"></script>
+  <script src="js/homepage.js" type="text/javascript"></script>
+  
 </html>
