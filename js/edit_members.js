@@ -144,7 +144,6 @@
             JSON.stringify(sendJSON);
             formData.append('data', JSON.stringify(sendJSON));
             formData.append('password', document.body.querySelector('#inputPassword').value);
-			console.log(sendJSON);
 
             // Send to server.
             var req = new XMLHttpRequest();
