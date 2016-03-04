@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Deep Treble, Rutgers Coed A Capella Group</title>
+    <title>Deep Treble</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="third_party/mustache.js"></script>
   </head>
   <body>
@@ -235,7 +235,7 @@
               sendJSON[i].people.sort(function (a, b) {
                 if (a.name > b.name) {
                   return 1;
-                }
+                } 
                 if (a.name < b.name) {
                   return -1;
                 }
@@ -247,6 +247,7 @@
             JSON.stringify(sendJSON);
             formData.append('data', JSON.stringify(sendJSON));
             formData.append('password', document.body.querySelector('#inputPassword').value);
+			console.log(sendJSON);
 
             // Send to server.
             var req = new XMLHttpRequest();
