@@ -1,6 +1,6 @@
 <?php
   if ($_POST["password"] == "200percentyeah!") {
-    file_put_contents('data/members.json', $_POST["data"]);
+    file_put_contents('http://www.rudeeptreble.com/data/members.json', $_POST["data"]);
     foreach ($_FILES as $key => $value) {
       $upload_path = "images/members/" . $key;
       if (move_uploaded_file($_FILES[$key]["tmp_name"], $upload_path)) {
