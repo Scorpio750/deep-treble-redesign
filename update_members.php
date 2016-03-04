@@ -1,5 +1,7 @@
 <?php
+  echo $_POST["data"];
   if ($_POST["password"] == "200percentyeah!") {
+	
     file_put_contents('data/members.json', $_POST["data"]);
     foreach ($_FILES as $key => $value) {
       $upload_path = "images/members/" . $key;
