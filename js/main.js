@@ -6,7 +6,7 @@ var prepareBG = function() {
 }
 $(document).scroll(prepareBG);
 
-$(document).onload(function() {
+$(document).ready(function() {
         'use strict';
 
         // Render our headers and footers.
