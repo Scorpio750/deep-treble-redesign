@@ -1,0 +1,26 @@
+{
+  "name": "deep-treble",
+  "version": "1.0.0",
+  "description": "Deep Treble webpage",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scorpio750/deep-treble.git"
+  },
+  "keywords": [
+    "Deep",
+    "Treble",
+    "acapella",
+    "Rutgers"
+  ],
+  "author": "Patrick Wu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Scorpio750/deep-treble/issues"
+  },
+  "homepage": "https://github.com/Scorpio750/deep-treble#readme"
+}
