@@ -1,7 +1,5 @@
 exports.routes = function(app) {
 	app.get('/', function(req, res) {
-		res.render('index', {
-			msg: req.query.msg
-		});
+		res.sendFile(process.cwd() + '/dist/views/index.html');
 	});
 }

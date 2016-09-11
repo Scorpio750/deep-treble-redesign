@@ -1,14 +1,9 @@
-let express = require('express');
-let app = express();
-let PORT = process.env.NODE_ENV || 3000;
+const express = require('express');
+const app = express();
+const PORT = process.env.NODE_ENV || 3000;
+const route = require('./routes/route.js');
 
-app.get('/', function(req, res) {
-	res.render('index', {
-		msg: req.query.msg
-	});
-});
-
-let route = require('./routes/route.js');
+route.routes(app);
 
 app.listen(PORT, function() {
 	console.log('listening on port', PORT);
