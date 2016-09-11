@@ -1,29 +1,21 @@
 const 	gulp 		= require('gulp'),
-		browserSync = require('browser-sync').create(),
-		reload		= browserSync.reload,
+		exec		= require('gulp-exec'),
+		nodemon		= require('gulp-nodemon'),
 		debug		= require('gulp-debug'),
 		webpack		= require('webpack-stream');
-	
+
 const config = {
-	
+
 }
 
-/*gulp.task('serve', [], function() {
-	browserSync.init({
-		server: { },
-		startPath: 'dist/views/index.html',
-		ghostMode: { scroll: false }
+gulp.task('server', function () {
+	nodemon({
+		script: 'server.js',
+		ext: 'js html'
+	})
+	.on('restart', function() {
+		console.log('Restarting server...');
 	});
-});*/
+});
 
-gulp.task('server', function (cb) {
-	  exec('node lib/app.js', function (err, stdout, stderr) {
-
-		      console.log(stdout);
-			      console.log(stderr);
-				      cb(err);
-					    });
-	  });
-
-gulp.task('ghostMode');
 gulp.task('default', ['server']);
