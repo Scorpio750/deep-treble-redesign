@@ -34,6 +34,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-debug": "^2.1.2",
     "gulp-nodemon": "^2.1.0",
+    "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
     "node-sass": "^3.10.0",
     "sass-loader": "^4.0.2",
