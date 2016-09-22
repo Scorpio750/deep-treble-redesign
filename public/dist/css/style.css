@@ -1,9 +1,0 @@
-@font-face {
-  font-family: "Avenir";
-  src: url("../fonts/Avenir.ttc") format("truetype"); }
-
-header {
-  display: flex;
-  justify-content: center; }
-  header nav {
-    flex: 1 0 80%; }
