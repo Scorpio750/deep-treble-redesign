@@ -4,7 +4,6 @@ import debug from 'gulp-debug'
 import webpack from 'webpack-stream'
 import wpConfig from './config/webpack.config.js'
 import sass from 'gulp-sass'
-import browserSync from 'browser-sync'
 import livereload	from 'gulp-livereload'
 
 const config = {
@@ -27,22 +26,6 @@ gulp.task('sass', () => {
 	.pipe(sass().on('error', sass.logError))
 	.pipe(gulp.dest(config.cssPath))
 	.pipe(livereload())
-})
-
-gulp.task('browser-sync', () => {
-
-	browserSync.init({
-		startPath: config.htmlPath + 'index.html',
-	ghostMode: {
-		scroll: false
-	}
-	})
-	gulp.watch([
-		config.htmlPath + '*.html',
-		config.cssPath + '*.css',
-		config.jsPath + '*.js'
-		],
-		browserSync.reload())
 })
 
 gulp.task('server', ['webpack', 'sass'], (cb) => {
