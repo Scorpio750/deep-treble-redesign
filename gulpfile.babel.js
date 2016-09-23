@@ -1,6 +1,5 @@
 import gulp from 'gulp'
 import nodemon from 'gulp-nodemon'
-import notify from 'gulp-notify'
 import debug from 'gulp-debug'
 import webpack from 'webpack-stream'
 import wpConfig from './config/webpack.config.js'
@@ -8,11 +7,11 @@ import sass from 'gulp-sass'
 import livereload from 'gulp-livereload'
 
 const config = {
-    sassPath: './public/src/scss/*.scss',
-    cssPath: './public/dist/css/',
-    jsPath: './public/src/js/*.js',
-    bundledPath: './public/dist/js/',
-    htmlPath: './public/dist/views/'
+    sassPath: './src/scss/*.scss',
+    cssPath: './public/css/',
+    jsPath: './src/js/*.js',
+    bundledPath: './public/js/',
+    htmlPath: './public/views/'
 }
 
 gulp.task('webpack', () => {
@@ -45,8 +44,6 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
         .on('restart', () => {
             setTimeout(() => {
                 livereload.changed('server.js')
-                gulp.src('server.js')
-					.pipe(notify('Restarting server...'))
             }, 1000)
         })
 
