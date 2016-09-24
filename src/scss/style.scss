@@ -3,7 +3,7 @@
 	src: url("/assets/fonts/Avenir.ttc") format("truetype");
 }
 $font-color: #333;
-$coffee-peach: #fff6e7;
+$coffee-background: #f5f4f2;
 
 html, body {
 	box-sizing: border-box;
@@ -35,10 +35,17 @@ body {
 		width: inherit;
 		background-image: url("/assets/img/oak desk.jpg");
 	}
+	#blank-space {
+		width: 800px;
+		height: 578px;
+		z-index: 1001;
+		background-color: $coffee-background;
+	}
 	img {
 		position: absolute;
 		width: 800px;
-		border-radius: 10em;
+		// border-radius: 10em;
+		opacity: 0;
 		cursor: pointer;
 	}
 }

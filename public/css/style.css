@@ -28,10 +28,15 @@ body {
     height: inherit;
     width: inherit;
     background-image: url("/assets/img/oak desk.jpg"); }
+  #ripple #blank-space {
+    width: 800px;
+    height: 578px;
+    z-index: 1001;
+    background-color: #f5f4f2; }
   #ripple img {
     position: absolute;
     width: 800px;
-    border-radius: 10em;
+    opacity: 0;
     cursor: pointer; }
 
 header {
