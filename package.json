@@ -46,6 +46,7 @@
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "gsap": "^1.19.0"
   }
 }
