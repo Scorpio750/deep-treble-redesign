@@ -5,11 +5,16 @@
 $font-color: white;
 $coffee-background: #f5f4f2;
 
-html, body {
+body,
+html {
 	box-sizing: border-box;
-	height: 100%;
 	margin: 0;
 	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 body {
@@ -29,11 +34,13 @@ body {
 	z-index: 1000;
 	width: 100vw;
 	height: 100vh;
+
 	canvas {
 		position: absolute;
 		height: inherit;
 		width: inherit;
 	}
+
 	#blank-space {
 		width: 800px;
 		height: 578px;
@@ -41,6 +48,7 @@ body {
 		background-color: $coffee-background;
 		border-radius: 1em;
 	}
+
 	#coffee-holder {
 		position: inherit;
 		border-radius: 100vh;
@@ -55,9 +63,11 @@ body {
 		// 	opacity: .5;
 		// }
 	}
+
 	img {
 		display: none;
 	}
+
 	#coffee {
 		position: absolute;
 		width: 800px;
@@ -75,50 +85,63 @@ header {
 	justify-content: center;
 	position: fixed;
 	width: 99%;
+	z-index: 100;
+	opacity: 1;
 }
 
 nav {
-	padding-top: .6em;
 	flex: 1 0 auto;
 	display: flex;
 	justify-content: center;
 
 	#logo-space {
 		flex: 1 0 30%;
+		height: 3.5em;
+		background-color: black;
 		// border-bottom: .1em solid crimson;
-		opacity: .7;
+		// opacity: 0.7;
+
 		#DT-logo {
-			// padding: .1em;
-			// width: 45px;
-			width: 3em;
-			padding: .5em 1em;
+			position: absolute;
+			background-image: url("/assets/logos/DE:EP white.png");
+			background-size: cover;
+			width: 3.5em;
+			height: 3.5em;
+			margin: 0.5em 1em;
 			cursor: pointer;
-			transition: 0.1s all ease-in-out;
-			// opacity: .8;
-			// &:hover {
-			// 	opacity: 1;
-			// }
+			&:before {
+				background-color: black;
+				content: '';
+				display: block;
+				position: absolute;
+				height: inherit;
+				width: inherit;
+				z-index: -1;
+			}
 		}
 	}
 
 	ul {
+		padding-left: 0;
+		padding-top: 0.6em;
 		flex: 1 0 auto;
 		display: flex;
 		justify-content: space-between;
 		list-style: none;
-		padding: 0;
 		margin: 0;
 		height: 3.7em;
+		background-color: black;
 
 		li {
 			flex: 1 0 auto;
 			cursor: pointer;
 			font-size: 1.2em;
 			text-align: center;
-			opacity: .7;
-			padding: .8em;
-			border-bottom: .1em solid crimson;
+			opacity: 0.7;
+			padding: 0.8em;
+			border-bottom: 0.1em solid crimson;
 			transition: 0.1s all ease-in-out;
+
 			&:hover {
 				opacity: 1;
 			}
@@ -127,10 +150,14 @@ nav {
 }
 
 main {
-	flex: 1 0 80%;
-	// min-height: 80%;
+	flex: 1 0 auto;
+	min-height: 80%;
 }
 
 footer {
+	border-top: 0.2em solid crimson;
+	opacity: 0.5;
 	flex: 0 1 5%;
+	background-color: #111;
+	padding: 0.5em;
 }

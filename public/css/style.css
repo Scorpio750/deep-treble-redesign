@@ -2,11 +2,15 @@
   font-family: "Avenir";
   src: url("/assets/fonts/Avenir.ttc") format("truetype"); }
 
-html, body {
+body,
+html {
   box-sizing: border-box;
-  height: 100%;
   margin: 0;
   padding: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
 
 body {
   font-family: Avenir;
@@ -65,10 +69,11 @@ header {
   -ms-flex-pack: center;
   justify-content: center;
   position: fixed;
-  width: 99%; }
+  width: 99%;
+  z-index: 100;
+  opacity: 1; }
 
 nav {
-  padding-top: .6em;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -ms-flexbox;
@@ -78,13 +83,27 @@ nav {
   nav #logo-space {
     -ms-flex: 1 0 30%;
     flex: 1 0 30%;
-    opacity: .7; }
+    height: 3.5em;
+    background-color: black; }
     nav #logo-space #DT-logo {
-      width: 3em;
-      padding: .5em 1em;
-      cursor: pointer;
-      transition: 0.1s all ease-in-out; }
+      position: absolute;
+      background-image: url("/assets/logos/DE:EP white.png");
+      background-size: cover;
+      width: 3.5em;
+      height: 3.5em;
+      margin: 0.5em 1em;
+      cursor: pointer; }
+      nav #logo-space #DT-logo:before {
+        background-color: black;
+        content: '';
+        display: block;
+        position: absolute;
+        height: inherit;
+        width: inherit;
+        z-index: -1; }
   nav ul {
+    padding-left: 0;
+    padding-top: 0.6em;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
     display: -ms-flexbox;
@@ -92,26 +111,31 @@ nav {
     -ms-flex-pack: justify;
     justify-content: space-between;
     list-style: none;
-    padding: 0;
     margin: 0;
-    height: 3.7em; }
+    height: 3.7em;
+    background-color: black; }
     nav ul li {
       -ms-flex: 1 0 auto;
       flex: 1 0 auto;
       cursor: pointer;
       font-size: 1.2em;
       text-align: center;
-      opacity: .7;
-      padding: .8em;
-      border-bottom: .1em solid crimson;
+      opacity: 0.7;
+      padding: 0.8em;
+      border-bottom: 0.1em solid crimson;
       transition: 0.1s all ease-in-out; }
       nav ul li:hover {
         opacity: 1; }
 
 main {
-  -ms-flex: 1 0 80%;
-  flex: 1 0 80%; }
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  min-height: 80%; }
 
 footer {
+  border-top: 0.2em solid crimson;
+  opacity: 0.5;
   -ms-flex: 0 1 5%;
-  flex: 0 1 5%; }
+  flex: 0 1 5%;
+  background-color: #111;
+  padding: 0.5em; }
