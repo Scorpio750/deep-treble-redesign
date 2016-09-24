@@ -6,11 +6,19 @@ body,
 html {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  overflow: hidden; }
 
 a {
   text-decoration: none;
   color: inherit; }
+
+ul {
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
 
 body {
   font-family: Avenir;
@@ -91,10 +99,10 @@ nav {
       background-size: cover;
       width: 3.5em;
       height: 3.5em;
-      margin: 0.5em 1em;
-      cursor: pointer; }
+      margin: 0.7em 1em;
+      cursor: pointer;
+      opacity: 0.8; }
       nav #logo-space #DT-logo:before {
-        background-color: black;
         content: '';
         display: block;
         position: absolute;
@@ -102,16 +110,11 @@ nav {
         width: inherit;
         z-index: -1; }
   nav ul {
-    padding-left: 0;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     padding-top: 0.6em;
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    list-style: none;
-    margin: 0;
     height: 3.7em;
     background-color: black; }
     nav ul li {
@@ -128,14 +131,29 @@ nav {
         opacity: 1; }
 
 main {
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  min-height: 80%; }
+  -ms-flex: 6 0 90vh;
+  flex: 6 0 90vh; }
 
 footer {
   border-top: 0.2em solid crimson;
   opacity: 0.5;
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex: 0 1 5%;
   flex: 0 1 5%;
   background-color: #111;
   padding: 0.5em; }
+  footer #footer-left {
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%; }
+  footer #footer-right {
+    text-align: right;
+    margin-right: 1em;
+    -ms-flex: 1 0 50%;
+    flex: 1 0 50%; }
+    footer #footer-right #social-media {
+      margin-top: 3em 0;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
+      footer #footer-right #social-media li {
+        margin: 0 .3em; }

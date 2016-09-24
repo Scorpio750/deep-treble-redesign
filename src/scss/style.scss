@@ -10,11 +10,19 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	overflow: hidden;
 }
 
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -100,17 +108,18 @@ nav {
 		background-color: black;
 		// border-bottom: .1em solid crimson;
 		// opacity: 0.7;
-
 		#DT-logo {
 			position: absolute;
 			background-image: url("/assets/logos/DE:EP white.png");
 			background-size: cover;
 			width: 3.5em;
 			height: 3.5em;
-			margin: 0.5em 1em;
+			margin: 0.7em 1em;
 			cursor: pointer;
+			opacity: 0.8;
+
 			&:before {
-				background-color: black;
+				// background-color: black;
 				content: '';
 				display: block;
 				position: absolute;
@@ -122,13 +131,9 @@ nav {
 	}
 
 	ul {
-		padding-left: 0;
+		justify-content: space-between;
 		padding-top: 0.6em;
 		flex: 1 0 auto;
-		display: flex;
-		justify-content: space-between;
-		list-style: none;
-		margin: 0;
 		height: 3.7em;
 		background-color: black;
 
@@ -150,14 +155,31 @@ nav {
 }
 
 main {
-	flex: 1 0 auto;
-	min-height: 80%;
+	flex: 6 0 90vh;
 }
 
 footer {
 	border-top: 0.2em solid crimson;
 	opacity: 0.5;
+	display: flex;
 	flex: 0 1 5%;
 	background-color: #111;
 	padding: 0.5em;
+
+	#footer-left {
+		flex: 1 0 50%;
+	}
+
+	#footer-right {
+		text-align: right;
+		margin-right: 1em;
+		flex: 1 0 50%;
+		#social-media {
+			margin-top: 3em 0;
+			justify-content: flex-end;
+			li {
+				margin: 0 .3em;
+			}
+		}
+	}
 }
