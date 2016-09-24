@@ -58,21 +58,33 @@
 
 	// GSAP animations
 	document.addEventListener('DOMContentLoaded', function () {
-		var coffee = document.getElementById('coffee');
+	    var coffee = document.getElementById('coffee');
+	    var myCanvas = document.getElementById('myCanvas');
+	    var coffeeHolder = document.getElementById('coffee-holder');
 
-		// initial animations on pageload
-		(function aCupofCoffee() {
-			_gsap2.default.to(coffee, 3, {
-				opacity: 1,
-				ease: Power2.easeInOut
-			});
-		})();
+	    // initial animations on pageload
+	    (function aCupofCoffee() {
+	        _gsap2.default.to(coffee, 3, {
+	            opacity: 1,
+	            ease: Power2.easeInOut
+	        });
+	    })();
 
-		// ripple animations
-		var ctx = document.getElementById('myCanvas').getContext('2d');
-		ctx.drawImage(coffee, 0, 0);
-		var r = new _Ripple2.default(ctx, 100, 50, 1000);
+	    coffeeHolder.addEventListener('click', showMain);
+
+	    // ripple animations
+	    var ctx = myCanvas.getContext('2d');
+	    ctx.drawImage(coffee, 0, 0);
 	});
+
+	function showMain(ctx) {
+	    _gsap2.default.to(document.getElementById('ripple'), .2, {
+	        opacity: 0,
+	        display: 'none',
+	        ease: Power4.easeIn
+	    });
+	    var r = new _Ripple2.default(ctx, 100, 50, 1000);
+	}
 
 /***/ },
 /* 1 */
@@ -7890,11 +7902,16 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	// Ripple class by Peter Hrynkow
+	var _gsap = __webpack_require__(1);
+
+	var _gsap2 = _interopRequireDefault(_gsap);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	var Ripple = function Ripple(_ctx, _x, _y, _diameter) {
 
 		this.ctx = _ctx;
@@ -7922,7 +7939,8 @@
 		// And tmp canvas to body for debugging purposes
 		document.body.appendChild(this.tmpCanvas);
 		this.init();
-	};
+	}; // Ripple class by Peter Hrynkow
+
 
 	Ripple.prototype = {
 
@@ -7953,7 +7971,7 @@
 			this.displacedImgData = this.ctx.getImageData(this.x, this.y, this.diameter, this.diameter);
 
 			// Begin animation
-			TweenMax.to(this.animationProps, 5, {
+			_gsap2.default.to(this.animationProps, 5, {
 				scale: 4,
 				repeat: -1,
 				ease: Sine.easeOut
@@ -7962,11 +7980,11 @@
 			var tl = new TimelineMax({
 				repeat: -1
 			});
-			tl.add(TweenMax.to(this.animationProps, .5, {
+			tl.add(_gsap2.default.to(this.animationProps, .5, {
 				depth: 10,
 				ease: Quad.easeOut
 			}));
-			tl.add(TweenMax.to(this.animationProps, 4.5, {
+			tl.add(_gsap2.default.to(this.animationProps, 4.5, {
 				depth: 0,
 				ease: Quad.easeOut
 			}));

@@ -10,8 +10,8 @@ html, body {
 
 body {
   font-family: Avenir;
-  background-color: blanchedalmond;
-  color: #333;
+  background-color: black;
+  color: white;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column nowrap;
@@ -60,7 +60,6 @@ body {
 header {
   -ms-flex: 1 0 5%;
   flex: 1 0 5%;
-  border: 0.6em inset white;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -69,12 +68,22 @@ header {
   width: 99%; }
 
 nav {
+  padding-top: .6em;
   -ms-flex: 1 0 auto;
   flex: 1 0 auto;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
   justify-content: center; }
+  nav #logo-space {
+    -ms-flex: 1 0 30%;
+    flex: 1 0 30%;
+    opacity: .7; }
+    nav #logo-space #DT-logo {
+      width: 3em;
+      padding: .5em 1em;
+      cursor: pointer;
+      transition: 0.1s all ease-in-out; }
   nav ul {
     -ms-flex: 1 0 auto;
     flex: 1 0 auto;
@@ -84,17 +93,20 @@ nav {
     justify-content: space-between;
     list-style: none;
     padding: 0;
-    margin: 0; }
+    margin: 0;
+    height: 3.7em; }
     nav ul li {
       -ms-flex: 1 0 auto;
       flex: 1 0 auto;
       cursor: pointer;
-      font-size: 2em;
+      font-size: 1.2em;
       text-align: center;
-      transition: 0.3s all ease-in-out;
-      padding: .5em; }
-    nav ul li ~ li {
-      border-left: 0.2em solid white; }
+      opacity: .7;
+      padding: .8em;
+      border-bottom: .1em solid crimson;
+      transition: 0.1s all ease-in-out; }
+      nav ul li:hover {
+        opacity: 1; }
 
 main {
   -ms-flex: 1 0 80%;

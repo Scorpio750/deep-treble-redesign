@@ -2,7 +2,7 @@
 	font-family: "Avenir";
 	src: url("/assets/fonts/Avenir.ttc") format("truetype");
 }
-$font-color: #333;
+$font-color: white;
 $coffee-background: #f5f4f2;
 
 html, body {
@@ -14,7 +14,7 @@ html, body {
 
 body {
 	font-family: Avenir;
-	background-color: blanchedalmond;
+	background-color: black;
 	color: $font-color;
 	display: flex;
 	// justify-content: center;
@@ -70,7 +70,7 @@ body {
 
 header {
 	flex: 1 0 5%;
-	border: 0.6em inset white;
+	// border: 0.6em inset white;
 	display: flex;
 	justify-content: center;
 	position: fixed;
@@ -78,9 +78,28 @@ header {
 }
 
 nav {
+	padding-top: .6em;
 	flex: 1 0 auto;
 	display: flex;
 	justify-content: center;
+
+	#logo-space {
+		flex: 1 0 30%;
+		// border-bottom: .1em solid crimson;
+		opacity: .7;
+		#DT-logo {
+			// padding: .1em;
+			// width: 45px;
+			width: 3em;
+			padding: .5em 1em;
+			cursor: pointer;
+			transition: 0.1s all ease-in-out;
+			// opacity: .8;
+			// &:hover {
+			// 	opacity: 1;
+			// }
+		}
+	}
 
 	ul {
 		flex: 1 0 auto;
@@ -89,22 +108,20 @@ nav {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		height: 3.7em;
 
 		li {
 			flex: 1 0 auto;
 			cursor: pointer;
-			font-size: 2em;
+			font-size: 1.2em;
 			text-align: center;
-			transition: 0.3s all ease-in-out;
-			padding: .5em;
-
+			opacity: .7;
+			padding: .8em;
+			border-bottom: .1em solid crimson;
+			transition: 0.1s all ease-in-out;
 			&:hover {
-
+				opacity: 1;
 			}
-		}
-
-		li~li {
-			border-left: 0.2em solid white;
 		}
 	}
 }

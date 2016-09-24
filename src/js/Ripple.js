@@ -1,4 +1,6 @@
 // Ripple class by Peter Hrynkow
+import TweenMax from 'gsap'
+
 let Ripple = function (_ctx, _x, _y, _diameter) {
 
   this.ctx = _ctx
