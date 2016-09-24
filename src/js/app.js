@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     (function aCupofCoffee() {
         TweenMax.to(coffee, 3, {
             opacity: 1,
-            ease: Power2.easeInOut
+            ease: Power3.easeInOut
         })
     })()
 
@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function showMain(ctx) {
-	TweenMax.to(document.getElementById('ripple'), .2, {
+
+	TweenMax.to(document.getElementById('ripple'), .3, {
 		opacity: 0,
 		display: 'none',
 		ease: Power4.easeIn

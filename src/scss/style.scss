@@ -13,6 +13,15 @@ html {
 	overflow: hidden;
 }
 
+body {
+	font-family: Avenir;
+	background-color: black;
+	color: $font-color;
+	display: flex;
+	// justify-content: center;
+	flex-flow: column nowrap;
+}
+
 a {
 	text-decoration: none;
 	color: inherit;
@@ -23,15 +32,37 @@ ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+
+	li {
+		opacity: 0.7;
+		transition: 0.1s all ease-in-out;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
-body {
-	font-family: Avenir;
-	background-color: black;
-	color: $font-color;
-	display: flex;
-	// justify-content: center;
-	flex-flow: column nowrap;
+.dropdown-content {
+	display: none;
+	margin-top: 0.4em;
+	position: absolute;
+	z-index: -1;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+	li {
+		font-size: 18px;
+		text-align: left;
+		background-color: #111;
+		border-left: 0.4em solid #333;
+		// padding-left: 0.5em;
+		border-bottom: none;
+		width: 120px;
+	}
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
 }
 
 #ripple {
@@ -106,8 +137,7 @@ nav {
 		flex: 1 0 30%;
 		height: 3.5em;
 		background-color: black;
-		// border-bottom: .1em solid crimson;
-		// opacity: 0.7;
+
 		#DT-logo {
 			position: absolute;
 			background-image: url("/assets/logos/DE:EP white.png");
@@ -117,16 +147,21 @@ nav {
 			margin: 0.7em 1em;
 			cursor: pointer;
 			opacity: 0.8;
+			transition: 0.2s all ease-in-out;
+			z-index: 99;
 
-			&:before {
-				// background-color: black;
-				content: '';
-				display: block;
-				position: absolute;
-				height: inherit;
-				width: inherit;
-				z-index: -1;
+			&:hover {
+				opacity: 1;
 			}
+			// &:before {
+			// 	// background-color: black;
+			// 	content: '';
+			// 	display: block;
+			// 	position: absolute;
+			// 	height: inherit;
+			// 	width: inherit;
+			// 	z-index: -1;
+			// }
 		}
 	}
 
@@ -142,14 +177,8 @@ nav {
 			cursor: pointer;
 			font-size: 1.2em;
 			text-align: center;
-			opacity: 0.7;
 			padding: 0.8em;
 			border-bottom: 0.1em solid crimson;
-			transition: 0.1s all ease-in-out;
-
-			&:hover {
-				opacity: 1;
-			}
 		}
 	}
 }
@@ -160,25 +189,40 @@ main {
 
 footer {
 	border-top: 0.2em solid crimson;
-	opacity: 0.5;
 	display: flex;
 	flex: 0 1 5%;
 	background-color: #111;
-	padding: 0.5em;
+	padding-top: 0.4em;
+	opacity: 0.5;
 
 	#footer-left {
 		flex: 1 0 50%;
 	}
 
 	#footer-right {
-		text-align: right;
-		margin-right: 1em;
 		flex: 1 0 50%;
-		#social-media {
-			margin-top: 3em 0;
-			justify-content: flex-end;
-			li {
-				margin: 0 .3em;
+		display: flex;
+
+		.filler {
+			flex: 25 0 auto;
+		}
+
+		.content {
+			flex: 1 0 auto;
+			display: flex;
+			flex-flow: column;
+
+			.upper-text {
+				cursor: default;
+			}
+
+			#social-media {
+				margin: 0.2em 0.4em;
+				justify-content: flex-end;
+
+				li {
+					margin: 0 0.3em;
+				}
 			}
 		}
 	}

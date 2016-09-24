@@ -66,7 +66,7 @@
 	    (function aCupofCoffee() {
 	        _gsap2.default.to(coffee, 3, {
 	            opacity: 1,
-	            ease: Power2.easeInOut
+	            ease: Power3.easeInOut
 	        });
 	    })();
 
@@ -78,7 +78,8 @@
 	});
 
 	function showMain(ctx) {
-	    _gsap2.default.to(document.getElementById('ripple'), .2, {
+
+	    _gsap2.default.to(document.getElementById('ripple'), .3, {
 	        opacity: 0,
 	        display: 'none',
 	        ease: Power4.easeIn
