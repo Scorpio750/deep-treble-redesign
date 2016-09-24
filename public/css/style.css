@@ -12,12 +12,17 @@ body {
   font-family: Avenir;
   background-color: blanchedalmond;
   color: #333;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-flow: column nowrap;
   flex-flow: column nowrap; }
 
 #ripple {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-align: center;
   align-items: center;
   position: absolute;
   z-index: 1000;
@@ -34,33 +39,55 @@ body {
     z-index: 1001;
     background-color: #f5f4f2;
     border-radius: 1em; }
+  #ripple #coffee-holder {
+    position: inherit;
+    border-radius: 100vh;
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    background-color: grey;
+    z-index: 1003;
+    opacity: 0; }
   #ripple img {
+    display: none; }
+  #ripple #coffee {
     position: absolute;
     width: 800px;
     border-radius: 1em;
     z-index: 1002;
-    opacity: 0; }
+    opacity: 0;
+    display: inherit; }
 
 header {
+  -ms-flex: 1 0 5%;
   flex: 1 0 5%;
   border: 0.6em inset white;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
   position: fixed;
   width: 99%; }
 
 nav {
+  -ms-flex: 1 0 auto;
   flex: 1 0 auto;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center; }
   nav ul {
+    -ms-flex: 1 0 auto;
     flex: 1 0 auto;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     list-style: none;
     padding: 0;
     margin: 0; }
     nav ul li {
+      -ms-flex: 1 0 auto;
       flex: 1 0 auto;
       cursor: pointer;
       font-size: 2em;
@@ -71,7 +98,9 @@ nav {
       border-left: 0.2em solid white; }
 
 main {
+  -ms-flex: 1 0 80%;
   flex: 1 0 80%; }
 
 footer {
+  -ms-flex: 0 1 5%;
   flex: 0 1 5%; }

@@ -1,4 +1,5 @@
 import gulp from 'gulp'
+import autoprefixer from 'gulp-autoprefixer'
 import nodemon from 'gulp-nodemon'
 import debug from 'gulp-debug'
 import webpack from 'webpack-stream'
@@ -34,6 +35,10 @@ gulp.task('webpack', ['frontend-build', 'backend-build'])
 gulp.task('sass', () => {
     return gulp.src(config.sassPath)
         .pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+      		browsers: ['last 2 versions'],
+      		cascade: false
+    		}))
         .pipe(gulp.dest(config.cssPath))
         .pipe(livereload())
 })
@@ -46,15 +51,15 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
             ext: 'js html'
         })
         .on('start', () => {
+			// prevents nodemon from starting multiple times
             if (!called) {
                 cb()
                 called = true
             }
         })
         .on('restart', () => {
-            setTimeout(() => {
-                livereload.changed('server.js')
-            }, 1000)
+			gulp.src('./server.bundle.js')
+				.pipe(livereload())
         })
 
     gulp.watch(config.sassPath, ['sass'])

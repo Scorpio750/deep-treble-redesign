@@ -42,12 +42,30 @@ body {
 		background-color: $coffee-background;
 		border-radius: 1em;
 	}
+	#coffee-holder {
+		position: inherit;
+		border-radius: 100vh;
+		width: 250px;
+		height: 250px;
+		cursor: pointer;
+		background-color: grey;
+		z-index: 1003;
+		opacity: 0;
+		// transition: .2s all ease-in-out;
+		// &:hover{
+		// 	opacity: .5;
+		// }
+	}
 	img {
+		display: none;
+	}
+	#coffee {
 		position: absolute;
 		width: 800px;
 		border-radius: 1em;
 		z-index: 1002;
 		opacity: 0;
+		display: inherit;
 	}
 }
 

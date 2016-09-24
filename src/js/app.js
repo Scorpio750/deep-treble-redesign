@@ -1,4 +1,5 @@
 import TweenMax from 'gsap'
+import Ripple from './Ripple.js'
 
 // GSAP animations
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,4 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			ease: Power2.easeInOut
 		})
 	})()
+
+// ripple animations
+var ctx = document.getElementById('myCanvas').getContext('2d');
+ctx.drawImage(document.getElementById('coffee'), 0, 0)
+var r = new Ripple(ctx, 100, 50, 400);
 })
