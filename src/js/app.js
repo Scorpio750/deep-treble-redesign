@@ -18,16 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	coffeeHolder.addEventListener('click', showMain)
 
     // ripple animations
-    let ctx = myCanvas.getContext('2d')
+    const ctx = myCanvas.getContext('2d')
     ctx.drawImage(coffee, 0, 0)
 })
 
 function showMain(ctx) {
 
-	TweenMax.to(document.getElementById('ripple'), .3, {
+	TweenMax.to(document.getElementById('ripple'), 3, {
 		opacity: 0,
 		display: 'none',
 		ease: Power4.easeIn
 	})
-    let r = new Ripple(ctx, 100, 50, 1000)
+    const r = new Ripple(ctx, 320, 120, 720)
 }

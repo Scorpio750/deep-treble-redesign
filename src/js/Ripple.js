@@ -26,7 +26,7 @@ let Ripple = function (_ctx, _x, _y, _diameter) {
   this.tmpCanvasCtx = this.tmpCanvas.getContext('2d')
 
   // And tmp canvas to body for debugging purposes
-  document.body.appendChild(this.tmpCanvas)
+  // document.body.appendChild(this.tmpCanvas)
   this.init()
 }
 

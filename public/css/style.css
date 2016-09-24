@@ -6,8 +6,7 @@ body,
 html {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-  overflow: hidden; }
+  padding: 0; }
 
 body {
   font-family: Avenir;
@@ -63,15 +62,12 @@ ul {
   width: 100vw;
   height: 100vh; }
   #ripple canvas {
-    position: absolute;
-    height: inherit;
-    width: inherit; }
+    position: absolute; }
   #ripple #blank-space {
-    width: 800px;
-    height: 578px;
-    z-index: 1001;
-    background-color: #f5f4f2;
-    border-radius: 1em; }
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f4f2; }
   #ripple #coffee-holder {
     position: inherit;
     border-radius: 100vh;
@@ -85,8 +81,6 @@ ul {
     display: none; }
   #ripple #coffee {
     position: absolute;
-    width: 800px;
-    border-radius: 1em;
     z-index: 1002;
     opacity: 0;
     display: inherit; }

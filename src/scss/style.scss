@@ -10,7 +10,6 @@ html {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 }
 
 body {
@@ -20,6 +19,7 @@ body {
 	display: flex;
 	// justify-content: center;
 	flex-flow: column nowrap;
+	// overflow: hidden;
 }
 
 a {
@@ -76,16 +76,16 @@ ul {
 
 	canvas {
 		position: absolute;
-		height: inherit;
-		width: inherit;
+		// height: inherit;
+		// width: inherit;
 	}
 
 	#blank-space {
-		width: 800px;
-		height: 578px;
-		z-index: 1001;
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		// z-index: -1;
 		background-color: $coffee-background;
-		border-radius: 1em;
 	}
 
 	#coffee-holder {
@@ -109,8 +109,7 @@ ul {
 
 	#coffee {
 		position: absolute;
-		width: 800px;
-		border-radius: 1em;
+		// width: 800px;
 		z-index: 1002;
 		opacity: 0;
 		display: inherit;

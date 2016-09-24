@@ -79,12 +79,12 @@
 
 	function showMain(ctx) {
 
-	    _gsap2.default.to(document.getElementById('ripple'), .3, {
+	    _gsap2.default.to(document.getElementById('ripple'), 3, {
 	        opacity: 0,
 	        display: 'none',
 	        ease: Power4.easeIn
 	    });
-	    var r = new _Ripple2.default(ctx, 100, 50, 1000);
+	    var r = new _Ripple2.default(ctx, 320, 120, 720);
 	}
 
 /***/ },
@@ -7938,7 +7938,7 @@
 		this.tmpCanvasCtx = this.tmpCanvas.getContext('2d');
 
 		// And tmp canvas to body for debugging purposes
-		document.body.appendChild(this.tmpCanvas);
+		// document.body.appendChild(this.tmpCanvas)
 		this.init();
 	}; // Ripple class by Peter Hrynkow
 
