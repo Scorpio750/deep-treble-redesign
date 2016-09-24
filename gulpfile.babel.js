@@ -5,6 +5,7 @@ import webpack from 'webpack-stream'
 import wpConfig from './config/webpack.config.js'
 import sass from 'gulp-sass'
 import livereload from 'gulp-livereload'
+import fs from 'fs'
 
 const config = {
     sassPath: './src/scss/*.scss',
@@ -14,12 +15,21 @@ const config = {
     htmlPath: './public/views/'
 }
 
-gulp.task('webpack', () => {
+gulp.task('frontend-build', () => {
     return gulp.src(config.jsPath)
-        .pipe(webpack(wpConfig))
+        .pipe(webpack(wpConfig['frontendConfig']))
         .pipe(gulp.dest(config.bundledPath))
         .pipe(livereload())
 })
+
+gulp.task('backend-build', () => {
+    return gulp.src(config.jsPath)
+        .pipe(webpack(wpConfig['backendConfig']))
+        .pipe(gulp.dest('./'))
+        .pipe(livereload())
+})
+
+gulp.task('webpack', ['frontend-build', 'backend-build'])
 
 gulp.task('sass', () => {
     return gulp.src(config.sassPath)
@@ -32,7 +42,7 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
     let called = false
     livereload.listen()
     nodemon({
-            script: 'server.js',
+            script: 'server.bundle.js',
             ext: 'js html'
         })
         .on('start', () => {
@@ -48,6 +58,7 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
         })
 
     gulp.watch(config.sassPath, ['sass'])
-    gulp.watch(config.jsPath, ['webpack'])
+    gulp.watch(config.jsPath, ['frontend-build'])
+	gulp.watch('./*.js', ['backend-build'])
 })
 gulp.task('default', ['server'])

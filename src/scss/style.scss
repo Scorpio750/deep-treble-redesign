@@ -1,12 +1,94 @@
 @font-face {
 	font-family: "Avenir";
-	src: url("../fonts/Avenir.ttc") format("truetype");
+	src: url("/assets/fonts/Avenir.ttc") format("truetype");
+}
+$font-color: #333;
+$coffee-peach: #fff6e7;
+
+html, body {
+	box-sizing: border-box;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Avenir;
+	background-color: blanchedalmond;
+	color: $font-color;
+	display: flex;
+	// justify-content: center;
+	flex-flow: column nowrap;
+}
+
+#ripple {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	z-index: 1000;
+	width: 100vw;
+	height: 100vh;
+	canvas {
+		position: absolute;
+		height: inherit;
+		width: inherit;
+		background-image: url("/assets/img/oak desk.jpg");
+	}
+	img {
+		position: absolute;
+		width: 800px;
+		border-radius: 10em;
+		cursor: pointer;
+	}
 }
 
 header {
+	flex: 1 0 5%;
+	border: 0.6em inset white;
 	display: flex;
 	justify-content: center;
-	nav {
-		flex: 1 0 80%;
+	position: fixed;
+	width: 99%;
+}
+
+nav {
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: center;
+
+	ul {
+		flex: 1 0 auto;
+		display: flex;
+		justify-content: space-between;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			flex: 1 0 auto;
+			cursor: pointer;
+			font-size: 2em;
+			text-align: center;
+			transition: 0.3s all ease-in-out;
+			padding: .5em;
+
+			&:hover {
+
+			}
+		}
+
+		li~li {
+			border-left: 0.2em solid white;
+		}
 	}
+}
+
+main {
+	flex: 1 0 80%;
+	// min-height: 80%;
+}
+
+footer {
+	flex: 0 1 5%;
 }
