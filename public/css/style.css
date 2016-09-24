@@ -31,8 +31,7 @@ body {
   #ripple canvas {
     position: absolute;
     height: inherit;
-    width: inherit;
-    background-image: url("/assets/img/oak desk.jpg"); }
+    width: inherit; }
   #ripple #blank-space {
     width: 800px;
     height: 578px;

@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	})()
 
 // ripple animations
-var ctx = document.getElementById('myCanvas').getContext('2d');
-ctx.drawImage(document.getElementById('coffee'), 0, 0)
-var r = new Ripple(ctx, 100, 50, 400);
+let ctx = document.getElementById('myCanvas').getContext('2d');
+ctx.drawImage(coffee, 0, 0)
+let r = new Ripple(ctx, 100, 50, 1000);
+
+
 })

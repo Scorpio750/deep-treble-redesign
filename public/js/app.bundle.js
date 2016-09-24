@@ -70,8 +70,8 @@
 
 		// ripple animations
 		var ctx = document.getElementById('myCanvas').getContext('2d');
-		ctx.drawImage(document.getElementById('coffee'), 0, 0);
-		var r = new _Ripple2.default(ctx, 100, 50, 400);
+		ctx.drawImage(coffee, 0, 0);
+		var r = new _Ripple2.default(ctx, 100, 50, 1000);
 	});
 
 /***/ },
@@ -7894,10 +7894,11 @@
 
 	'use strict';
 
+	// Ripple class by Peter Hrynkow
 	var Ripple = function Ripple(_ctx, _x, _y, _diameter) {
 
 		this.ctx = _ctx;
-		this.mainImg = document.getElementById('mainImg');
+		this.mainImg = document.getElementById('coffee');
 		this.displacementImg = document.getElementById('displacementImg');
 		this.displacementOverlayImg = document.getElementById('displacementOverlayImg');
 
@@ -7980,14 +7981,14 @@
 			    depth = this.animationProps.depth,
 			    currentDiameter = this.diameter * scale,
 			    centerPoint = this.diameter / 2 - currentDiameter / 2,
-			    i,
-			    j,
-			    current,
-			    target,
-			    x,
-			    y,
-			    py,
-			    val;
+			    i = void 0,
+			    j = void 0,
+			    current = void 0,
+			    target = void 0,
+			    x = void 0,
+			    y = void 0,
+			    py = void 0,
+			    val = void 0;
 
 			this.tmpCanvasCtx.clearRect(0, 0, this.diameter, this.diameter);
 			this.tmpCanvasCtx.drawImage(this.displacementImg, centerPoint, centerPoint, currentDiameter, currentDiameter);

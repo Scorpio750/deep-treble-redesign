@@ -1,7 +1,8 @@
-var Ripple = function (_ctx, _x, _y, _diameter) {
+// Ripple class by Peter Hrynkow
+let Ripple = function (_ctx, _x, _y, _diameter) {
 
   this.ctx = _ctx
-  this.mainImg = document.getElementById('mainImg')
+  this.mainImg = document.getElementById('coffee')
   this.displacementImg = document.getElementById('displacementImg')
   this.displacementOverlayImg = document.getElementById('displacementOverlayImg')
 
@@ -30,7 +31,7 @@ var Ripple = function (_ctx, _x, _y, _diameter) {
 Ripple.prototype = {
 
 	init: function() {
-		var self = this
+		let self = this
 		if (!this.checkImagesLoaded()) {
 			this.displacementImg.onload = function() {
 				self.checkImagesLoaded()
@@ -62,7 +63,7 @@ Ripple.prototype = {
 			ease: Sine.easeOut
 		})
 
-		var tl = new TimelineMax({
+		let tl = new TimelineMax({
 			repeat: -1
 		})
 		tl.add(TweenMax.to(this.animationProps, .5, {
@@ -79,7 +80,7 @@ Ripple.prototype = {
 
 	render: function() {
 
-		var self = this,
+		let self = this,
 			scale = this.animationProps.scale,
 			depth = this.animationProps.depth,
 			currentDiameter = this.diameter * scale,
