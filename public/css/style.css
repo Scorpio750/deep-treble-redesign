@@ -29,7 +29,8 @@ ul {
   padding: 0; }
   ul li {
     opacity: 0.7;
-    transition: 0.1s all ease-in-out; }
+    transition: 0.1s all ease-in-out;
+    cursor: pointer; }
     ul li:hover {
       opacity: 1; }
 
@@ -116,7 +117,7 @@ nav {
       margin: 0.7em 1em;
       cursor: pointer;
       opacity: 0.8;
-      transition: 0.2s all ease-in-out;
+      transition: 0.1s all ease-in-out;
       z-index: 99; }
       nav #logo-space #DT-logo:hover {
         opacity: 1; }
@@ -131,7 +132,6 @@ nav {
     nav ul li {
       -ms-flex: 1 0 auto;
       flex: 1 0 auto;
-      cursor: pointer;
       font-size: 1.2em;
       text-align: center;
       padding: 0.8em;
@@ -152,7 +152,19 @@ footer {
   opacity: 0.5; }
   footer #footer-left {
     -ms-flex: 1 0 50%;
-    flex: 1 0 50%; }
+    flex: 1 0 50%;
+    display: -ms-flexbox;
+    display: flex; }
+    footer #footer-left #forms {
+      display: -ms-flexbox;
+      display: flex; }
+      footer #footer-left #forms li {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        font-size: 18px;
+        margin: 0 0.5em; }
   footer #footer-right {
     -ms-flex: 1 0 50%;
     flex: 1 0 50%;
