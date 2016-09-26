@@ -62,28 +62,26 @@ ul {
   width: 100vw;
   height: 100vh; }
   #ripple canvas {
-    position: absolute; }
+    position: absolute;
+    z-index: 1002;
+    opacity: 0; }
   #ripple #blank-space {
     position: absolute;
     width: 100vw;
     height: 100vh;
+    z-index: 100;
     background-color: #f5f4f2; }
   #ripple #coffee-holder {
     position: inherit;
-    border-radius: 100vh;
-    width: 250px;
-    height: 250px;
+    border-radius: 100em;
+    width: 125px;
+    height: 125px;
     cursor: pointer;
     background-color: grey;
     z-index: 1003;
     opacity: 0; }
   #ripple img {
     display: none; }
-  #ripple #coffee {
-    position: absolute;
-    z-index: 1002;
-    opacity: 0;
-    display: inherit; }
 
 header {
   -ms-flex: 1 0 5%;

@@ -76,43 +76,31 @@ ul {
 
 	canvas {
 		position: absolute;
-		// height: inherit;
-		// width: inherit;
+		z-index: 1002;
+		opacity: 0;
 	}
 
 	#blank-space {
 		position: absolute;
 		width: 100vw;
 		height: 100vh;
-		// z-index: -1;
+		z-index: 100;
 		background-color: $coffee-background;
 	}
 
 	#coffee-holder {
 		position: inherit;
-		border-radius: 100vh;
-		width: 250px;
-		height: 250px;
+		border-radius: 100em;
+		width: 125px;
+		height: 125px;
 		cursor: pointer;
 		background-color: grey;
 		z-index: 1003;
 		opacity: 0;
-		// transition: .2s all ease-in-out;
-		// &:hover{
-		// 	opacity: .5;
-		// }
 	}
 
 	img {
 		display: none;
-	}
-
-	#coffee {
-		position: absolute;
-		// width: 800px;
-		z-index: 1002;
-		opacity: 0;
-		display: inherit;
 	}
 }
 
