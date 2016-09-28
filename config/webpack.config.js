@@ -35,7 +35,7 @@ fs.readdirSync('node_modules')
 
 module.exports = {
     angularConfig: {
-        entry: './src/js/index.ts',
+        entry: './src/js/angular2/index.ts',
 		resolve: {
 			extensions: ['', '.ts', '.js']
 		},
@@ -46,7 +46,7 @@ module.exports = {
         module: angularLoader
     },
 	initialConfig: {
-		entry: './src/js/initial.js',
+		entry: './src/js/initial/initial.js',
 		output: {
 			filename: 'initial.bundle.js'
 		},

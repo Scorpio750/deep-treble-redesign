@@ -11,20 +11,21 @@ import fs from 'fs'
 const config = {
     sassPath: './src/scss/*.scss',
     cssPath: './public/css/',
-    jsPath: './src/js/*.js',
+    initialPath: './src/js/initial/*.js',
+	angularPath: './src/js/angular2/*.js',
     bundledPath: './public/js/',
     htmlPath: './public/views/'
 }
 
 gulp.task('initial-build', () => {
-    return gulp.src(config.jsPath)
+    return gulp.src(config.initialPath)
         .pipe(webpack(wpConfig['initialConfig']))
         .pipe(gulp.dest(config.bundledPath))
         .pipe(livereload())
 })
 
 gulp.task('angular-build', () => {
-	return gulp.src(config.jsPath)
+	return gulp.src(config.angularPath)
 		.pipe(webpack(wpConfig['angularConfig']))
 		.pipe(gulp.dest(config.bundledPath))
 		.pipe(livereload())
@@ -34,7 +35,7 @@ gulp.task('frontend-build', ['initial-build', 'angular-build'])
 
 
 gulp.task('backend-build', () => {
-    return gulp.src(config.jsPath)
+    return gulp.src(config.initialPath)
         .pipe(webpack(wpConfig['backendConfig']))
         .pipe(gulp.dest('./'))
         .pipe(livereload())
@@ -73,7 +74,8 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
         })
 
     gulp.watch(config.sassPath, ['sass'])
-    gulp.watch(config.jsPath, ['frontend-build'])
+    gulp.watch(config.initialPath, ['initial-build'])
+	gulp.watch(config.angularPath, ['angular-build'])
 	gulp.watch('./*.js', ['backend-build'])
 })
 gulp.task('default', ['server'])
