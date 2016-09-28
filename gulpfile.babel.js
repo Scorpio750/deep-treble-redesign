@@ -16,12 +16,22 @@ const config = {
     htmlPath: './public/views/'
 }
 
-gulp.task('frontend-build', () => {
+gulp.task('initial-build', () => {
     return gulp.src(config.jsPath)
-        .pipe(webpack(wpConfig['frontendConfig']))
+        .pipe(webpack(wpConfig['initialConfig']))
         .pipe(gulp.dest(config.bundledPath))
         .pipe(livereload())
 })
+
+gulp.task('angular-build', () => {
+	return gulp.src(config.jsPath)
+		.pipe(webpack(wpConfig['angularConfig']))
+		.pipe(gulp.dest(config.bundledPath))
+		.pipe(livereload())
+})
+
+gulp.task('frontend-build', ['initial-build', 'angular-build'])
+
 
 gulp.task('backend-build', () => {
     return gulp.src(config.jsPath)

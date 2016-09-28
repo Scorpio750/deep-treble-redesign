@@ -1,10 +1,26 @@
 import fs from 'fs'
 
-let loaders = {
+const angularLoader = {
+	preloaders: {
+			test: /\.ts$/,
+			loader: 'tslint'
+		},
+	loaders: [{
+			test: /\.ts$/,
+			exclude: /node_modules/,
+			loader: 'ts'
+		},
+		{
+      	 	test: /\.js$/,
+      	 	exclude: /node_modules/,
+			loader: 'babel'
+		}]
+}
+const defaultLoader = {
     loaders: [{
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel'
     }]
 }
 
@@ -18,13 +34,24 @@ fs.readdirSync('node_modules')
     })
 
 module.exports = {
-    frontendConfig: {
-        entry: './src/js/app.js',
+    angularConfig: {
+        entry: './src/js/index.ts',
+		resolve: {
+			extensions: ['', '.ts', '.js']
+		},
+		devtool: 'source-map',
         output: {
             filename: 'app.bundle.js'
         },
-        module: loaders
+        module: angularLoader
     },
+	initialConfig: {
+		entry: './src/js/initial.js',
+		output: {
+			filename: 'initial.bundle.js'
+		},
+		module: defaultLoader
+	},
     backendConfig: {
         entry: './server.js',
         target: 'node',
@@ -36,6 +63,6 @@ module.exports = {
             __filename: true
         },
         externals: nodeModules,
-        module: loaders
+        module: defaultLoader
     }
 }
