@@ -6,6 +6,6 @@ import { MyApp } from './app.component'
 	imports: [BrowserModule],
 	declarations: [MyApp],
 	bootstrap: [MyApp]
-}}
+})
 
 export class MyAppModule {}
