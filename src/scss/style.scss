@@ -133,6 +133,10 @@ nav {
 			cursor: pointer;
 			opacity: 0.8;
 			z-index: 99;
+			&:hover {
+				opacity: 1;
+			}
+
 		}
 	}
 
@@ -160,8 +164,7 @@ main {
 footer {
 	border-top: 0.2em solid crimson;
 	display: flex;
-	flex: 0 1 5%;
-	background-color: #111;
+	// flex: 0 1 5vh;
 	padding-top: 0.4em;
 	opacity: 0.5;
 

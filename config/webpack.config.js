@@ -1,28 +1,7 @@
 import fs from 'fs'
-
-const angularLoader = {
-	preloaders: {
-			test: /\.ts$/,
-			loader: 'tslint'
-		},
-	loaders: [{
-			test: /\.ts$/,
-			exclude: /node_modules/,
-			loader: 'ts'
-		},
-		{
-      	 	test: /\.js$/,
-      	 	exclude: /node_modules/,
-			loader: 'babel'
-		}]
-}
-const defaultLoader = {
-    loaders: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
-    }]
-}
+import webpack from 'webpack'
+import HtmlWebpack from 'html-webpack-plugin'
+const ChunkWebpack = webpack.optimize.CommonsChunkPlugin
 
 let nodeModules = {}
 fs.readdirSync('node_modules')
@@ -33,25 +12,72 @@ fs.readdirSync('node_modules')
         nodeModules[mod] = 'commonjs ' + mod
     })
 
+/* Loaders */
+const angularLoader = {
+    preloaders: {
+        test: /\.ts$/,
+        loader: 'tslint'
+    },
+    loaders: [{
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        loader: 'ts'
+    }, {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+    }, {
+        test: /\.scss$/,
+        loader: 'raw!sass'
+    }, {
+        test: /\.html$/,
+        loader: 'raw'
+    }]
+}
+
+const defaultLoader = {
+    loaders: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+    }]
+}
+
+/* Configs */
 module.exports = {
     angularConfig: {
-        entry: './src/js/angular2/index.ts',
-		resolve: {
-			extensions: ['', '.ts', '.js']
-		},
-		devtool: 'source-map',
-        output: {
-            filename: 'app.bundle.js'
+        entry: {
+            vendor: ['./src/js/app/vendor'],
+            app: ['./src/js/app/index']
         },
+        resolve: {
+            extensions: ['', '.ts', '.js']
+        },
+        devtool: 'source-map',
+        output: {
+            filename: '[name].bundle.js'
+        },
+        plugins: [
+            new ChunkWebpack({
+            	filename: 'vendor.bundle.js',
+            	minChunks: Infinity,
+            	name: 'vendor'
+            }),
+            new HtmlWebpack({
+                filename: 'index.html',
+                inject: 'main',
+                template: './public/views/index.html'
+            })
+        ],
         module: angularLoader
     },
-	initialConfig: {
-		entry: './src/js/initial/initial.js',
-		output: {
-			filename: 'initial.bundle.js'
-		},
-		module: defaultLoader
-	},
+    initialConfig: {
+        entry: './src/js/initial/initial.js',
+        output: {
+            filename: 'initial.bundle.js'
+        },
+        module: defaultLoader
+    },
     backendConfig: {
         entry: './server.js',
         target: 'node',

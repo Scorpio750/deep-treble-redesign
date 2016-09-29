@@ -56,9 +56,8 @@
 	var PORT = process.env.NODE_ENV || 3000;
 
 	// bless this function
-	app.use(_express2.default.static('public'));
 	app.use(_express2.default.static('public/views'));
-	app.use(_express2.default.static('bower-components'));
+	app.use(_express2.default.static('public'));
 
 	app.listen(PORT, function () {
 	    console.log('Listening on port', PORT);
