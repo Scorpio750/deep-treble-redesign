@@ -44,7 +44,6 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/// <reference path="../../../node_modules/typescript/lib/lib.es6.d.ts" />
 	"use strict";
 	__webpack_require__(1);
 	__webpack_require__(3);

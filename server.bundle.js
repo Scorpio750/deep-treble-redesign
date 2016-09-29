@@ -58,6 +58,7 @@
 	// bless this function
 	app.use(_express2.default.static('public'));
 	app.use(_express2.default.static('public/views'));
+	app.use(_express2.default.static('bower-components'));
 
 	app.listen(PORT, function () {
 	    console.log('Listening on port', PORT);

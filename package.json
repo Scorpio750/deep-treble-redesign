@@ -60,6 +60,7 @@
     "@angular/platform-browser-dynamic": "~2.0.1",
     "@angular/router": "~3.0.1",
     "@angular/upgrade": "~2.0.1",
+    "bower": "^1.7.9",
     "es6-shim": "^0.35.1",
     "express": "^4.14.0",
     "gsap": "^1.19.0",

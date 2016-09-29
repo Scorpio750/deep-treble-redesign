@@ -29,7 +29,6 @@ ul {
   padding: 0; }
   ul li {
     opacity: 0.7;
-    transition: 0.1s all ease-in-out;
     cursor: pointer; }
     ul li:hover {
       opacity: 1; }
@@ -117,10 +116,7 @@ nav {
       margin: 0.7em 1em;
       cursor: pointer;
       opacity: 0.8;
-      transition: 0.1s all ease-in-out;
       z-index: 99; }
-      nav #logo-space #DT-logo:hover {
-        opacity: 1; }
   nav ul {
     -ms-flex-pack: justify;
     justify-content: space-between;

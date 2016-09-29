@@ -34,9 +34,7 @@ ul {
 
 	li {
 		opacity: 0.7;
-		transition: 0.1s all ease-in-out;
 		cursor: pointer;
-
 		&:hover {
 			opacity: 1;
 		}
@@ -134,21 +132,7 @@ nav {
 			margin: 0.7em 1em;
 			cursor: pointer;
 			opacity: 0.8;
-			transition: 0.1s all ease-in-out;
 			z-index: 99;
-
-			&:hover {
-				opacity: 1;
-			}
-			// &:before {
-			// 	// background-color: black;
-			// 	content: '';
-			// 	display: block;
-			// 	position: absolute;
-			// 	height: inherit;
-			// 	width: inherit;
-			// 	z-index: -1;
-			// }
 		}
 	}
 
