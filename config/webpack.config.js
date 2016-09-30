@@ -1,8 +1,9 @@
 import fs from 'fs'
-import webpack from 'webpack'
+// import webpack from 'webpack'
+// const ChunkWebpack = webpack.optimize.CommonsChunkPlugin
 import HtmlWebpack from 'html-webpack-plugin'
-const ChunkWebpack = webpack.optimize.CommonsChunkPlugin
 
+// lets parser recognize node module filetypes
 let nodeModules = {}
 fs.readdirSync('node_modules')
     .filter((x) => {
@@ -13,7 +14,7 @@ fs.readdirSync('node_modules')
     })
 
 /* Loaders */
-const angularLoader = {
+const frontendLoader = {
     preloaders: {
         test: /\.ts$/,
         loader: 'tslint'
@@ -26,9 +27,6 @@ const angularLoader = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
-    }, {
-        test: /\.scss$/,
-        loader: 'raw!sass'
     }, {
         test: /\.html$/,
         loader: 'raw'
@@ -45,8 +43,10 @@ const defaultLoader = {
 
 /* Configs */
 module.exports = {
-    angularConfig: {
+    frontendConfig: {
+		debug: true,
         entry: {
+			initial: ['./src/js/initial/initial.js'],
             vendor: ['./src/js/app/vendor'],
             app: ['./src/js/app/index']
         },
@@ -58,25 +58,12 @@ module.exports = {
             filename: '[name].bundle.js'
         },
         plugins: [
-            new ChunkWebpack({
-            	filename: 'vendor.bundle.js',
-            	minChunks: Infinity,
-            	name: 'vendor'
-            }),
             new HtmlWebpack({
-                filename: 'index.html',
-                inject: 'main',
-                template: './public/views/index.html'
+                inject: 'head',
+                template: './src/templates/index.html'
             })
         ],
-        module: angularLoader
-    },
-    initialConfig: {
-        entry: './src/js/initial/initial.js',
-        output: {
-            filename: 'initial.bundle.js'
-        },
-        module: defaultLoader
+        module: frontendLoader
     },
     backendConfig: {
         entry: './server.js',

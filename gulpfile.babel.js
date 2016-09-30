@@ -11,31 +11,20 @@ import fs from 'fs'
 const config = {
     sassPath: './src/scss/*.scss',
     cssPath: './public/css/',
-    initialPath: './src/js/initial/*.js',
-	angularPath: './src/js/angular2/*.js',
-    bundledPath: './public/js/',
+    frontendPath: './src/js/**/*.js',
+    bundledPath: './public/',
     htmlPath: './public/views/'
 }
 
-gulp.task('initial-build', () => {
-    return gulp.src(config.initialPath)
-        .pipe(webpack(wpConfig['initialConfig']))
-        .pipe(gulp.dest(config.bundledPath))
-        .pipe(livereload())
-})
-
-gulp.task('angular-build', () => {
-	return gulp.src(config.angularPath)
-		.pipe(webpack(wpConfig['angularConfig']))
+gulp.task('frontend-build', () => {
+	return gulp.src(config.frontendPath)
+		.pipe(webpack(wpConfig['frontendConfig']))
 		.pipe(gulp.dest(config.bundledPath))
 		.pipe(livereload())
 })
 
-gulp.task('frontend-build', ['initial-build', 'angular-build'])
-
-
 gulp.task('backend-build', () => {
-    return gulp.src(config.initialPath)
+    return gulp.src('./')
         .pipe(webpack(wpConfig['backendConfig']))
         .pipe(gulp.dest('./'))
         .pipe(livereload())
@@ -76,6 +65,7 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
     gulp.watch(config.sassPath, ['sass'])
     gulp.watch(config.initialPath, ['initial-build'])
 	gulp.watch(config.angularPath, ['angular-build'])
-	gulp.watch('./*.js', ['backend-build'])
+	gulp.watch('./server.js', ['backend-build'])
+	gulp.watch('./config/*.js', ['webpack'])
 })
 gulp.task('default', ['server'])

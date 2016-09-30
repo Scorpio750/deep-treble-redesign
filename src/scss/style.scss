@@ -133,9 +133,9 @@ nav {
 			cursor: pointer;
 			opacity: 0.8;
 			z-index: 99;
-			&:hover {
-				opacity: 1;
-			}
+			// &:hover {
+			// 	opacity: 1;
+			// }
 
 		}
 	}
@@ -159,6 +159,12 @@ nav {
 
 main {
 	flex: 6 0 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	app {
+		font-size: 24px;
+	}
 }
 
 footer {

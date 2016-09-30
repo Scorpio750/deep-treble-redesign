@@ -117,8 +117,6 @@ nav {
       cursor: pointer;
       opacity: 0.8;
       z-index: 99; }
-      nav #logo-space #DT-logo:hover {
-        opacity: 1; }
   nav ul {
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -137,7 +135,15 @@ nav {
 
 main {
   -ms-flex: 6 0 90vh;
-  flex: 6 0 90vh; }
+  flex: 6 0 90vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  main app {
+    font-size: 24px; }
 
 footer {
   border-top: 0.2em solid crimson;
