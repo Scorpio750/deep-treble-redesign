@@ -9,14 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-let MyApp = class MyApp {
+let AppComponent = class AppComponent {
 };
-MyApp = __decorate([
+AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
-        template: "<h1>Welcome to Deep Treble's webpage!</h1>"
+        template: "<h3>Welcome to Deep Treble's webpage!</h3>"
     }), 
     __metadata('design:paramtypes', [])
-], MyApp);
-exports.MyApp = MyApp;
+], AppComponent);
+exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

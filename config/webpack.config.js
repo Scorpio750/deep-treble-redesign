@@ -59,7 +59,7 @@ module.exports = {
         },
         plugins: [
             new HtmlWebpack({
-                inject: 'head',
+                inject: 'body',
                 template: './src/templates/index.html'
             })
         ],

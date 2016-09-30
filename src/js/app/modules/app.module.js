@@ -10,16 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const platform_browser_1 = require('@angular/platform-browser');
 const core_1 = require('@angular/core');
-const app_component_1 = require('../components/app.component');
-let MyAppModule = class MyAppModule {
+const app_home_component_1 = require('../components/home/app.home-component');
+let AppModule = class AppModule {
 };
-MyAppModule = __decorate([
+AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule],
-        declarations: [app_component_1.MyApp],
-        bootstrap: [app_component_1.MyApp]
+        declarations: [app_home_component_1.HomeComponent],
+        bootstrap: [app_home_component_1.HomeComponent]
     }), 
     __metadata('design:paramtypes', [])
-], MyAppModule);
-exports.MyAppModule = MyAppModule;
+], AppModule);
+exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

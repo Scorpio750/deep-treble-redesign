@@ -115,7 +115,6 @@ nav {
       height: 3.5em;
       margin: 0.7em 1em;
       cursor: pointer;
-      opacity: 0.8;
       z-index: 99; }
   nav ul {
     -ms-flex-pack: justify;

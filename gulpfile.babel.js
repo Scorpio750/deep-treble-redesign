@@ -63,8 +63,7 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
         })
 
     gulp.watch(config.sassPath, ['sass'])
-    gulp.watch(config.initialPath, ['initial-build'])
-	gulp.watch(config.angularPath, ['angular-build'])
+    gulp.watch(config.frontendPath, ['frontend-build'])
 	gulp.watch('./server.js', ['backend-build'])
 	gulp.watch('./config/*.js', ['webpack'])
 })
