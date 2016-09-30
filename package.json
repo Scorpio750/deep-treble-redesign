@@ -8,6 +8,9 @@
     "start": "node server.bundle.js",
 	"postinstall": "gulp"
   },
+  "engines": {
+	"node": "6.2.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Scorpio750/deep-treble.git"
