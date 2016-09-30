@@ -11,7 +11,7 @@ import fs from 'fs'
 const config = {
     sassPath: './src/scss/*.scss',
     cssPath: './public/css/',
-    frontendPath: './src/js/**/',
+    frontendPath: './src/js/**/**/*.js',
     bundledPath: './public/',
     htmlPath: './public/views/'
 }

@@ -10,6 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 let HomeComponent = class HomeComponent {
+    constructor() {
+        this.greeting = "This is where I will put a greeting!";
+    }
 };
 HomeComponent = __decorate([
     core_1.Component({

@@ -35033,6 +35033,9 @@
 	};
 	const core_1 = __webpack_require__(4);
 	let HomeComponent = class HomeComponent {
+	    constructor() {
+	        this.greeting = "This is where I will put a greeting!";
+	    }
 	};
 	HomeComponent = __decorate([
 	    core_1.Component({
