@@ -116,7 +116,8 @@ nav {
       margin: 0.7em 1em;
       cursor: pointer;
       z-index: 99;
-      opacity: 0.8; }
+      opacity: 0.8;
+      transition: all .1s ease-in-out; }
       nav #logo-space #DT-logo:hover {
         opacity: 1; }
   nav ul {
