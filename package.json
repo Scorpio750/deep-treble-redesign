@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.bundle.js",
-	"postinstall": "gulp"
+    "start": "node server.bundle.js"
   },
   "engines": {
 	"node": "6.2.2"
@@ -68,7 +67,6 @@
     "@angular/router": "~3.0.1",
     "@angular/upgrade": "~2.0.1",
     "angular2": "^2.0.0-beta.17",
-    "bower": "^1.7.9",
     "es6-shim": "^0.35.1",
     "express": "^4.14.0",
     "gsap": "^1.19.0",
