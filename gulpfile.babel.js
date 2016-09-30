@@ -9,12 +9,23 @@ import livereload from 'gulp-livereload'
 import fs from 'fs'
 
 const config = {
-    sassPath: './src/scss/*.scss',
+    sassPath: './src/scss/**/*.scss',
     cssPath: './public/css/',
     frontendPath: './src/js/**/**/*.js',
     bundledPath: './public/',
     htmlPath: './public/views/'
 }
+
+gulp.task('sass', () => {
+    return gulp.src(config.sassPath)
+        .pipe(sass().on('error', sass.logError))
+		.pipe(autoprefixer({
+      		browsers: ['last 2 versions'],
+      		cascade: false
+    		}))
+        .pipe(gulp.dest(config.cssPath))
+        .pipe(livereload())
+})
 
 gulp.task('frontend-build', () => {
 	return gulp.src(config.frontendPath)
@@ -31,17 +42,6 @@ gulp.task('backend-build', () => {
 })
 
 gulp.task('webpack', ['frontend-build', 'backend-build'])
-
-gulp.task('sass', () => {
-    return gulp.src(config.sassPath)
-        .pipe(sass().on('error', sass.logError))
-		.pipe(autoprefixer({
-      		browsers: ['last 2 versions'],
-      		cascade: false
-    		}))
-        .pipe(gulp.dest(config.cssPath))
-        .pipe(livereload())
-})
 
 gulp.task('server', ['webpack', 'sass'], (cb) => {
     let called = false

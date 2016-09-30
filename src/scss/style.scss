@@ -18,6 +18,7 @@ body {
 	color: $font-color;
 	display: flex;
 	flex-flow: column nowrap;
+	// text-align: center;
 	// overflow: hidden;
 }
 
@@ -127,15 +128,15 @@ nav {
 			position: absolute;
 			background-image: url("/assets/logos/DE:EP white.png");
 			background-size: cover;
-			width: 3.5em;
-			height: 3.5em;
+			width: 10vmin;
+			height: 10vmin;
 			margin: 0.7em 1em;
 			cursor: pointer;
 			z-index: 99;
-			// opacity: 0.8;
-			// &:hover {
-			// 	opacity: 1;
-			// }
+			opacity: 0.8;
+			&:hover {
+				opacity: 1;
+			}
 
 		}
 	}

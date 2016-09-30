@@ -111,11 +111,14 @@ nav {
       position: absolute;
       background-image: url("/assets/logos/DE:EP white.png");
       background-size: cover;
-      width: 3.5em;
-      height: 3.5em;
+      width: 10vmin;
+      height: 10vmin;
       margin: 0.7em 1em;
       cursor: pointer;
-      z-index: 99; }
+      z-index: 99;
+      opacity: 0.8; }
+      nav #logo-space #DT-logo:hover {
+        opacity: 1; }
   nav ul {
     -ms-flex-pack: justify;
     justify-content: space-between;
