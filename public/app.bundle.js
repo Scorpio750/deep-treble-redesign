@@ -35037,7 +35037,7 @@
 	HomeComponent = __decorate([
 	    core_1.Component({
 	        selector: 'app',
-	        template: "<h3>Welcome to Deep Treble's webpage!</h3>"
+	        templateUrl: 'views/components/home.html'
 	    }), 
 	    __metadata('design:paramtypes', [])
 	], HomeComponent);
