@@ -133,7 +133,7 @@ nav {
 			margin: 0.7em 1em;
 			cursor: pointer;
 			z-index: 99;
-			opacity: 0.8;
+			opacity: 0.9;
 			transition: all .1s ease-in-out;
 			&:hover {
 				opacity: 1;
@@ -174,7 +174,7 @@ footer {
 	display: flex;
 	// flex: 0 1 5vh;
 	padding-top: 0.4em;
-	opacity: 0.5;
+	opacity: 0.6;
 
 	#footer-left {
 		flex: 1 0 50%;

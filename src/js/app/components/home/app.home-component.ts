@@ -7,5 +7,8 @@ import { Component } from '@angular/core'
 })
 
 export class HomeComponent {
-	greeting = "This is where I will put a greeting!";
+	greeting = {
+		header: "Welcome to Deep Treble's Webpage",
+		body: "Please excuse our appearance as we build our new website!"
+	}
 }
