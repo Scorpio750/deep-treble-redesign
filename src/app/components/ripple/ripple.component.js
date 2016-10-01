@@ -9,15 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-require('./ripple.component.html');
-require('./ripple.component.scss');
 let RippleComponent = class RippleComponent {
 };
 RippleComponent = __decorate([
     core_1.Component({
         selector: 'ripple',
         templateUrl: './ripple.component.html',
-        styles: ['./ripple.component.scss']
+        styleUrls: ['./ripple.component.scss']
     }), 
     __metadata('design:paramtypes', [])
 ], RippleComponent);

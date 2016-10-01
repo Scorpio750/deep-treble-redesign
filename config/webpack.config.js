@@ -22,7 +22,7 @@ const frontendLoader = {
     loaders: [{
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: 'ts'
+        loaders: ['ts', 'angular2-template']
     }, {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -32,7 +32,7 @@ const frontendLoader = {
         loader: 'raw'
     }, {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass']
+        loaders: ['raw', 'css', 'sass']
     }]
 }
 
@@ -49,7 +49,7 @@ module.exports = {
     frontendConfig: {
 		debug: true,
         entry: {
-			initial: ['./src/app/initial/initial.js'],
+			initial: ['./src/app/initial/initial'],
             vendor: ['./src/app/vendor'],
             app: ['./src/app/index']
         },

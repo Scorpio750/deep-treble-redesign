@@ -12,7 +12,11 @@ const core_1 = require('@angular/core');
 let AppComponent = class AppComponent {
 };
 AppComponent = __decorate([
-    core_1.Component({}), 
+    core_1.Component({
+        selector: 'app',
+        templateUrl: './app.component.html',
+        styleUrls: ['./app.component.scss']
+    }), 
     __metadata('design:paramtypes', [])
 ], AppComponent);
 exports.AppComponent = AppComponent;
