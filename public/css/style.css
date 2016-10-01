@@ -15,7 +15,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap; }
+  flex-flow: column nowrap;
+  text-align: center; }
 
 a {
   text-decoration: none;
@@ -115,11 +116,7 @@ nav {
       height: 10vmin;
       margin: 0.7em 1em;
       cursor: pointer;
-      z-index: 99;
-      opacity: 0.9;
-      transition: all .1s ease-in-out; }
-      nav #logo-space #DT-logo:hover {
-        opacity: 1; }
+      z-index: 99; }
   nav ul {
     -ms-flex-pack: justify;
     justify-content: space-between;

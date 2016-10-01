@@ -1,10 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HomeComponent } from '../components/home/app.home-component';
+/* Modules */
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
+
+/* Components */
+import { AppComponent } from '../components/app.component'
+import { HomeComponent } from '../components/home/home.component'
 
 @NgModule({
 	imports: [BrowserModule],
-	declarations: [HomeComponent],
+	declarations: [
+		HomeComponent
+	],
 	bootstrap: [HomeComponent]
 })
 

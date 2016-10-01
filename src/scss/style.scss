@@ -18,7 +18,7 @@ body {
 	color: $font-color;
 	display: flex;
 	flex-flow: column nowrap;
-	// text-align: center;
+	text-align: center;
 	// overflow: hidden;
 }
 
@@ -133,11 +133,11 @@ nav {
 			margin: 0.7em 1em;
 			cursor: pointer;
 			z-index: 99;
-			opacity: 0.9;
-			transition: all .1s ease-in-out;
-			&:hover {
-				opacity: 1;
-			}
+			// opacity: 0.9;
+			// transition: all .1s ease-in-out;
+			// &:hover {
+			// 	opacity: 1;
+			// }
 
 		}
 	}

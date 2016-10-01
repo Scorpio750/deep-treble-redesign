@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+require('./home.component.html');
+require('./home.component.scss');
 let HomeComponent = class HomeComponent {
     constructor() {
         this.greeting = {
@@ -20,10 +22,10 @@ let HomeComponent = class HomeComponent {
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'app',
-        styleUrls: ['css/components/home.css'],
-        templateUrl: 'views/components/home.html'
+        styleUrls: ['home.component.scss'],
+        templateUrl: 'home.component.html'
     }), 
     __metadata('design:paramtypes', [])
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=app.home-component.js.map
+//# sourceMappingURL=home.component.js.map

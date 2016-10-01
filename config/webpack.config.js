@@ -30,6 +30,9 @@ const frontendLoader = {
     }, {
         test: /\.html$/,
         loader: 'raw'
+    }, {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass']
     }]
 }
 
