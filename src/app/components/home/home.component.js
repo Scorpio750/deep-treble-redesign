@@ -19,7 +19,7 @@ let HomeComponent = class HomeComponent {
 };
 HomeComponent = __decorate([
     core_1.Component({
-        selector: 'app',
+        selector: 'home',
         templateUrl: './home.component.html',
         styleUrls: ['./home.component.scss']
     }), 

@@ -32,7 +32,7 @@ const frontendLoader = {
         loader: 'raw'
     }, {
         test: /\.scss$/,
-        loaders: ['raw', 'css', 'sass']
+        loader: 'raw!sass'
     }]
 }
 

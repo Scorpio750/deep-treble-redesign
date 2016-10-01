@@ -17,41 +17,48 @@ body {
   display: flex;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  text-align: center;
+  text-align: center; }
+
+/* Ripple Styles */
+#ripple {
+  display: -ms-flexbox;
+  display: flex;
   -ms-flex-pack: center;
   justify-content: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh; }
+  #ripple canvas {
+    position: absolute;
+    z-index: 1002;
+    opacity: 0; }
+  #ripple #blank-space {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: #f5f4f2; }
+  #ripple #coffee-holder {
+    position: inherit;
+    border-radius: 100em;
+    width: 125px;
+    height: 125px;
+    cursor: pointer;
+    background-color: grey;
+    z-index: 1003;
+    opacity: 0; }
+  #ripple img {
+    display: none; }
 
-a {
-  text-decoration: none;
-  color: inherit; }
-
-ul {
+app {
+  -ms-flex: 1 0 100%;
+  flex: 1 0 100%;
+  min-height: inherit;
+  min-width: inherit;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0; }
-  ul li {
-    opacity: 0.7;
-    cursor: pointer; }
-    ul li:hover {
-      opacity: 1; }
-
-.dropdown-content {
-  display: none;
-  margin-top: 0.4em;
-  position: absolute;
-  z-index: -1;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
-  .dropdown-content li {
-    font-size: 18px;
-    text-align: left;
-    background-color: #111;
-    border-left: 0.4em solid #333;
-    border-bottom: none;
-    width: 120px; }
-
-.dropdown:hover .dropdown-content {
-  display: block; }
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap; }

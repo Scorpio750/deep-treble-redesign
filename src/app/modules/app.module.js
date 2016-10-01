@@ -12,7 +12,6 @@ const platform_browser_1 = require('@angular/platform-browser');
 const core_1 = require('@angular/core');
 const app_component_1 = require('../components/app.component');
 const home_component_1 = require('../components/home/home.component');
-const ripple_component_1 = require('../components/ripple/ripple.component');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -20,8 +19,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule],
         declarations: [
             app_component_1.AppComponent,
-            home_component_1.HomeComponent,
-            ripple_component_1.RippleComponent
+            home_component_1.HomeComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }), 

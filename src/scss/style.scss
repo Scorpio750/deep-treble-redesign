@@ -3,6 +3,7 @@
 	src: url("/assets/fonts/Avenir.ttc") format("truetype");
 }
 $font-color: white;
+$coffee-background: #f5f4f2;
 
 body,
 html {
@@ -19,49 +20,53 @@ body {
 	display: flex;
 	flex-flow: column nowrap;
 	text-align: center;
-	justify-content: center;
-	align-items: center;
 	// overflow: hidden;
 }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
-
-ul {
+/* Ripple Styles */
+#ripple {
 	display: flex;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-
-	li {
-		opacity: 0.7;
-		cursor: pointer;
-		&:hover {
-			opacity: 1;
-		}
-	}
-}
-
-.dropdown-content {
-	display: none;
-	margin-top: 0.4em;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
-	z-index: -1;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	z-index: 1000;
+	width: 100vw;
+	height: 100vh;
 
-	li {
-		font-size: 18px;
-		text-align: left;
-		background-color: #111;
-		border-left: 0.4em solid #333;
-		// padding-left: 0.5em;
-		border-bottom: none;
-		width: 120px;
+	canvas {
+		position: absolute;
+		z-index: 1002;
+		opacity: 0;
+	}
+
+	#blank-space {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		z-index: 100;
+		background-color: $coffee-background;
+	}
+
+	#coffee-holder {
+		position: inherit;
+		border-radius: 100em;
+		width: 125px;
+		height: 125px;
+		cursor: pointer;
+		background-color: grey;
+		z-index: 1003;
+		opacity: 0;
+	}
+
+	img {
+		display: none;
 	}
 }
 
-.dropdown:hover .dropdown-content {
-	display: block;
+app {
+	flex: 1 0 100%;
+	min-height: inherit;
+	min-width: inherit;
+	display: flex;
+	flex-flow: column nowrap;
 }

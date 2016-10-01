@@ -1,3 +1,45 @@
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		opacity: 0.7;
+		cursor: pointer;
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.dropdown-content {
+	display: none;
+	margin-top: 0.4em;
+	position: absolute;
+	z-index: -1;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+	li {
+		font-size: 18px;
+		text-align: left;
+		background-color: #111;
+		border-left: 0.4em solid #333;
+		// padding-left: 0.5em;
+		border-bottom: none;
+		width: 120px;
+	}
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
 header {
 	flex: 1 0 5%;
 	// border: 0.6em inset white;
@@ -55,7 +97,7 @@ nav {
 }
 
 main {
-	flex: 6 0 90vh;
+	flex-basis: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;

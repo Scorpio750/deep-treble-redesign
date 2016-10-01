@@ -11,7 +11,7 @@ import fs from 'fs'
 const config = {
     sassPath: './src/scss/**/*.scss',
     cssPath: './public/css/',
-    frontendPath: './src/app/**/',
+    frontendPath: './src/app/**/**/**/',
     bundledPath: './public/',
     htmlPath: './public/views/'
 }
@@ -63,7 +63,7 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
         })
 
     gulp.watch(config.sassPath, ['sass'])
-    gulp.watch(config.frontendPath + '**/*.js', ['frontend-build'])
+    gulp.watch(config.frontendPath, ['frontend-build'])
 	gulp.watch('./server.js', ['backend-build'])
 	gulp.watch('./config/*.js', ['webpack'])
 })
