@@ -18,8 +18,9 @@ body {
 	background-color: black;
 	color: $font-color;
 	display: flex;
-	flex-flow: column nowrap;
+	// flex-flow: column nowrap;
 	text-align: center;
+	align-items: center;
 	// overflow: hidden;
 }
 
@@ -65,8 +66,8 @@ body {
 
 app {
 	flex: 1 0 100%;
-	min-height: inherit;
-	min-width: inherit;
+	// min-height: inherit;
+	// min-width: inherit;
 	display: flex;
 	flex-flow: column nowrap;
 }

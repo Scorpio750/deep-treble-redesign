@@ -15,9 +15,9 @@ body {
   color: white;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
-  text-align: center; }
+  text-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 /* Ripple Styles */
 #ripple {
@@ -56,8 +56,6 @@ body {
 app {
   -ms-flex: 1 0 100%;
   flex: 1 0 100%;
-  min-height: inherit;
-  min-width: inherit;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: column nowrap;
