@@ -6,7 +6,8 @@ body,
 html {
   box-sizing: border-box;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  min-height: 100vh; }
 
 body {
   font-family: Avenir;
@@ -16,7 +17,11 @@ body {
   display: flex;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
-  text-align: center; }
+  text-align: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 a {
   text-decoration: none;
@@ -50,142 +55,3 @@ ul {
 
 .dropdown:hover .dropdown-content {
   display: block; }
-
-#ripple {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: absolute;
-  z-index: 1000;
-  width: 100vw;
-  height: 100vh; }
-  #ripple canvas {
-    position: absolute;
-    z-index: 1002;
-    opacity: 0; }
-  #ripple #blank-space {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    background-color: #f5f4f2; }
-  #ripple #coffee-holder {
-    position: inherit;
-    border-radius: 100em;
-    width: 125px;
-    height: 125px;
-    cursor: pointer;
-    background-color: grey;
-    z-index: 1003;
-    opacity: 0; }
-  #ripple img {
-    display: none; }
-
-header {
-  -ms-flex: 1 0 5%;
-  flex: 1 0 5%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: fixed;
-  width: 99%;
-  z-index: 100;
-  opacity: 1; }
-
-nav {
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center; }
-  nav #logo-space {
-    -ms-flex: 1 0 30%;
-    flex: 1 0 30%;
-    height: 3.5em;
-    background-color: black; }
-    nav #logo-space #DT-logo {
-      position: absolute;
-      background-image: url("/assets/logos/DE:EP white.png");
-      background-size: cover;
-      width: 10vmin;
-      height: 10vmin;
-      margin: 0.7em 1em;
-      cursor: pointer;
-      z-index: 99; }
-  nav ul {
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding-top: 0.6em;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    height: 3.7em;
-    background-color: black; }
-    nav ul li {
-      -ms-flex: 1 0 auto;
-      flex: 1 0 auto;
-      font-size: 1.2em;
-      text-align: center;
-      padding: 0.8em;
-      border-bottom: 0.1em solid crimson; }
-
-main {
-  -ms-flex: 6 0 90vh;
-  flex: 6 0 90vh;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  main app {
-    font-size: 24px; }
-
-footer {
-  border-top: 0.2em solid crimson;
-  display: -ms-flexbox;
-  display: flex;
-  padding-top: 0.4em;
-  opacity: 0.6; }
-  footer #footer-left {
-    -ms-flex: 1 0 50%;
-    flex: 1 0 50%;
-    display: -ms-flexbox;
-    display: flex; }
-    footer #footer-left #forms {
-      display: -ms-flexbox;
-      display: flex; }
-      footer #footer-left #forms li {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-align: center;
-        align-items: center;
-        font-size: 18px;
-        margin: 0 0.5em; }
-  footer #footer-right {
-    -ms-flex: 1 0 50%;
-    flex: 1 0 50%;
-    display: -ms-flexbox;
-    display: flex; }
-    footer #footer-right .filler {
-      -ms-flex: 25 0 auto;
-      flex: 25 0 auto; }
-    footer #footer-right .content {
-      -ms-flex: 1 0 auto;
-      flex: 1 0 auto;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-flow: column;
-      flex-flow: column; }
-      footer #footer-right .content .upper-text {
-        cursor: default; }
-      footer #footer-right .content #social-media {
-        margin: 0.2em 0.4em;
-        -ms-flex-pack: end;
-        justify-content: flex-end; }
-        footer #footer-right .content #social-media li {
-          margin: 0 0.3em; }

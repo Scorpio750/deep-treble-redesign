@@ -49,9 +49,9 @@ module.exports = {
     frontendConfig: {
 		debug: true,
         entry: {
-			initial: ['./src/js/initial/initial.js'],
-            vendor: ['./src/js/app/vendor'],
-            app: ['./src/js/app/index']
+			initial: ['./src/app/initial/initial.js'],
+            vendor: ['./src/app/vendor'],
+            app: ['./src/app/index']
         },
         resolve: {
             extensions: ['', '.ts', '.js']

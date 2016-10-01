@@ -1,0 +1,115 @@
+header {
+	flex: 1 0 5%;
+	// border: 0.6em inset white;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	width: 99%;
+	z-index: 100;
+	opacity: 1;
+}
+
+nav {
+	flex: 1 0 auto;
+	display: flex;
+	justify-content: center;
+
+	#logo-space {
+		flex: 1 0 30%;
+		height: 3.5em;
+		background-color: black;
+
+		#DT-logo {
+			position: absolute;
+			background-image: url("/assets/logos/DE:EP white.png");
+			background-size: cover;
+			width: 10vmin;
+			height: 10vmin;
+			margin: 0.7em 1em;
+			cursor: pointer;
+			z-index: 99;
+			// opacity: 0.9;
+			// transition: all .1s ease-in-out;
+			// &:hover {
+			// 	opacity: 1;
+			// }
+
+		}
+	}
+
+	ul {
+		justify-content: space-between;
+		padding-top: 0.6em;
+		flex: 1 0 auto;
+		height: 3.7em;
+		background-color: black;
+
+		li {
+			flex: 1 0 auto;
+			font-size: 1.2em;
+			text-align: center;
+			padding: 0.8em;
+			border-bottom: 0.1em solid crimson;
+		}
+	}
+}
+
+main {
+	flex: 6 0 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	app {
+		font-size: 24px;
+	}
+}
+
+footer {
+	border-top: 0.2em solid crimson;
+	display: flex;
+	// flex: 0 1 5vh;
+	padding-top: 0.4em;
+	opacity: 0.6;
+
+	#footer-left {
+		flex: 1 0 50%;
+		display: flex;
+		#forms {
+			display: flex;
+			li {
+				display: flex;
+				align-items: center;
+				font-size: 18px;
+				margin: 0 0.5em;
+			}
+		}
+	}
+
+	#footer-right {
+		flex: 1 0 50%;
+		display: flex;
+
+		.filler {
+			flex: 25 0 auto;
+		}
+
+		.content {
+			flex: 1 0 auto;
+			display: flex;
+			flex-flow: column;
+
+			.upper-text {
+				cursor: default;
+			}
+
+			#social-media {
+				margin: 0.2em 0.4em;
+				justify-content: flex-end;
+
+				li {
+					margin: 0 0.3em;
+				}
+			}
+		}
+	}
+}
