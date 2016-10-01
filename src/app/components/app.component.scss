@@ -12,32 +12,11 @@ ul {
 	li {
 		opacity: 0.7;
 		cursor: pointer;
+
 		&:hover {
 			opacity: 1;
 		}
 	}
-}
-
-.dropdown-content {
-	display: none;
-	margin-top: 0.4em;
-	position: absolute;
-	z-index: -1;
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-
-	li {
-		font-size: 18px;
-		text-align: left;
-		background-color: #111;
-		border-left: 0.4em solid #333;
-		// padding-left: 0.5em;
-		border-bottom: none;
-		width: 120px;
-	}
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
 }
 
 header {
@@ -75,7 +54,6 @@ nav {
 			// &:hover {
 			// 	opacity: 1;
 			// }
-
 		}
 	}
 
@@ -94,13 +72,36 @@ nav {
 			border-bottom: 0.1em solid crimson;
 		}
 	}
+
+	.dropdown-content {
+		display: none;
+		margin-top: 0.4em;
+		position: absolute;
+		z-index: -1;
+		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+
+		li {
+			font-size: 18px;
+			text-align: left;
+			background-color: #111;
+			border-left: 0.4em solid #333;
+			// padding-left: 0.5em;
+			border-bottom: none;
+			width: 120px;
+		}
+	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
 }
 
 main {
-	flex-basis: 90vh;
+	flex-basis: 88vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	app {
 		font-size: 24px;
 	}
@@ -116,8 +117,10 @@ footer {
 	#footer-left {
 		flex: 1 0 50%;
 		display: flex;
+
 		#contact {
 			display: flex;
+
 			li {
 				display: flex;
 				align-items: center;
