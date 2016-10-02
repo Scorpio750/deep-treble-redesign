@@ -35322,7 +35322,7 @@
 /* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "ul {\n  flex: 1 0 auto;\n  display: flex;\n  list-style: none; }\n  ul li {\n    margin: 3em;\n    opacity: 0.8;\n    transition: 0.1s all ease-in-out; }\n    ul li:hover {\n      opacity: 1;\n      top: 10;\n      border: 1.25em inset dimgrey; }\n\nimg {\n  height: 33vh; }\n\n.description {\n  width: 38vh; }\n  .description #name {\n    padding-bottom: 0.2em;\n    border-bottom: 0.1em solid darkred; }\n  .description h3 {\n    margin: 0; }\n"
+	module.exports = "ul {\n  flex: 1 0 auto;\n  display: flex;\n  list-style: none; }\n  ul li {\n    margin: 3em;\n    opacity: 0.8;\n    transition: 0.15s all ease-in-out; }\n    ul li:hover {\n      opacity: 1; }\n\nimg {\n  height: 33vh; }\n\n.description {\n  width: 38vh; }\n  .description #name {\n    padding-bottom: .2em;\n    border-bottom: .1em solid darkred; }\n  .description h3 {\n    margin: 0; }\n"
 
 /***/ },
 /* 36 */
