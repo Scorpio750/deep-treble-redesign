@@ -1,19 +1,20 @@
 import { Member } from '../components/members/Member'
 
+//TODO: pull img urls from src side
 export const MEMBERS: Member[] = [
     {
         name: 'Ally Winter',
         year: 2020,
         voicePart: 'Soprano',
         position: undefined,
-        headshotUrl: undefined
+        headshotUrl: './assets/img/headshots/placeholder.jpg'
     },
     {
         name: 'Kathryna Caparino',
         year: 2020,
         voicePart: 'Soprano',
 		position: undefined,
-        headshotUrl: undefined
+        headshotUrl: './assets/img/headshots/placeholder.jpg'
     },
     {
         name: 'Leah Rozario',
@@ -47,7 +48,7 @@ export const MEMBERS: Member[] = [
         name: 'Grace Lee',
         year: 2019,
         voicePart: 'Alto',
-        position: 'Assistant Musical Director',
+        position: 'Asst. Musical Director',
         headshotUrl: './assets/img/headshots/GraceHeadShot.jpg'
     },
     {
@@ -55,7 +56,7 @@ export const MEMBERS: Member[] = [
         year: 2019,
         voicePart: 'Alto',
         position: undefined,
-        headshotUrl: undefined
+        headshotUrl: './assets/img/headshots/placeholder.jpg'
     },
     {
         name: 'Duncan Sy',
@@ -69,7 +70,7 @@ export const MEMBERS: Member[] = [
         year: 2018,
         voicePart: 'Tenor',
 		position: undefined,
-        headshotUrl: undefined
+        headshotUrl: './assets/img/headshots/placeholder.jpg'
     },
     {
         name: 'Kenny Bambridge',
@@ -90,7 +91,7 @@ export const MEMBERS: Member[] = [
         year: 2019,
         voicePart: 'Bass',
 		position: undefined,
-        headshotUrl: undefined
+        headshotUrl: './assets/img/headshots/placeholder.jpg'
     },
     {
         name: 'Marquis Reece',
@@ -104,6 +105,6 @@ export const MEMBERS: Member[] = [
         year: 2020,
         voicePart: 'Bass',
 		position: undefined,
-        headshotUrl: undefined
+        headshotUrl: './assets/img/headshots/placeholder.jpg'
     }
 ]

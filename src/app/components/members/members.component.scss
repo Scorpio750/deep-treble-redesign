@@ -1,0 +1,25 @@
+ul {
+	flex: 1 0 auto;
+	display: flex;
+	// flex-flow: row wrap;
+	list-style: none;
+	li {
+		margin: 3em;
+		// border: 1.25em inset dimgrey;
+	}
+}
+
+.description {
+	#name {
+		margin
+		padding-bottom: .2em;
+		border-bottom: .1em solid darkred;
+	}
+	h3 {
+		margin: 0;
+	}
+}
+
+img {
+	height: 38vh;
+}

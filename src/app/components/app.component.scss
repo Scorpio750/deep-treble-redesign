@@ -97,7 +97,8 @@ nav {
 }
 
 main {
-	flex-basis: 88vh;
+	margin-top: 10vh;
+	flex-basis: 78vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -111,8 +112,13 @@ footer {
 	border-top: 0.2em solid crimson;
 	display: flex;
 	// flex: 0 1 5vh;
-	padding-top: 0.4em;
+	padding: 0.5em 0.4em;
 	opacity: 0.6;
+	position: fixed;
+	bottom: 0;
+	box-sizing: border-box;
+	width: 100vw;
+
 
 	#footer-left {
 		flex: 1 0 50%;

@@ -20,7 +20,7 @@ body {
 	display: flex;
 	// flex-flow: column nowrap;
 	text-align: center;
-	align-items: center;
+	align-items: stretch;
 	// overflow: hidden;
 }
 
@@ -61,8 +61,8 @@ h3 {
 	#coffee-holder {
 		position: inherit;
 		border-radius: 100em;
-		width: 125px;
-		height: 125px;
+		width: 250px;
+		height: 250px;
 		cursor: pointer;
 		background-color: grey;
 		z-index: 1003;

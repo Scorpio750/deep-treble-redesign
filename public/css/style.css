@@ -16,8 +16,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   text-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
+  -ms-flex-align: stretch;
+  align-items: stretch; }
 
 h1 {
   font-size: 6vmin; }
@@ -53,8 +53,8 @@ h3 {
   #ripple #coffee-holder {
     position: inherit;
     border-radius: 100em;
-    width: 125px;
-    height: 125px;
+    width: 250px;
+    height: 250px;
     cursor: pointer;
     background-color: grey;
     z-index: 1003;

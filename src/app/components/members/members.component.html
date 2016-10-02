@@ -3,8 +3,11 @@
 		[class.selected]="member === selectedMember"
 		(click)="onSelect(member)">
 		<img src="{{member.headshotUrl}}" alt="" />
-		<span>{{member.name}}</span>
-		<span>{{member.class}}</span>
-		<span *ngIf="member.position">{{member.position}}</span>
+		<br>
+		<div class="description">
+			<h2 id="name">{{member.name}}</h2>
+			<h3>Class of {{member.year}}</h3>
+			<h3 *ngIf="member.position">{{member.position}}</h3>
+		</div>
 	</li>
 </ul>
