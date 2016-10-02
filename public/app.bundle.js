@@ -35314,7 +35314,7 @@
 /* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "ul {\n  flex: 1 0 auto;\n  display: flex;\n  list-style: none; }\n  ul li {\n    margin: 3em;\n    border: 1.25em inset dimgrey; }\n\n.description #name {\n  padding-bottom: .2em;\n  border-bottom: .1em solid darkred; }\n\n.description h3 {\n  margin: 0; }\n\nimg {\n  height: 38vh; }\n"
+	module.exports = "ul {\n  flex: 1 0 auto;\n  display: flex;\n  list-style: none; }\n  ul li {\n    margin: 3em;\n    border: 1.25em inset dimgrey; }\n\nimg {\n  height: 30vh; }\n\n.description {\n  width: 38vmin; }\n  .description h3 {\n    margin: 0; }\n"
 
 /***/ },
 /* 36 */
