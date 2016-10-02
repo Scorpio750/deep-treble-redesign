@@ -1,0 +1,10 @@
+<ul>
+	<li *ngFor="let member of members"
+		[id.selected]="member === selectedMember"
+		(click)="onSelect(member)">
+		<img src="{{member.headshotUrl}}" alt="" />
+		<span>{{member.name}}</span>
+		<span>{{member.class}}</span>
+		<span *ngIf="{{member.position}}">{{member.position}}</span>
+	</li>
+</ul>

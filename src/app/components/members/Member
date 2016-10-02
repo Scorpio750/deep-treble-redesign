@@ -1,0 +1,7 @@
+export class Member {
+	name: string
+	voicePart: string
+	class: string
+	position: string
+	headshotUrl: string
+}
