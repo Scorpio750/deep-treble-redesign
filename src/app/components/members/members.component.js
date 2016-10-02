@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const members_service_1 = require('.,/services/members.service');
+const members_service_1 = require('../../services/members.service');
 let MembersComponent = class MembersComponent {
     constructor(membersService) {
         this.membersService = membersService;

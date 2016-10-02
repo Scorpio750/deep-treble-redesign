@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { Member } from './Member'
-import { MembersService } from '.,/services/members.service'
+import { MembersService } from '../../services/members.service'
 
 @Component({
-	selector: '<members>'
+	selector: '<members>',
 	templateUrl: './members.component.html',
 	styleUrls: './members.component.scss'
 })

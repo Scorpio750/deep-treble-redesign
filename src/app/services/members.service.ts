@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core'
-import { Member } from '../components/Member'
-import { MEMBERS } from '../models/members'
+import { Member } from '../components/member/Member'
+import { MEMBERS } from '../models/membersSeed'
 
 @Injectable()
-export class MemberService {
+export class MembersService {
 	getMembers(): Promise<Member[]> {
 		return Promise.resolve(MEMBERS)
 	}

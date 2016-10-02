@@ -10,14 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 const core_1 = require('@angular/core');
 const members_1 = require('../models/members');
-let MemberService = class MemberService {
+let MembersService = class MembersService {
     getMembers() {
         return Promise.resolve(members_1.MEMBERS);
     }
 };
-MemberService = __decorate([
+MembersService = __decorate([
     core_1.Injectable(), 
     __metadata('design:paramtypes', [])
-], MemberService);
-exports.MemberService = MemberService;
+], MembersService);
+exports.MembersService = MembersService;
 //# sourceMappingURL=members.service.js.map
