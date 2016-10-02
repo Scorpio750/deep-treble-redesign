@@ -24,6 +24,16 @@ body {
 	// overflow: hidden;
 }
 
+h1 {
+	font-size: 6vmin;
+}
+h2 {
+	font-size: 4.5vmin;
+}
+h3 {
+	font-size: 3vmin;
+}
+
 /* Ripple Styles */
 #ripple {
 	display: flex;
@@ -66,8 +76,6 @@ body {
 
 app {
 	flex: 1 0 100%;
-	// min-height: inherit;
-	// min-width: inherit;
 	display: flex;
 	flex-flow: column nowrap;
 }

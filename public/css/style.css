@@ -19,6 +19,15 @@ body {
   -ms-flex-align: center;
   align-items: center; }
 
+h1 {
+  font-size: 6vmin; }
+
+h2 {
+  font-size: 4.5vmin; }
+
+h3 {
+  font-size: 3vmin; }
+
 /* Ripple Styles */
 #ripple {
   display: -ms-flexbox;

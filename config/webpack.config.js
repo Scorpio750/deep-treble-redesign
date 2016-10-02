@@ -31,6 +31,9 @@ const frontendLoader = {
         test: /\.html$/,
         loader: 'raw'
     }, {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+        loader: 'file?name=assets/[name].[hash].[ext]'
+    }, {
         test: /\.scss$/,
         loader: 'raw!sass'
     }]
@@ -47,9 +50,9 @@ const defaultLoader = {
 /* Configs */
 module.exports = {
     frontendConfig: {
-		debug: true,
+        debug: true,
         entry: {
-			initial: ['./src/app/initial/initial'],
+            initial: ['./src/app/initial/initial'],
             vendor: ['./src/app/vendor'],
             app: ['./src/app/index']
         },
