@@ -9,13 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
+const members_service_1 = require('../services/members.service');
 let AppComponent = class AppComponent {
 };
 AppComponent = __decorate([
     core_1.Component({
         selector: 'app',
         templateUrl: './app.component.html',
-        styleUrls: ['./app.component.scss']
+        styleUrls: ['./app.component.scss'],
+        providers: [members_service_1.MembersService]
     }), 
     __metadata('design:paramtypes', [])
 ], AppComponent);

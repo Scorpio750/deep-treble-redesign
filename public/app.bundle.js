@@ -35006,9 +35006,10 @@
 	const core_1 = __webpack_require__(4);
 	/* Components */
 	const app_component_1 = __webpack_require__(25);
-	const home_component_1 = __webpack_require__(28);
+	const home_component_1 = __webpack_require__(30);
+	const members_component_1 = __webpack_require__(33);
 	/* Routing */
-	const app_routing_1 = __webpack_require__(31);
+	const app_routing_1 = __webpack_require__(36);
 	let AppModule = class AppModule {
 	};
 	AppModule = __decorate([
@@ -35019,7 +35020,8 @@
 	        ],
 	        declarations: [
 	            app_component_1.AppComponent,
-	            home_component_1.HomeComponent
+	            home_component_1.HomeComponent,
+	            members_component_1.MembersComponent
 	        ],
 	        bootstrap: [app_component_1.AppComponent]
 	    }), 
@@ -35043,13 +35045,15 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	const core_1 = __webpack_require__(4);
+	const members_service_1 = __webpack_require__(26);
 	let AppComponent = class AppComponent {
 	};
 	AppComponent = __decorate([
 	    core_1.Component({
 	        selector: 'app',
-	        template: __webpack_require__(26),
-	        styles: [__webpack_require__(27)]
+	        template: __webpack_require__(28),
+	        styles: [__webpack_require__(29)],
+	        providers: [members_service_1.MembersService]
 	    }), 
 	    __metadata('design:paramtypes', [])
 	], AppComponent);
@@ -35058,18 +35062,160 @@
 
 /***/ },
 /* 26 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<header>\n    <nav>\n        <div id=\"logo-space\">\n            <div id=\"DT-logo\"></div>\n        </div>\n        <ul>\n            <li class=\"dropdown\">\n                About\n                <ul class=\"dropdown-content\">\n                    <li routerLink=\"/members\">Members</li>\n                    <li routerLink=\"/history\">History</li>\n                </ul>\n            </li>\n            <li routerLink=\"/media\">Media</li>\n            <li routerLink=\"/merch\">Merchandise</li>\n            <li routerLink=\"/aaru\">AARU</li>\n        </ul>\n\n    </nav>\n</header>\n<main>\n    <router-outlet></router-outlet>\n</main>\n<footer>\n    <section id=\"footer-left\">\n        <ul id=\"contact\">\n            <li>\n                <a href=\"mailto:rudeeptreble@gmail.com\" id=\"mail\">Contact Us</a>\n            </li>\n            <!-- <li>Join our newsletter!</li> -->\n        </ul>\n    </section>\n    <section id=\"footer-right\">\n        <div class=\"filler\"></div>\n        <div class=\"content\">\n            <div class=\"upper-text\">\n                Follow us on:\n            </div>\n            <ul id=\"social-media\">\n                <li>\n                    <a href=\"https://www.facebook.com/rudeeptreble\">\n                        <i class=\"fa fa-lg fa-facebook-square\" aria-hidden=\"true\"></i>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"https://twitter.com/deeptreble\">\n                        <i class=\"fa fa-lg fa-twitter\"></i>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"https://www.instagram.com/deeptreble/\">\n                        <i class=\"fa fa-lg fa-instagram\"></i>\n                    </a>\n                </li>\n            </ul>\n        </div>\n    </section>\n</footer>\n"
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	const core_1 = __webpack_require__(4);
+	const membersSeed_1 = __webpack_require__(27);
+	let MembersService = class MembersService {
+	    getMembers() {
+	        return Promise.resolve(membersSeed_1.MEMBERS);
+	    }
+	};
+	MembersService = __decorate([
+	    core_1.Injectable(), 
+	    __metadata('design:paramtypes', [])
+	], MembersService);
+	exports.MembersService = MembersService;
+
 
 /***/ },
 /* 27 */
 /***/ function(module, exports) {
 
-	module.exports = "a {\n  text-decoration: none;\n  color: inherit; }\n\nul {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0; }\n  ul li {\n    opacity: 0.7;\n    cursor: pointer; }\n    ul li:hover {\n      opacity: 1; }\n\nheader {\n  flex: 1 0 5%;\n  display: flex;\n  justify-content: center;\n  position: fixed;\n  width: 99%;\n  z-index: 100;\n  opacity: 1; }\n\nnav {\n  flex: 1 0 auto;\n  display: flex;\n  justify-content: center; }\n  nav #logo-space {\n    flex: 1 0 30%;\n    height: 3.5em;\n    background-color: black; }\n    nav #logo-space #DT-logo {\n      position: absolute;\n      background-image: url(\"/assets/logos/DE:EP white.png\");\n      background-size: cover;\n      width: 10vmin;\n      height: 10vmin;\n      margin: 0.7em 1em;\n      cursor: pointer;\n      z-index: 99; }\n  nav ul {\n    justify-content: space-between;\n    padding-top: 0.6em;\n    flex: 1 0 auto;\n    height: 3.7em;\n    background-color: black; }\n    nav ul li {\n      flex: 1 0 auto;\n      font-size: 1.2em;\n      text-align: center;\n      padding: 0.8em;\n      border-bottom: 0.1em solid crimson; }\n  nav .dropdown-content {\n    display: none;\n    margin-top: 0.4em;\n    position: absolute;\n    z-index: -1;\n    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }\n    nav .dropdown-content li {\n      font-size: 18px;\n      text-align: left;\n      background-color: #111;\n      border-left: 0.4em solid #333;\n      border-bottom: none;\n      width: 120px; }\n  nav .dropdown:hover .dropdown-content {\n    display: block; }\n\nmain {\n  flex-basis: 88vh;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  main app {\n    font-size: 24px; }\n\nfooter {\n  border-top: 0.2em solid crimson;\n  display: flex;\n  padding-top: 0.4em;\n  opacity: 0.6; }\n  footer #footer-left {\n    flex: 1 0 50%;\n    display: flex; }\n    footer #footer-left #contact {\n      display: flex; }\n      footer #footer-left #contact li {\n        display: flex;\n        align-items: center;\n        font-size: 18px;\n        margin: 0 0.5em; }\n  footer #footer-right {\n    flex: 1 0 50%;\n    display: flex; }\n    footer #footer-right .filler {\n      flex: 10 0 auto; }\n    footer #footer-right .content {\n      flex: 1 0 auto;\n      display: flex;\n      flex-flow: column; }\n      footer #footer-right .content .upper-text {\n        cursor: default; }\n      footer #footer-right .content #social-media {\n        margin: 0.2em 0.4em;\n        justify-content: flex-end; }\n        footer #footer-right .content #social-media li {\n          margin: 0 0.3em; }\n"
+	"use strict";
+	exports.MEMBERS = [
+	    {
+	        name: 'Ally Winter',
+	        year: 2020,
+	        voicePart: 'Soprano',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Kathryna Caparino',
+	        year: 2020,
+	        voicePart: 'Soprano',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Leah Rozario',
+	        year: 2019,
+	        voicePart: 'Soprano',
+	        position: 'Musical Director',
+	        headshotUrl: './assets/img/headshots/LeahHeadShot.jpg'
+	    },
+	    {
+	        name: 'Bria Romano',
+	        year: 2018,
+	        voicePart: 'Alto',
+	        position: undefined,
+	        headshotUrl: './assets/img/headshots/BriaHeadShot.jpg'
+	    },
+	    {
+	        name: 'Claire Towell',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: 'Webmaster',
+	        headshotUrl: './assets/img/headshots/ClaireHeadShot.jpg'
+	    },
+	    {
+	        name: 'Erica Lazarow',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: 'Business Manager',
+	        headshotUrl: './assets/img/headshots/EricaHeadShot.jpg'
+	    },
+	    {
+	        name: 'Grace Lee',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: 'Assistant Musical Director',
+	        headshotUrl: './assets/img/headshots/GraceHeadShot.jpg'
+	    },
+	    {
+	        name: 'Jannae Johnson',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Duncan Sy',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: 'Treasurer',
+	        headshotUrl: './assets/img/headshots/DuncanHeadShot.jpg'
+	    },
+	    {
+	        name: 'Johnny Ferreira',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Kenny Bambridge',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: undefined,
+	        headshotUrl: './assets/img/headshots/KennyHeadShot.jpg'
+	    },
+	    {
+	        name: 'Yoku Crentsil',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: 'Social Affairs Manager',
+	        headshotUrl: './assets/img/headshots/YokuHeadShot.jpg'
+	    },
+	    {
+	        name: 'Joe Haverlock',
+	        year: 2019,
+	        voicePart: 'Bass',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Marquis Reece',
+	        year: 2017,
+	        voicePart: 'Bass',
+	        position: 'Historian',
+	        headshotUrl: './assets/img/headshots/MarquisHeadShot.jpg'
+	    },
+	    {
+	        name: 'Mason Satnick',
+	        year: 2020,
+	        voicePart: 'Bass',
+	        position: undefined,
+	        headshotUrl: undefined
+	    }
+	];
+
 
 /***/ },
 /* 28 */
+/***/ function(module, exports) {
+
+	module.exports = "<header>\n    <nav>\n        <div id=\"logo-space\">\n            <div routerLink=\"/\" id=\"DT-logo\"></div>\n        </div>\n        <ul>\n            <li class=\"dropdown\">\n                About\n                <ul class=\"dropdown-content\">\n                    <li routerLink=\"/members\">Members</li>\n                    <li routerLink=\"/history\">History</li>\n                </ul>\n            </li>\n            <li routerLink=\"/media\">Media</li>\n            <li routerLink=\"/merch\">Merchandise</li>\n            <li routerLink=\"/aaru\">AARU</li>\n        </ul>\n\n    </nav>\n</header>\n<main>\n    <router-outlet></router-outlet>\n</main>\n<footer>\n    <section id=\"footer-left\">\n        <ul id=\"contact\">\n            <li>\n                <a href=\"mailto:rudeeptreble@gmail.com\" id=\"mail\">Contact Us</a>\n            </li>\n            <!-- <li>Join our newsletter!</li> -->\n        </ul>\n    </section>\n    <section id=\"footer-right\">\n        <div class=\"filler\"></div>\n        <div class=\"content\">\n            <div class=\"upper-text\">\n                Follow us on:\n            </div>\n            <ul id=\"social-media\">\n                <li>\n                    <a href=\"https://www.facebook.com/rudeeptreble\">\n                        <i class=\"fa fa-lg fa-facebook-square\" aria-hidden=\"true\"></i>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"https://twitter.com/deeptreble\">\n                        <i class=\"fa fa-lg fa-twitter\"></i>\n                    </a>\n                </li>\n                <li>\n                    <a href=\"https://www.instagram.com/deeptreble/\">\n                        <i class=\"fa fa-lg fa-instagram\"></i>\n                    </a>\n                </li>\n            </ul>\n        </div>\n    </section>\n</footer>\n"
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	module.exports = "a {\n  text-decoration: none;\n  color: inherit; }\n\nul {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0; }\n  ul li {\n    opacity: 0.7;\n    cursor: pointer; }\n    ul li:hover {\n      opacity: 1; }\n\nheader {\n  flex: 1 0 5%;\n  display: flex;\n  justify-content: center;\n  position: fixed;\n  width: 99%;\n  z-index: 100;\n  opacity: 1; }\n\nnav {\n  flex: 1 0 auto;\n  display: flex;\n  justify-content: center; }\n  nav #logo-space {\n    flex: 1 0 30%;\n    height: 3.5em;\n    background-color: black; }\n    nav #logo-space #DT-logo {\n      position: absolute;\n      background-image: url(\"/assets/logos/DE:EP white.png\");\n      background-size: cover;\n      width: 10vmin;\n      height: 10vmin;\n      margin: 0.7em 1em;\n      cursor: pointer;\n      z-index: 99; }\n  nav ul {\n    justify-content: space-between;\n    padding-top: 0.6em;\n    flex: 1 0 auto;\n    height: 3.7em;\n    background-color: black; }\n    nav ul li {\n      flex: 1 0 auto;\n      font-size: 1.2em;\n      text-align: center;\n      padding: 0.8em;\n      border-bottom: 0.1em solid crimson; }\n  nav .dropdown-content {\n    display: none;\n    margin-top: 0.4em;\n    position: absolute;\n    z-index: -1;\n    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }\n    nav .dropdown-content li {\n      font-size: 18px;\n      text-align: left;\n      background-color: #111;\n      border-left: 0.4em solid #333;\n      border-bottom: none;\n      width: 120px; }\n  nav .dropdown:hover .dropdown-content {\n    display: block; }\n\nmain {\n  flex-basis: 88vh;\n  display: flex;\n  justify-content: center;\n  align-items: center; }\n  main app {\n    font-size: 24px; }\n\nfooter {\n  border-top: 0.2em solid crimson;\n  display: flex;\n  padding-top: 0.4em;\n  opacity: 0.6; }\n  footer #footer-left {\n    flex: 1 0 50%;\n    display: flex; }\n    footer #footer-left #contact {\n      display: flex; }\n      footer #footer-left #contact li {\n        display: flex;\n        align-items: center;\n        font-size: 18px;\n        margin: 0 0.5em; }\n  footer #footer-right {\n    flex: 1 0 50%;\n    display: flex; }\n    footer #footer-right .filler {\n      flex: 10 0 auto; }\n    footer #footer-right .content {\n      flex: 1 0 auto;\n      display: flex;\n      flex-flow: column; }\n      footer #footer-right .content .upper-text {\n        cursor: default; }\n      footer #footer-right .content #social-media {\n        margin: 0.2em 0.4em;\n        justify-content: flex-end; }\n        footer #footer-right .content #social-media li {\n          margin: 0 0.3em; }\n"
+
+/***/ },
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35094,8 +35240,8 @@
 	HomeComponent = __decorate([
 	    core_1.Component({
 	        selector: 'home',
-	        template: __webpack_require__(29),
-	        styles: [__webpack_require__(30)]
+	        template: __webpack_require__(31),
+	        styles: [__webpack_require__(32)]
 	    }), 
 	    __metadata('design:paramtypes', [])
 	], HomeComponent);
@@ -35103,26 +35249,81 @@
 
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = "<h1>{{greeting.header}}</h1>\n<h3>{{greeting.body}}</h3>\n"
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports) {
 
 	module.exports = "* {\n  opacity: .9; }\n"
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const router_1 = __webpack_require__(32);
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	const core_1 = __webpack_require__(4);
+	const members_service_1 = __webpack_require__(26);
+	let MembersComponent = class MembersComponent {
+	    constructor(membersService) {
+	        this.membersService = membersService;
+	    }
+	    // onInit lifecycle hook
+	    ngOnInit() {
+	        this.getMembers();
+	    }
+	    getMembers() {
+	        this.membersService.getMembers()
+	            .then((members) => this.members = members);
+	    }
+	    onSelect(member) {
+	        this.selectedMember = member;
+	    }
+	};
+	MembersComponent = __decorate([
+	    core_1.Component({
+	        selector: '<members>',
+	        template: __webpack_require__(34),
+	        styles: [__webpack_require__(35)]
+	    }), 
+	    __metadata('design:paramtypes', [members_service_1.MembersService])
+	], MembersComponent);
+	exports.MembersComponent = MembersComponent;
+
+
+/***/ },
+/* 34 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul>\n\t<li *ngFor=\"let member of members\"\n\t\t[class.selected]=\"member === selectedMember\"\n\t\t(click)=\"onSelect(member)\">\n\t\t<img src=\"{{member.headshotUrl}}\" alt=\"\" />\n\t\t<span>{{member.name}}</span>\n\t\t<span>{{member.class}}</span>\n\t\t<span *ngIf=\"member.position\">{{member.position}}</span>\n\t</li>\n</ul>\n"
+
+/***/ },
+/* 35 */
+/***/ function(module, exports) {
+
+	module.exports = ""
+
+/***/ },
+/* 36 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	const router_1 = __webpack_require__(37);
 	/* Components */
-	const home_component_1 = __webpack_require__(28);
-	const members_component_1 = __webpack_require__(62);
+	const home_component_1 = __webpack_require__(30);
+	const members_component_1 = __webpack_require__(33);
 	// import { HistoryComponent } from '../components/history/history.component'
 	// import {MediaComponent } from '../components/media/media.component'
 	// import { MerchComponent } from '../components/merch/merch.component'
@@ -35133,7 +35334,7 @@
 	        component: home_component_1.HomeComponent
 	    },
 	    {
-	        path: '/members',
+	        path: 'members',
 	        component: members_component_1.MembersComponent
 	    }
 	];
@@ -35141,7 +35342,7 @@
 
 
 /***/ },
-/* 32 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35150,7 +35351,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(23), __webpack_require__(4), __webpack_require__(5), __webpack_require__(33), __webpack_require__(46), __webpack_require__(47), __webpack_require__(48), __webpack_require__(49), __webpack_require__(53), __webpack_require__(54), __webpack_require__(6), __webpack_require__(55), __webpack_require__(56), __webpack_require__(57), __webpack_require__(58), __webpack_require__(59), __webpack_require__(60), __webpack_require__(61)) :
+	     true ? factory(exports, __webpack_require__(23), __webpack_require__(4), __webpack_require__(5), __webpack_require__(38), __webpack_require__(51), __webpack_require__(52), __webpack_require__(53), __webpack_require__(54), __webpack_require__(58), __webpack_require__(59), __webpack_require__(6), __webpack_require__(60), __webpack_require__(61), __webpack_require__(62), __webpack_require__(63), __webpack_require__(64), __webpack_require__(65), __webpack_require__(66)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core', 'rxjs/Subject', 'rxjs/observable/from', 'rxjs/observable/of', 'rxjs/operator/every', 'rxjs/operator/map', 'rxjs/operator/mergeAll', 'rxjs/operator/mergeMap', 'rxjs/operator/reduce', 'rxjs/Observable', 'rxjs/operator/catch', 'rxjs/operator/concatAll', 'rxjs/operator/first', 'rxjs/util/EmptyError', 'rxjs/observable/fromPromise', 'rxjs/operator/last', 'rxjs/BehaviorSubject'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.router = global.ng.router || {}),global.ng.common,global.ng.core,global.Rx,global.Rx.Observable,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx));
 	}(this, function (exports,_angular_common,_angular_core,rxjs_Subject,rxjs_observable_from,rxjs_observable_of,rxjs_operator_every,rxjs_operator_map,rxjs_operator_mergeAll,rxjs_operator_mergeMap,rxjs_operator_reduce,rxjs_Observable,rxjs_operator_catch,rxjs_operator_concatAll,rxjs_operator_first,rxjs_util_EmptyError,rxjs_observable_fromPromise,l,rxjs_BehaviorSubject) { 'use strict';
@@ -38850,16 +39051,16 @@
 
 
 /***/ },
-/* 33 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromObservable_1 = __webpack_require__(34);
+	var FromObservable_1 = __webpack_require__(39);
 	exports.from = FromObservable_1.FromObservable.create;
 	//# sourceMappingURL=from.js.map
 
 /***/ },
-/* 34 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -38869,14 +39070,14 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var isArray_1 = __webpack_require__(12);
-	var isPromise_1 = __webpack_require__(35);
-	var PromiseObservable_1 = __webpack_require__(36);
-	var IteratorObservable_1 = __webpack_require__(37);
-	var ArrayObservable_1 = __webpack_require__(39);
-	var ArrayLikeObservable_1 = __webpack_require__(43);
-	var iterator_1 = __webpack_require__(38);
+	var isPromise_1 = __webpack_require__(40);
+	var PromiseObservable_1 = __webpack_require__(41);
+	var IteratorObservable_1 = __webpack_require__(42);
+	var ArrayObservable_1 = __webpack_require__(44);
+	var ArrayLikeObservable_1 = __webpack_require__(48);
+	var iterator_1 = __webpack_require__(43);
 	var Observable_1 = __webpack_require__(6);
-	var observeOn_1 = __webpack_require__(44);
+	var observeOn_1 = __webpack_require__(49);
 	var observable_1 = __webpack_require__(19);
 	var isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
 	/**
@@ -38980,7 +39181,7 @@
 	//# sourceMappingURL=FromObservable.js.map
 
 /***/ },
-/* 35 */
+/* 40 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -38991,7 +39192,7 @@
 	//# sourceMappingURL=isPromise.js.map
 
 /***/ },
-/* 36 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39117,7 +39318,7 @@
 	//# sourceMappingURL=PromiseObservable.js.map
 
 /***/ },
-/* 37 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39128,7 +39329,7 @@
 	};
 	var root_1 = __webpack_require__(7);
 	var Observable_1 = __webpack_require__(6);
-	var iterator_1 = __webpack_require__(38);
+	var iterator_1 = __webpack_require__(43);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -39279,7 +39480,7 @@
 	//# sourceMappingURL=IteratorObservable.js.map
 
 /***/ },
-/* 38 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39316,7 +39517,7 @@
 	//# sourceMappingURL=iterator.js.map
 
 /***/ },
-/* 39 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39326,9 +39527,9 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(6);
-	var ScalarObservable_1 = __webpack_require__(40);
-	var EmptyObservable_1 = __webpack_require__(41);
-	var isScheduler_1 = __webpack_require__(42);
+	var ScalarObservable_1 = __webpack_require__(45);
+	var EmptyObservable_1 = __webpack_require__(46);
+	var isScheduler_1 = __webpack_require__(47);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -39443,7 +39644,7 @@
 	//# sourceMappingURL=ArrayObservable.js.map
 
 /***/ },
-/* 40 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39506,7 +39707,7 @@
 	//# sourceMappingURL=ScalarObservable.js.map
 
 /***/ },
-/* 41 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39586,7 +39787,7 @@
 	//# sourceMappingURL=EmptyObservable.js.map
 
 /***/ },
-/* 42 */
+/* 47 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39597,7 +39798,7 @@
 	//# sourceMappingURL=isScheduler.js.map
 
 /***/ },
-/* 43 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39607,8 +39808,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(6);
-	var ScalarObservable_1 = __webpack_require__(40);
-	var EmptyObservable_1 = __webpack_require__(41);
+	var ScalarObservable_1 = __webpack_require__(45);
+	var EmptyObservable_1 = __webpack_require__(46);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -39672,7 +39873,7 @@
 	//# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ },
-/* 44 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39682,7 +39883,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(9);
-	var Notification_1 = __webpack_require__(45);
+	var Notification_1 = __webpack_require__(50);
 	/**
 	 * @see {@link Notification}
 	 *
@@ -39752,7 +39953,7 @@
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 45 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39884,16 +40085,16 @@
 	//# sourceMappingURL=Notification.js.map
 
 /***/ },
-/* 46 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(39);
+	var ArrayObservable_1 = __webpack_require__(44);
 	exports.of = ArrayObservable_1.ArrayObservable.of;
 	//# sourceMappingURL=of.js.map
 
 /***/ },
-/* 47 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39966,7 +40167,7 @@
 	//# sourceMappingURL=every.js.map
 
 /***/ },
-/* 48 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40058,7 +40259,7 @@
 	//# sourceMappingURL=map.js.map
 
 /***/ },
-/* 49 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40067,8 +40268,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(50);
-	var subscribeToResult_1 = __webpack_require__(51);
+	var OuterSubscriber_1 = __webpack_require__(55);
+	var subscribeToResult_1 = __webpack_require__(56);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable which
 	 * concurrently delivers all values that are emitted on the inner Observables.
@@ -40174,7 +40375,7 @@
 	//# sourceMappingURL=mergeAll.js.map
 
 /***/ },
-/* 50 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40209,16 +40410,16 @@
 	//# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ },
-/* 51 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var root_1 = __webpack_require__(7);
 	var isArray_1 = __webpack_require__(12);
-	var isPromise_1 = __webpack_require__(35);
+	var isPromise_1 = __webpack_require__(40);
 	var Observable_1 = __webpack_require__(6);
-	var iterator_1 = __webpack_require__(38);
-	var InnerSubscriber_1 = __webpack_require__(52);
+	var iterator_1 = __webpack_require__(43);
+	var InnerSubscriber_1 = __webpack_require__(57);
 	var observable_1 = __webpack_require__(19);
 	function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
 	    var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
@@ -40288,7 +40489,7 @@
 	//# sourceMappingURL=subscribeToResult.js.map
 
 /***/ },
-/* 52 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40329,7 +40530,7 @@
 	//# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ },
-/* 53 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40338,8 +40539,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var subscribeToResult_1 = __webpack_require__(51);
-	var OuterSubscriber_1 = __webpack_require__(50);
+	var subscribeToResult_1 = __webpack_require__(56);
+	var OuterSubscriber_1 = __webpack_require__(55);
 	/**
 	 * Projects each source value to an Observable which is merged in the output
 	 * Observable.
@@ -40495,7 +40696,7 @@
 	//# sourceMappingURL=mergeMap.js.map
 
 /***/ },
-/* 54 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40612,7 +40813,7 @@
 	//# sourceMappingURL=reduce.js.map
 
 /***/ },
-/* 55 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40621,8 +40822,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(50);
-	var subscribeToResult_1 = __webpack_require__(51);
+	var OuterSubscriber_1 = __webpack_require__(55);
+	var subscribeToResult_1 = __webpack_require__(56);
 	/**
 	 * Catches errors on the observable to be handled by returning a new observable or throwing an error.
 	 * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
@@ -40682,11 +40883,11 @@
 	//# sourceMappingURL=catch.js.map
 
 /***/ },
-/* 56 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeAll_1 = __webpack_require__(49);
+	var mergeAll_1 = __webpack_require__(54);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by
 	 * concatenating the inner Observables in order.
@@ -40736,7 +40937,7 @@
 	//# sourceMappingURL=concatAll.js.map
 
 /***/ },
-/* 57 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40746,7 +40947,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(9);
-	var EmptyError_1 = __webpack_require__(58);
+	var EmptyError_1 = __webpack_require__(63);
 	/**
 	 * Emits only the first value (or the first value that meets some condition)
 	 * emitted by the source Observable.
@@ -40889,7 +41090,7 @@
 	//# sourceMappingURL=first.js.map
 
 /***/ },
-/* 58 */
+/* 63 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -40922,16 +41123,16 @@
 	//# sourceMappingURL=EmptyError.js.map
 
 /***/ },
-/* 59 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(36);
+	var PromiseObservable_1 = __webpack_require__(41);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 60 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40941,7 +41142,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(9);
-	var EmptyError_1 = __webpack_require__(58);
+	var EmptyError_1 = __webpack_require__(63);
 	/**
 	 * Returns an Observable that emits only the last item emitted by the source Observable.
 	 * It optionally takes a predicate function as a parameter, in which case, rather than emitting
@@ -41054,7 +41255,7 @@
 	//# sourceMappingURL=last.js.map
 
 /***/ },
-/* 61 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41106,203 +41307,6 @@
 	}(Subject_1.Subject));
 	exports.BehaviorSubject = BehaviorSubject;
 	//# sourceMappingURL=BehaviorSubject.js.map
-
-/***/ },
-/* 62 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	const core_1 = __webpack_require__(4);
-	const members_service_1 = __webpack_require__(63);
-	let MembersComponent = class MembersComponent {
-	    constructor(membersService) {
-	        this.membersService = membersService;
-	    }
-	    // onInit lifecycle hook
-	    ngOnInit() {
-	        this.getMembers();
-	    }
-	    getMembers() {
-	        this.membersService.getMembers()
-	            .then((members) => this.members = members);
-	    }
-	    onSelect(member) {
-	        this.selectedMember = member;
-	    }
-	};
-	MembersComponent = __decorate([
-	    core_1.Component({
-	        selector: '<members>',
-	        template: __webpack_require__(65),
-	        styles: [__webpack_require__(66)]
-	    }), 
-	    __metadata('design:paramtypes', [members_service_1.MembersService])
-	], MembersComponent);
-	exports.MembersComponent = MembersComponent;
-
-
-/***/ },
-/* 63 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	const core_1 = __webpack_require__(4);
-	const membersSeed_1 = __webpack_require__(64);
-	let MembersService = class MembersService {
-	    getMembers() {
-	        return Promise.resolve(membersSeed_1.MEMBERS);
-	    }
-	};
-	MembersService = __decorate([
-	    core_1.Injectable(), 
-	    __metadata('design:paramtypes', [])
-	], MembersService);
-	exports.MembersService = MembersService;
-
-
-/***/ },
-/* 64 */
-/***/ function(module, exports) {
-
-	"use strict";
-	exports.MEMBERS = [
-	    {
-	        name: 'Ally Winter',
-	        year: 2020,
-	        voicePart: 'Soprano',
-	        position: undefined,
-	        headshotUrl: undefined
-	    },
-	    {
-	        name: 'Kathryna Caparino',
-	        year: 2020,
-	        voicePart: 'Soprano',
-	        position: undefined,
-	        headshotUrl: undefined
-	    },
-	    {
-	        name: 'Leah Rozario',
-	        year: 2019,
-	        voicePart: 'Soprano',
-	        position: 'Musical Director',
-	        headshotUrl: './headshots/LeahHeadShot.jpg'
-	    },
-	    {
-	        name: 'Bria Romano',
-	        year: 2018,
-	        voicePart: 'Alto',
-	        position: undefined,
-	        headshotUrl: './headshots/BriaHeadShot.jpg'
-	    },
-	    {
-	        name: 'Claire Towell',
-	        year: 2019,
-	        voicePart: 'Alto',
-	        position: 'Webmaster',
-	        headshotUrl: './headshots/ClaireHeadShot.jpg'
-	    },
-	    {
-	        name: 'Erica Lazarow',
-	        year: 2019,
-	        voicePart: 'Alto',
-	        position: 'Business Manager',
-	        headshotUrl: './headshots/EricaHeadShot.jpg'
-	    },
-	    {
-	        name: 'Grace Lee',
-	        year: 2019,
-	        voicePart: 'Alto',
-	        position: 'Assistant Musical Director',
-	        headshotUrl: './headshots/GraceHeadShot.jpg'
-	    },
-	    {
-	        name: 'Jannae Johnson',
-	        year: 2019,
-	        voicePart: 'Alto',
-	        position: undefined,
-	        headshotUrl: undefined
-	    },
-	    {
-	        name: 'Duncan Sy',
-	        year: 2018,
-	        voicePart: 'Tenor',
-	        position: 'Treasurer',
-	        headshotUrl: './headshots/DuncanHeadShot.jpg'
-	    },
-	    {
-	        name: 'Johnny Ferreira',
-	        year: 2018,
-	        voicePart: 'Tenor',
-	        position: undefined,
-	        headshotUrl: undefined
-	    },
-	    {
-	        name: 'Kenny Bambridge',
-	        year: 2018,
-	        voicePart: 'Tenor',
-	        position: undefined,
-	        headshotUrl: './headshots/KennyHeadShot.jpg'
-	    },
-	    {
-	        name: 'Yoku Crentsil',
-	        year: 2018,
-	        voicePart: 'Tenor',
-	        position: 'Social Affairs Manager',
-	        headshotUrl: './headshots/YokuHeadShot.jpg'
-	    },
-	    {
-	        name: 'Joe Haverlock',
-	        year: 2019,
-	        voicePart: 'Bass',
-	        position: undefined,
-	        headshotUrl: undefined
-	    },
-	    {
-	        name: 'Marquis Reece',
-	        year: 2017,
-	        voicePart: 'Bass',
-	        position: 'Historian',
-	        headshotUrl: './headshots/MarquisHeadShot.jpg'
-	    },
-	    {
-	        name: 'Mason Satnick',
-	        year: 2020,
-	        voicePart: 'Bass',
-	        position: undefined,
-	        headshotUrl: undefined
-	    }
-	];
-
-
-/***/ },
-/* 65 */
-/***/ function(module, exports) {
-
-	module.exports = "<ul>\n\t<li *ngFor=\"let member of members\"\n\t\t[id.selected]=\"member === selectedMember\"\n\t\t(click)=\"onSelect(member)\">\n\t\t<img src=\"{{member.headshotUrl}}\" alt=\"\" />\n\t\t<span>{{member.name}}</span>\n\t\t<span>{{member.class}}</span>\n\t\t<span *ngIf=\"{{member.position}}\">{{member.position}}</span>\n\t</li>\n</ul>\n"
-
-/***/ },
-/* 66 */
-/***/ function(module, exports) {
-
-	module.exports = ""
 
 /***/ }
 /******/ ]);

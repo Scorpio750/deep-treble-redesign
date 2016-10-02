@@ -12,6 +12,7 @@ const platform_browser_1 = require('@angular/platform-browser');
 const core_1 = require('@angular/core');
 const app_component_1 = require('../components/app.component');
 const home_component_1 = require('../components/home/home.component');
+const members_component_1 = require('../components/members/members.component');
 const app_routing_1 = require('../routing/app.routing');
 let AppModule = class AppModule {
 };
@@ -23,7 +24,8 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            home_component_1.HomeComponent
+            home_component_1.HomeComponent,
+            members_component_1.MembersComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }), 

@@ -8,7 +8,7 @@ const appRoutes = [
         component: home_component_1.HomeComponent
     },
     {
-        path: '/members',
+        path: 'members',
         component: members_component_1.MembersComponent
     }
 ];

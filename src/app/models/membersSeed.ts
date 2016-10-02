@@ -20,35 +20,35 @@ export const MEMBERS: Member[] = [
         year: 2019,
         voicePart: 'Soprano',
         position: 'Musical Director',
-        headshotUrl: './headshots/LeahHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/LeahHeadShot.jpg'
     },
     {
         name: 'Bria Romano',
         year: 2018,
         voicePart: 'Alto',
         position: undefined,
-        headshotUrl: './headshots/BriaHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/BriaHeadShot.jpg'
     },
     {
         name: 'Claire Towell',
         year: 2019,
         voicePart: 'Alto',
         position: 'Webmaster',
-        headshotUrl: './headshots/ClaireHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/ClaireHeadShot.jpg'
     },
     {
         name: 'Erica Lazarow',
         year: 2019,
         voicePart: 'Alto',
         position: 'Business Manager',
-        headshotUrl: './headshots/EricaHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/EricaHeadShot.jpg'
     },
     {
         name: 'Grace Lee',
         year: 2019,
         voicePart: 'Alto',
         position: 'Assistant Musical Director',
-        headshotUrl: './headshots/GraceHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/GraceHeadShot.jpg'
     },
     {
         name: 'Jannae Johnson',
@@ -62,7 +62,7 @@ export const MEMBERS: Member[] = [
         year: 2018,
         voicePart: 'Tenor',
         position: 'Treasurer',
-        headshotUrl: './headshots/DuncanHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/DuncanHeadShot.jpg'
     },
     {
         name: 'Johnny Ferreira',
@@ -76,14 +76,14 @@ export const MEMBERS: Member[] = [
         year: 2018,
         voicePart: 'Tenor',
         position: undefined,
-        headshotUrl: './headshots/KennyHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/KennyHeadShot.jpg'
     },
     {
         name: 'Yoku Crentsil',
         year: 2018,
         voicePart: 'Tenor',
         position: 'Social Affairs Manager',
-        headshotUrl: './headshots/YokuHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/YokuHeadShot.jpg'
     },
     {
         name: 'Joe Haverlock',
@@ -97,7 +97,7 @@ export const MEMBERS: Member[] = [
         year: 2017,
         voicePart: 'Bass',
         position: 'Historian',
-        headshotUrl: './headshots/MarquisHeadShot.jpg'
+        headshotUrl: './assets/img/headshots/MarquisHeadShot.jpg'
     },
     {
         name: 'Mason Satnick',

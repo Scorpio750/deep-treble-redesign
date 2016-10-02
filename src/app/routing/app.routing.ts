@@ -15,7 +15,7 @@ const appRoutes: Routes = [
 		component: HomeComponent
 	},
 	{
-		path: '/members',
+		path: 'members',
 		component: MembersComponent
 	}
 ]
