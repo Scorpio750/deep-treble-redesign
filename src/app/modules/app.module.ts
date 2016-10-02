@@ -6,9 +6,15 @@ import { NgModule } from '@angular/core'
 import { AppComponent } from '../components/app.component'
 import { HomeComponent } from '../components/home/home.component'
 
+/* Routing */
+import { routing } from '../routing/app.routing'
+
 
 @NgModule({
-	imports: [BrowserModule],
+	imports: [
+		BrowserModule,
+		routing
+	],
 	declarations: [
 		AppComponent,
 		HomeComponent

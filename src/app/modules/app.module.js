@@ -12,11 +12,15 @@ const platform_browser_1 = require('@angular/platform-browser');
 const core_1 = require('@angular/core');
 const app_component_1 = require('../components/app.component');
 const home_component_1 = require('../components/home/home.component');
+const app_routing_1 = require('../routing/app.routing');
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
+        imports: [
+            platform_browser_1.BrowserModule,
+            app_routing_1.routing
+        ],
         declarations: [
             app_component_1.AppComponent,
             home_component_1.HomeComponent

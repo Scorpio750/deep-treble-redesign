@@ -7,19 +7,19 @@
             <li class="dropdown">
                 About
                 <ul class="dropdown-content">
-                    <li>Members</li>
-                    <li>History</li>
+                    <li routerLink="/members">Members</li>
+                    <li routerLink="/history">History</li>
                 </ul>
             </li>
-            <li>Media</li>
-            <li>Merchandise</li>
-            <li>AARU</li>
+            <li routerLink="/media">Media</li>
+            <li routerLink="/merch">Merchandise</li>
+            <li routerLink="/aaru">AARU</li>
         </ul>
 
     </nav>
 </header>
 <main>
-    <home>Loading...</home>
+    <router-outlet></router-outlet>
 </main>
 <footer>
     <section id="footer-left">
