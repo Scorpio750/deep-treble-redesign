@@ -9,10 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const members_1 = require('../models/members');
+const membersSeed_1 = require('../models/membersSeed');
 let MembersService = class MembersService {
     getMembers() {
-        return Promise.resolve(members_1.MEMBERS);
+        return Promise.resolve(membersSeed_1.MEMBERS);
     }
 };
 MembersService = __decorate([

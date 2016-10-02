@@ -18,7 +18,7 @@ let MembersComponent = class MembersComponent {
         this.getMembers();
     }
     getMembers() {
-        this.membersService.getHeroes()
+        this.membersService.getMembers()
             .then((members) => this.members = members);
     }
     onSelect(member) {
@@ -29,10 +29,9 @@ MembersComponent = __decorate([
     core_1.Component({
         selector: '<members>',
         templateUrl: './members.component.html',
-        styleUrls: './members.component.scss'
+        styleUrls: ['./members.component.scss']
     }), 
-    __metadata('design:paramtypes', [(typeof (_a = typeof members_service_1.MembersService !== 'undefined' && members_service_1.MembersService) === 'function' && _a) || Object])
+    __metadata('design:paramtypes', [members_service_1.MembersService])
 ], MembersComponent);
 exports.MembersComponent = MembersComponent;
-var _a;
 //# sourceMappingURL=members.component.js.map

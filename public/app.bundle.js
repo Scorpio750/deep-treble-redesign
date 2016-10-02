@@ -35122,7 +35122,7 @@
 	const router_1 = __webpack_require__(32);
 	/* Components */
 	const home_component_1 = __webpack_require__(28);
-	// import { MembersComponent } from '../components/members/members.component'
+	const members_component_1 = __webpack_require__(62);
 	// import { HistoryComponent } from '../components/history/history.component'
 	// import {MediaComponent } from '../components/media/media.component'
 	// import { MerchComponent } from '../components/merch/merch.component'
@@ -35131,6 +35131,10 @@
 	    {
 	        path: '',
 	        component: home_component_1.HomeComponent
+	    },
+	    {
+	        path: '/members',
+	        component: members_component_1.MembersComponent
 	    }
 	];
 	exports.routing = router_1.RouterModule.forRoot(appRoutes);
@@ -41102,6 +41106,203 @@
 	}(Subject_1.Subject));
 	exports.BehaviorSubject = BehaviorSubject;
 	//# sourceMappingURL=BehaviorSubject.js.map
+
+/***/ },
+/* 62 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	const core_1 = __webpack_require__(4);
+	const members_service_1 = __webpack_require__(63);
+	let MembersComponent = class MembersComponent {
+	    constructor(membersService) {
+	        this.membersService = membersService;
+	    }
+	    // onInit lifecycle hook
+	    ngOnInit() {
+	        this.getMembers();
+	    }
+	    getMembers() {
+	        this.membersService.getMembers()
+	            .then((members) => this.members = members);
+	    }
+	    onSelect(member) {
+	        this.selectedMember = member;
+	    }
+	};
+	MembersComponent = __decorate([
+	    core_1.Component({
+	        selector: '<members>',
+	        template: __webpack_require__(65),
+	        styles: [__webpack_require__(66)]
+	    }), 
+	    __metadata('design:paramtypes', [members_service_1.MembersService])
+	], MembersComponent);
+	exports.MembersComponent = MembersComponent;
+
+
+/***/ },
+/* 63 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	const core_1 = __webpack_require__(4);
+	const membersSeed_1 = __webpack_require__(64);
+	let MembersService = class MembersService {
+	    getMembers() {
+	        return Promise.resolve(membersSeed_1.MEMBERS);
+	    }
+	};
+	MembersService = __decorate([
+	    core_1.Injectable(), 
+	    __metadata('design:paramtypes', [])
+	], MembersService);
+	exports.MembersService = MembersService;
+
+
+/***/ },
+/* 64 */
+/***/ function(module, exports) {
+
+	"use strict";
+	exports.MEMBERS = [
+	    {
+	        name: 'Ally Winter',
+	        year: 2020,
+	        voicePart: 'Soprano',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Kathryna Caparino',
+	        year: 2020,
+	        voicePart: 'Soprano',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Leah Rozario',
+	        year: 2019,
+	        voicePart: 'Soprano',
+	        position: 'Musical Director',
+	        headshotUrl: './headshots/LeahHeadShot.jpg'
+	    },
+	    {
+	        name: 'Bria Romano',
+	        year: 2018,
+	        voicePart: 'Alto',
+	        position: undefined,
+	        headshotUrl: './headshots/BriaHeadShot.jpg'
+	    },
+	    {
+	        name: 'Claire Towell',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: 'Webmaster',
+	        headshotUrl: './headshots/ClaireHeadShot.jpg'
+	    },
+	    {
+	        name: 'Erica Lazarow',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: 'Business Manager',
+	        headshotUrl: './headshots/EricaHeadShot.jpg'
+	    },
+	    {
+	        name: 'Grace Lee',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: 'Assistant Musical Director',
+	        headshotUrl: './headshots/GraceHeadShot.jpg'
+	    },
+	    {
+	        name: 'Jannae Johnson',
+	        year: 2019,
+	        voicePart: 'Alto',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Duncan Sy',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: 'Treasurer',
+	        headshotUrl: './headshots/DuncanHeadShot.jpg'
+	    },
+	    {
+	        name: 'Johnny Ferreira',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Kenny Bambridge',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: undefined,
+	        headshotUrl: './headshots/KennyHeadShot.jpg'
+	    },
+	    {
+	        name: 'Yoku Crentsil',
+	        year: 2018,
+	        voicePart: 'Tenor',
+	        position: 'Social Affairs Manager',
+	        headshotUrl: './headshots/YokuHeadShot.jpg'
+	    },
+	    {
+	        name: 'Joe Haverlock',
+	        year: 2019,
+	        voicePart: 'Bass',
+	        position: undefined,
+	        headshotUrl: undefined
+	    },
+	    {
+	        name: 'Marquis Reece',
+	        year: 2017,
+	        voicePart: 'Bass',
+	        position: 'Historian',
+	        headshotUrl: './headshots/MarquisHeadShot.jpg'
+	    },
+	    {
+	        name: 'Mason Satnick',
+	        year: 2020,
+	        voicePart: 'Bass',
+	        position: undefined,
+	        headshotUrl: undefined
+	    }
+	];
+
+
+/***/ },
+/* 65 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul>\n\t<li *ngFor=\"let member of members\"\n\t\t[id.selected]=\"member === selectedMember\"\n\t\t(click)=\"onSelect(member)\">\n\t\t<img src=\"{{member.headshotUrl}}\" alt=\"\" />\n\t\t<span>{{member.name}}</span>\n\t\t<span>{{member.class}}</span>\n\t\t<span *ngIf=\"{{member.position}}\">{{member.position}}</span>\n\t</li>\n</ul>\n"
+
+/***/ },
+/* 66 */
+/***/ function(module, exports) {
+
+	module.exports = ""
 
 /***/ }
 /******/ ]);
