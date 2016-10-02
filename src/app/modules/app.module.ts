@@ -6,10 +6,13 @@ import { NgModule } from '@angular/core'
 import { AppComponent } from '../components/app.component'
 import { HomeComponent } from '../components/home/home.component'
 import { MembersComponent } from '../components/members/members.component'
+import { HistoryComponent } from '../components/history/history.component'
+import { MediaComponent } from '../components/media/media.component'
+import { MerchComponent } from '../components/merch/merch.component'
+import { AARUComponent } from '../components/aaru/aaru.component'
 
 /* Routing */
 import { routing } from '../routing/app.routing'
-
 
 @NgModule({
 	imports: [
@@ -19,7 +22,11 @@ import { routing } from '../routing/app.routing'
 	declarations: [
 		AppComponent,
 		HomeComponent,
-		MembersComponent
+		MembersComponent,
+		HistoryComponent,
+		MediaComponent,
+		MerchComponent,
+		AARUComponent
 	],
 	bootstrap: [AppComponent]
 })

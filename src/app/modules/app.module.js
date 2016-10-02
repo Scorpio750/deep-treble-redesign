@@ -13,6 +13,10 @@ const core_1 = require('@angular/core');
 const app_component_1 = require('../components/app.component');
 const home_component_1 = require('../components/home/home.component');
 const members_component_1 = require('../components/members/members.component');
+const history_component_1 = require('../components/history/history.component');
+const media_component_1 = require('../components/media/media.component');
+const merch_component_1 = require('../components/merch/merch.component');
+const aaru_component_1 = require('../components/aaru/aaru.component');
 const app_routing_1 = require('../routing/app.routing');
 let AppModule = class AppModule {
 };
@@ -25,7 +29,11 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             home_component_1.HomeComponent,
-            members_component_1.MembersComponent
+            members_component_1.MembersComponent,
+            history_component_1.HistoryComponent,
+            media_component_1.MediaComponent,
+            merch_component_1.MerchComponent,
+            aaru_component_1.AARUComponent
         ],
         bootstrap: [app_component_1.AppComponent]
     }), 

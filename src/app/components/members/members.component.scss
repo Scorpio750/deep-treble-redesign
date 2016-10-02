@@ -3,9 +3,18 @@ ul {
 	display: flex;
 	// flex-flow: row wrap;
 	list-style: none;
+
 	li {
 		margin: 3em;
 		// border: 1.25em inset dimgrey;
+		opacity: 0.8;
+		transition: 0.1s all ease-in-out;
+
+		&:hover {
+			opacity: 1;
+			top: 10;
+			border: 1.25em inset dimgrey;
+		}
 	}
 }
 
@@ -15,10 +24,12 @@ img {
 
 .description {
 	width: 38vh;
+
 	#name {
-		padding-bottom: .2em;
-		border-bottom: .1em solid darkred;
+		padding-bottom: 0.2em;
+		border-bottom: 0.1em solid darkred;
 	}
+
 	h3 {
 		margin: 0;
 	}
