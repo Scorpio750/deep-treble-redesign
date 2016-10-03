@@ -4,22 +4,22 @@ import { AARU } from '../components/aaru/AARU'
 export const ORGS: AARU[] = [
     {
         name: 'Orphan Sporks',
-        site: 'www.orphansporks.com'
+        site: 'http://www.orphansporks.com'
     },
     {
         name: 'Casual Harmony',
-        site: 'eden.rutgers.edu/~charmony'
+        site: 'http://eden.rutgers.edu/~charmony'
     },
     {
         name: 'Shockwave',
-        site: 'shockwave.rutgers.edu'
+        site: 'http://shockwave.rutgers.edu'
     },
     {
         name: 'RAAG',
-        site: 'www.eden.rutgers.edu/~raag'
+        site: 'http://www.eden.rutgers.edu/~raag'
     },
     {
         name: 'Kol Halayla',
-        site: 'www.kolhalayla.com'
+        site: 'http://www.kolhalayla.com'
     }
 ]

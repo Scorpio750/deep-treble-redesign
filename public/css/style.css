@@ -28,13 +28,9 @@ h2 {
 h3 {
   font-size: 3vmin; }
 
-.flex-container {
-  display: -ms-flexbox;
-  display: flex; }
-
 a {
   text-decoration: none;
-  opacity: 0.9;
+  color: white;
   transition: 0.1s all ease-in-out; }
   a:hover {
     opacity: 1; }
@@ -49,6 +45,10 @@ ul {
   padding: 0;
   -ms-flex-pack: distribute;
   justify-content: space-around; }
+
+.flex-container {
+  display: -ms-flexbox;
+  display: flex; }
 
 .heading {
   padding-bottom: 0.2em;
@@ -108,6 +108,6 @@ app {
   flex-flow: column nowrap; }
 
 aaru {
-  -ms-flex-align: start;
-  -ms-grid-row-align: flex-start;
-  align-items: flex-start; }
+  min-height: 80%;
+  display: -ms-flexbox;
+  display: flex; }

@@ -1,5 +1,32 @@
-h3 {
-	opacity: 0.9;
+section {
+	flex: 1 0 50%;
+	text-align: left;
 }
 
-ul {}
+#description {
+	line-height: 2.5;
+}
+#list {
+	padding-left:10%;
+	display: flex;
+	align-items: center;
+
+	ul {
+		flex-flow: column wrap;
+		justify-content: center;
+		text-align: left;
+		list-style: upper-roman;
+		padding-left: 10%;
+
+		li {
+			font-size: 4.5vmin;
+			padding: .3em 0;
+			a {
+				opacity: .8;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

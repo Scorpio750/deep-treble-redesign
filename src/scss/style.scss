@@ -36,13 +36,9 @@ h3 {
 	font-size: 3vmin;
 }
 
-.flex-container {
-	display: flex;
-}
-
 a {
 	text-decoration: none;
-	opacity: 0.9;
+	color: white;
 	transition: 0.1s all ease-in-out;
 
 	&:hover {
@@ -58,6 +54,10 @@ ul {
 	padding: 0;
 	// flex-flow: row wrap;
 	justify-content: space-around;
+}
+
+.flex-container {
+	display: flex;
 }
 
 .heading {
@@ -123,5 +123,6 @@ app {
 }
 
 aaru {
-	align-items: flex-start;
+	min-height: 80%;
+	display: flex;
 }
