@@ -45,10 +45,25 @@ h3 {
 a {
 	text-decoration: none;
 	opacity: 0.9;
-	// transition: .1s all ease-in-out;
+	transition: 0.1s all ease-in-out;
+
 	&:hover {
 		opacity: 1;
 	}
+}
+
+ul {
+	flex: 1 0 auto;
+	list-style: none;
+	display: flex;
+	padding: none;
+	// flex-flow: row wrap;
+	justify-content: space-around;
+}
+
+.heading {
+	padding-bottom: 0.2em;
+	border-bottom: 0.1em solid darkred;
 }
 
 /* Ripple Styles */

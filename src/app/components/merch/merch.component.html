@@ -1,5 +1,8 @@
-<div class="flexbox">
-	<a href="http://www.cdbaby.com/cd/deeptreble1">
-		<img id="41-jones" src="/assets/img/merch/41 Jones (Leah).jpg" alt="" />
-	</a>
-</div>
+<ul>
+	<li	*ngFor="let merchItem of merch">
+		<div class="merchItem">
+			<h2 class="heading">{{merchItem.heading}}:</h2>
+			<a href="{{merchItem.productUrl}}"><img src="{{merchItem.imgUrl}}" alt="" /></a>
+		</div>
+	</li>
+</ul>

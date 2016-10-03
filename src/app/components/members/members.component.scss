@@ -1,16 +1,15 @@
 ul {
-	flex: 1 0 auto;
-	display: flex;
-	// flex-flow: row wrap;
-	list-style: none;
+	justify-content: space-around;
 	li {
-		margin: 3em;
 		// border: 1.25em inset dimgrey;
 		opacity: 0.8;
 		transition: 0.15s all ease-in-out;
 		&:hover {
 			opacity: 1;
 		}
+	}
+	li~li {
+		margin-left: 3em;	
 	}
 }
 
@@ -20,10 +19,6 @@ img {
 
 .description {
 	width: 38vh;
-	#name {
-		padding-bottom: .2em;
-		border-bottom: .1em solid darkred;
-	}
 	h3 {
 		margin: 0;
 	}

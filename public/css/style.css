@@ -38,9 +38,24 @@ h3 {
 
 a {
   text-decoration: none;
-  opacity: 0.9; }
+  opacity: 0.9;
+  transition: 0.1s all ease-in-out; }
   a:hover {
     opacity: 1; }
+
+ul {
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto;
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  padding: none;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.heading {
+  padding-bottom: 0.2em;
+  border-bottom: 0.1em solid darkred; }
 
 /* Ripple Styles */
 #ripple {

@@ -3,7 +3,7 @@ import { Member } from './Member'
 import { MembersService } from '../../services/members.service'
 
 @Component({
-    selector: '<members>',
+    selector: 'members',
     templateUrl: './members.component.html',
     styleUrls: ['./members.component.scss']
 })
@@ -14,7 +14,7 @@ export class MembersComponent implements OnInit {
 
     // onInit lifecycle hook
     ngOnInit(): void {
-        this.getMembers();
+        this.getMembers()
     }
     getMembers(): void {
         this.membersService.getMembers()

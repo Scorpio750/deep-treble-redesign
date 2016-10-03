@@ -9,27 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const merch_service_1 = require('../../services/merch.service');
-let MerchComponent = class MerchComponent {
-    constructor(merchService) {
-        this.merchService = merchService;
+const aaru_service_1 = require('../../services/aaru.service');
+let AARUComponent = class AARUComponent {
+    constructor(aaruService) {
+        this.aaruService = aaruService;
     }
     ngOnInit() {
-        this.getMerch();
+        this.getOrgs();
     }
-    getMerch() {
-        this.merchService.getMerch()
-            .then((merch) => this.merch = merch);
+    getOrgs() {
+        this.aaruService.getOrgs()
+            .then((aaru) => this.aaru = aaru);
     }
 };
-MerchComponent = __decorate([
+AARUComponent = __decorate([
     core_1.Component({
-        selector: 'merch',
-        templateUrl: './merch.component.html',
-        styleUrls: ['./merch.component.scss'],
-        providers: [merch_service_1.MerchService]
+        selector: 'aaru',
+        templateUrl: './aaru.component.html',
+        styleUrls: ['./aaru.component.scss'],
+        providers: [aaru_service_1.AARUService]
     }), 
-    __metadata('design:paramtypes', [merch_service_1.MerchService])
-], MerchComponent);
-exports.MerchComponent = MerchComponent;
-//# sourceMappingURL=merch.component.js.map
+    __metadata('design:paramtypes', [aaru_service_1.AARUService])
+], AARUComponent);
+exports.AARUComponent = AARUComponent;
+//# sourceMappingURL=aaru.component.js.map

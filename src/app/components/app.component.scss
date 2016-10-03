@@ -80,10 +80,12 @@ nav {
 		z-index: -1;
 		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 		// clearfix
-		&:before, &:after {
+		&:after,
+		&:before {
 			content: "";
 			display: table;
 		}
+
 		&:after {
 			clear: both;
 		}
@@ -97,6 +99,7 @@ nav {
 			border-bottom: none;
 			width: 120px;
 		}
+
 		&:after {
 			background-color: black;
 		}
@@ -113,6 +116,11 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 0 10vw;
+
+	aaru {
+		align-items: flex-start;
+	}
 }
 
 footer {
@@ -127,20 +135,20 @@ footer {
 	width: 100vw;
 	z-index: 99;
 
-
 	#footer-left {
 		flex: 1 0 50%;
 		display: flex;
+	}
 
-		#contact {
+	#contact {
+		display: flex;
+		justify-content: flex-start;
+
+		li {
 			display: flex;
-
-			li {
-				display: flex;
-				align-items: center;
-				font-size: 18px;
-				margin: 0 0.5em;
-			}
+			align-items: center;
+			font-size: 18px;
+			margin: 0 0.5em;
 		}
 	}
 

@@ -9,27 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const merch_service_1 = require('../../services/merch.service');
-let MerchComponent = class MerchComponent {
-    constructor(merchService) {
-        this.merchService = merchService;
-    }
-    ngOnInit() {
-        this.getMerch();
-    }
-    getMerch() {
-        this.merchService.getMerch()
-            .then((merch) => this.merch = merch);
+const aaruSeed_1 = require('../models/aaruSeed');
+let AARUService = class AARUService {
+    getOrgs() {
+        return Promise.resolve(aaruSeed_1.ORGS);
     }
 };
-MerchComponent = __decorate([
-    core_1.Component({
-        selector: 'merch',
-        templateUrl: './merch.component.html',
-        styleUrls: ['./merch.component.scss'],
-        providers: [merch_service_1.MerchService]
-    }), 
-    __metadata('design:paramtypes', [merch_service_1.MerchService])
-], MerchComponent);
-exports.MerchComponent = MerchComponent;
-//# sourceMappingURL=merch.component.js.map
+AARUService = __decorate([
+    core_1.Injectable(), 
+    __metadata('design:paramtypes', [])
+], AARUService);
+exports.AARUService = AARUService;
+//# sourceMappingURL=aaru.service.js.map

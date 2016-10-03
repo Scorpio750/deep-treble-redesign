@@ -1,1 +1,8 @@
-<h3>Nothing to see here yet. Stay tuned!</h3>
+<h3>
+	The Acapella Association of Rutgers University is a loose collective of A Capella organizations who engage in collaboration and friendly competition. Visit some of our friends below:
+</h3>
+<ul>
+	<li *ngFor="let org of aaru">
+		<a href="{{org.site}}">{{org.name}}</a>
+	</li>
+</ul>

@@ -28,7 +28,7 @@ const appRoutes = [
         component: merch_component_1.MerchComponent
     },
     {
-        path: 'AARU',
+        path: 'aaru',
         component: aaru_component_1.AARUComponent
     }
 ];
