@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const core_2 = require('@angular/core');
 let HomeComponent = class HomeComponent {
     constructor() {
         this.greeting = {
@@ -17,37 +16,12 @@ let HomeComponent = class HomeComponent {
             body: "Please excuse our appearance as we build our new website!"
         };
     }
-    get routeAnimation() {
-        return true;
-    }
 };
-__decorate([
-    core_1.HostBinding('@routeAnimation'), 
-    __metadata('design:type', Object)
-], HomeComponent.prototype, "routeAnimation", null);
 HomeComponent = __decorate([
     core_1.Component({
         selector: 'home',
         templateUrl: './home.component.html',
-        styleUrls: ['./home.component.scss'],
-        animations: [
-            core_2.trigger('routeAnimation', [
-                core_2.state('*', core_2.style({
-                    opacity: 1
-                })),
-                core_2.transition('void => *', [
-                    core_2.style({
-                        opacity: 0
-                    }),
-                    core_2.animate('1.5s ease-in-out')
-                ]),
-                core_2.transition('* => void', [
-                    core_2.animate('1.5s ease-out', core_2.style({
-                        opacity: 0
-                    }))
-                ])
-            ])
-        ]
+        styleUrls: ['./home.component.scss']
     }), 
     __metadata('design:paramtypes', [])
 ], HomeComponent);

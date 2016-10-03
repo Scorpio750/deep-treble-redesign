@@ -32,8 +32,6 @@ a {
   text-decoration: none;
   color: white;
   transition: 0.1s all ease-in-out; }
-  a:hover {
-    opacity: 1; }
 
 ul {
   -ms-flex: 1 0 auto;

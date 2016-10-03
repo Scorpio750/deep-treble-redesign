@@ -1,6 +1,12 @@
 ul {
 	text-align: left;
 }
+a {
+	opacity: 0.9;
+	&:hover {
+		opacity: 1;
+	}
+}
 img {
 	height: 50vh;
 	border: .75vw inset gainsboro;

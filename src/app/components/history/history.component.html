@@ -1,1 +1,10 @@
-<h2>Nothing to see here yet. Stay tuned!</h2>
+<ul id="timeline">
+	<li *ngFor="let event of timeline">
+		<p>
+			{{event.year}}
+		</p>
+		<p>
+			{{event.description}}
+		</p>
+	</li>
+</ul>
