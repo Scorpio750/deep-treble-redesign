@@ -28,13 +28,9 @@ h2 {
 h3 {
   font-size: 3vmin; }
 
-.flexbox {
+.flex-container {
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-align: center;
-  align-items: center; }
+  display: flex; }
 
 a {
   text-decoration: none;
@@ -49,7 +45,8 @@ ul {
   list-style: none;
   display: -ms-flexbox;
   display: flex;
-  padding: none;
+  margin: 0;
+  padding: 0;
   -ms-flex-pack: distribute;
   justify-content: space-around; }
 
@@ -109,3 +106,8 @@ app {
   display: flex;
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap; }
+
+aaru {
+  -ms-flex-align: start;
+  -ms-grid-row-align: flex-start;
+  align-items: flex-start; }

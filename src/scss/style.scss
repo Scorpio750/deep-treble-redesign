@@ -36,10 +36,8 @@ h3 {
 	font-size: 3vmin;
 }
 
-.flexbox {
+.flex-container {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 a {
@@ -56,7 +54,8 @@ ul {
 	flex: 1 0 auto;
 	list-style: none;
 	display: flex;
-	padding: none;
+	margin: 0;
+	padding: 0;
 	// flex-flow: row wrap;
 	justify-content: space-around;
 }
@@ -65,7 +64,6 @@ ul {
 	padding-bottom: 0.2em;
 	border-bottom: 0.1em solid darkred;
 }
-
 /* Ripple Styles */
 #ripple {
 	display: flex;
@@ -122,4 +120,8 @@ app {
 	flex: 1 0 100%;
 	display: flex;
 	flex-flow: column nowrap;
+}
+
+aaru {
+	align-items: flex-start;
 }
