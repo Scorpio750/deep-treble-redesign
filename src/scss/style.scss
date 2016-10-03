@@ -27,11 +27,28 @@ body {
 h1 {
 	font-size: 6vmin;
 }
+
 h2 {
 	font-size: 4.5vmin;
 }
+
 h3 {
 	font-size: 3vmin;
+}
+
+.flexbox {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+a {
+	text-decoration: none;
+	opacity: 0.9;
+	// transition: .1s all ease-in-out;
+	&:hover {
+		opacity: 1;
+	}
 }
 
 /* Ripple Styles */
@@ -40,22 +57,15 @@ h3 {
 	justify-content: center;
 	align-items: center;
 	position: absolute;
-	z-index: 1000;
+	z-index: 100;
 	width: 100vw;
 	height: 100vh;
+	display: none;
 
 	canvas {
 		position: absolute;
-		z-index: 1002;
+		z-index: 102;
 		opacity: 0;
-	}
-
-	#blank-space {
-		position: absolute;
-		width: 100vw;
-		height: 100vh;
-		z-index: 100;
-		background-color: $coffee-background;
 	}
 
 	#coffee-holder {
@@ -65,13 +75,32 @@ h3 {
 		height: 250px;
 		cursor: pointer;
 		background-color: grey;
-		z-index: 1003;
+		z-index: 103;
 		opacity: 0;
 	}
 
 	img {
 		display: none;
 	}
+}
+
+#black-space,
+#blank-space {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+}
+
+#blank-space {
+	background-color: $coffee-background;
+	z-index: 100;
+	display: none;
+}
+
+#black-space {
+	background-color: black;
+	z-index: 99;
+	display: none;
 }
 
 app {

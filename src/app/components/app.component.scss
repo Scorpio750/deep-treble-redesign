@@ -26,7 +26,7 @@ header {
 	justify-content: center;
 	position: fixed;
 	width: 99%;
-	z-index: 100;
+	z-index: 99;
 	opacity: 1;
 }
 
@@ -113,10 +113,6 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
-	app {
-		font-size: 24px;
-	}
 }
 
 footer {
@@ -129,6 +125,7 @@ footer {
 	bottom: 0;
 	box-sizing: border-box;
 	width: 100vw;
+	z-index: 99;
 
 
 	#footer-left {

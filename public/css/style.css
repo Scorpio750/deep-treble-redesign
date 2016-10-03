@@ -28,6 +28,20 @@ h2 {
 h3 {
   font-size: 3vmin; }
 
+.flexbox {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+a {
+  text-decoration: none;
+  opacity: 0.9; }
+  a:hover {
+    opacity: 1; }
+
 /* Ripple Styles */
 #ripple {
   display: -ms-flexbox;
@@ -37,19 +51,14 @@ h3 {
   -ms-flex-align: center;
   align-items: center;
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  display: none; }
   #ripple canvas {
     position: absolute;
-    z-index: 1002;
+    z-index: 102;
     opacity: 0; }
-  #ripple #blank-space {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: 100;
-    background-color: #f5f4f2; }
   #ripple #coffee-holder {
     position: inherit;
     border-radius: 100em;
@@ -57,10 +66,26 @@ h3 {
     height: 250px;
     cursor: pointer;
     background-color: grey;
-    z-index: 1003;
+    z-index: 103;
     opacity: 0; }
   #ripple img {
     display: none; }
+
+#black-space,
+#blank-space {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; }
+
+#blank-space {
+  background-color: #f5f4f2;
+  z-index: 100;
+  display: none; }
+
+#black-space {
+  background-color: black;
+  z-index: 99;
+  display: none; }
 
 app {
   -ms-flex: 1 0 100%;

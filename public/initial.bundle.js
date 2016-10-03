@@ -68,7 +68,6 @@
 	// GSAP animations
 	document.addEventListener('DOMContentLoaded', function () {
 	    var coffee = document.getElementById('coffee');
-	    var blankSpace = document.getElementById('blank-space');
 	    var myCanvas = document.getElementById('myCanvas');
 	    var coffeeHolder = document.getElementById('coffee-holder');
 	    var ctx = myCanvas.getContext('2d');
@@ -82,19 +81,28 @@
 	        });
 	    })();
 	
-	    coffeeHolder.addEventListener('click', function showMain() {
+	    coffeeHolder.addEventListener('click', function fadeToBlack() {
 	        coffee.style.display = 'none';
 	        coffeeHolder.style.display = 'none';
 	        this.style.display = 'none';
 	        // ripple animations
 	        var r = new _Ripple2.default(ctx, 0, -15, 720);
 	
-	        _gsap2.default.to(document.getElementById('ripple'), .6, {
+	        _gsap2.default.to(document.getElementById('ripple'), 4, {
 	            opacity: 0,
 	            display: 'none',
-	            ease: Power3.easeInOut
+	            ease: Power2.easeInOut,
+	            onComplete: showMain
 	        });
 	    });
+	
+	    function showMain() {
+	        _gsap2.default.to(document.getElementById('black-space'), 2, {
+	            opacity: 0,
+	            display: 'none',
+	            ease: Power2.easeInOut
+	        });
+	    }
 	});
 
 /***/ },

@@ -4,7 +4,6 @@ import Ripple from './Ripple.js'
 // GSAP animations
 document.addEventListener('DOMContentLoaded', () => {
     const coffee = document.getElementById('coffee');
-    const blankSpace = document.getElementById('blank-space');
     const myCanvas = document.getElementById('myCanvas');
     const coffeeHolder = document.getElementById('coffee-holder');
     const ctx = myCanvas.getContext('2d');
@@ -19,18 +18,27 @@ document.addEventListener('DOMContentLoaded', () => {
     })()
 
 
-    coffeeHolder.addEventListener('click', function showMain() {
+    coffeeHolder.addEventListener('click', function fadeToBlack() {
         coffee.style.display = 'none'
         coffeeHolder.style.display = 'none'
         this.style.display = 'none'
         // ripple animations
         let r = new Ripple(ctx, 0, -15, 720)
 
-        TweenMax.to(document.getElementById('ripple'), .6, {
+        TweenMax.to(document.getElementById('ripple'), 4, {
             opacity: 0,
             display: 'none',
-            ease: Power3.easeInOut
+            ease: Power2.easeInOut,
+            onComplete: showMain
         })
     })
+
+    function showMain() {
+        TweenMax.to(document.getElementById('black-space'), 2, {
+            opacity: 0,
+            display: 'none',
+            ease: Power2.easeInOut
+        })
+    }
 
 })

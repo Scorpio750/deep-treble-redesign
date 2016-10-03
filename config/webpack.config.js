@@ -52,7 +52,7 @@ module.exports = {
     frontendConfig: {
         debug: true,
         entry: {
-            initial: ['./src/app/initial/initial'],
+            // initial: ['./src/app/initial/initial'],
             vendor: ['./src/app/vendor'],
             app: ['./src/app/index']
         },
