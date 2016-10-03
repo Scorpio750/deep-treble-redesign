@@ -54,7 +54,8 @@ module.exports = {
         entry: {
             // initial: ['./src/app/initial/initial'],
             vendor: ['./src/app/vendor'],
-            app: ['./src/app/index']
+            app: ['./src/app/index'],
+            webAnimations: ['./bower_components/web-animations-js/web-animations.min.js']
         },
         resolve: {
             extensions: ['', '.ts', '.js']
