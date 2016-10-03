@@ -108,6 +108,5 @@ app {
   flex-flow: column nowrap; }
 
 aaru {
-  min-height: 80%;
   display: -ms-flexbox;
   display: flex; }

@@ -47,6 +47,10 @@ nav {
 			// &:hover {
 			// 	opacity: 1;
 			// }
+			&:after {
+				content:"";
+				background-color: black;
+			}
 		}
 	}
 
