@@ -67,8 +67,7 @@ ul {
   position: absolute;
   z-index: 100;
   width: 100vw;
-  height: 100vh;
-  display: none; }
+  height: 100vh; }
   #ripple canvas {
     position: absolute;
     z-index: 102;
@@ -93,13 +92,11 @@ ul {
 
 #blank-space {
   background-color: #f5f4f2;
-  z-index: 100;
-  display: none; }
+  z-index: 100; }
 
 #black-space {
   background-color: black;
-  z-index: 99;
-  display: none; }
+  z-index: 99; }
 
 app {
   -ms-flex: 1 0 100%;

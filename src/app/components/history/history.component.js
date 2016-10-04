@@ -21,6 +21,9 @@ let HistoryComponent = class HistoryComponent {
         this.historyService.getTimeline()
             .then((timeline) => this.timeline = timeline);
     }
+    onSelect(event) {
+        this.selectedEvent = event;
+    }
 };
 HistoryComponent = __decorate([
     core_1.Component({

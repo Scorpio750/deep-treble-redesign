@@ -73,7 +73,7 @@ ul {
 	z-index: 100;
 	width: 100vw;
 	height: 100vh;
-	display: none;
+	// display: none;
 
 	canvas {
 		position: absolute;
@@ -107,13 +107,13 @@ ul {
 #blank-space {
 	background-color: $coffee-background;
 	z-index: 100;
-	display: none;
+	// display: none;
 }
 
 #black-space {
 	background-color: black;
 	z-index: 99;
-	display: none;
+	// display: none;
 }
 
 app {

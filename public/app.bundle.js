@@ -35349,6 +35349,9 @@
 	        this.historyService.getTimeline()
 	            .then((timeline) => this.timeline = timeline);
 	    }
+	    onSelect(event) {
+	        this.selectedEvent = event;
+	    }
 	};
 	HistoryComponent = __decorate([
 	    core_1.Component({
@@ -35440,13 +35443,13 @@
 /* 39 */
 /***/ function(module, exports) {
 
-	module.exports = "<ul id=\"timeline\">\n\t<li *ngFor=\"let event of timeline\">\n\t\t<p>\n\t\t\t{{event.year}}\n\t\t</p>\n\t\t<p>\n\t\t\t{{event.description}}\n\t\t</p>\n\t</li>\n</ul>\n"
+	module.exports = "<ul id=\"timeline\">\n\t<li *ngFor=\"let event of timeline\"\n\t\t[class.selected]=\"event === selectedEvent\"\n\t\t(click)=\"onSelect(event)\">\n\t\t<p>\n\t\t\t{{event.year}}\n\t\t</p>\n\t\t<p>\n\t\t\t{{event.description}}\n\t\t</p>\n\t</li>\n</ul>\n"
 
 /***/ },
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "li {\n  transition: .1s all ease-in-out; }\n  li:hover {\n    font-size: 3.5vmin; }\n"
+	module.exports = "li {\n  cursor: pointer;\n  transition: 0.8s all ease-in-out; }\n\n.selected {\n  font-size: 1.5em;\n  margin: 2em; }\n"
 
 /***/ },
 /* 41 */
