@@ -53,10 +53,10 @@
 
 	"use strict";
 	const platform_browser_dynamic_1 = __webpack_require__(2);
-	const core_1 = __webpack_require__(4);
+	// import { enableProdMode } from '@angular/core'
 	const app_module_1 = __webpack_require__(24);
 	const platform = platform_browser_dynamic_1.platformBrowserDynamic();
-	core_1.enableProdMode();
+	// enableProdMode()
 	platform.bootstrapModule(app_module_1.AppModule);
 
 
