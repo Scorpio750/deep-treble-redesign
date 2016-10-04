@@ -1,0 +1,6 @@
+li {
+	transition: .1s all ease-in-out;
+	&:hover{
+		font-size: 3.5vmin;
+	}
+}
