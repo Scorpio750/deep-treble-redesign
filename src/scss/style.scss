@@ -2,6 +2,10 @@
 	font-family: "Avenir";
 	src: url("/assets/fonts/Avenir.ttc") format("truetype");
 }
+@font-face {
+	font-family: "Avenir-Light";
+	src: url("/assets/fonts/Avenir-Light.ttf") format("truetype");
+}
 $font-color: white;
 $coffee-background: #f5f4f2;
 
@@ -14,7 +18,7 @@ html {
 }
 
 body {
-	font-family: Avenir;
+	font-family: Avenir, Avenir-Light;
 	background-color: black;
 	color: $font-color;
 	display: flex;
