@@ -14,7 +14,7 @@ fs.readdirSync('node_modules')
     })
 
 /* Loaders */
-const angularLoader = {
+const frontendLoader = {
     preloaders: {
         test: /\.ts$/,
         loader: 'tslint'
@@ -23,6 +23,10 @@ const angularLoader = {
         test: /\.ts$/,
         exclude: /node_modules/,
         loaders: ['ts', 'angular2-template']
+    }, {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel'
     }, {
         test: /\.html$/,
         loader: 'raw'
@@ -45,12 +49,12 @@ const defaultLoader = {
 
 /* Configs */
 module.exports = {
-    angularConfig: {
+    frontendConfig: {
         debug: true,
         entry: {
+            // initial: ['./src/app/initial/initial'],
             vendor: ['./src/app/vendor'],
-            app: ['./src/app/index'],
-            // webAnimations: ['./bower_components/web-animations-js/web-animations.min.js']
+            app: ['./src/app/index']
         },
         resolve: {
             extensions: ['', '.ts', '.js']
@@ -65,22 +69,13 @@ module.exports = {
                 template: './src/templates/index.html'
             })
         ],
-        module: angularLoader
+        module: frontendLoader
     },
-    initialConfig: {
-        entry: {
-            initial: ['./src/app/initial/initial']
-        },
-        output: {
-            filename: '[name].bundle.js'
-        },
-        module: defaultLoader
-    }
     backendConfig: {
         entry: './server.js',
         target: 'node',
         output: {
-            filename: '[name].bundle.js'
+            filename: 'server.bundle.js'
         },
         node: {
             __dirname: true,

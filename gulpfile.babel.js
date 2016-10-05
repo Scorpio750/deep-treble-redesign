@@ -1,6 +1,7 @@
 import gulp from 'gulp'
 import autoprefixer from 'gulp-autoprefixer'
 import nodemon from 'gulp-nodemon'
+import debug from 'gulp-debug'
 import webpack from 'webpack-stream'
 import wpConfig from './config/webpack.config.js'
 import sass from 'gulp-sass'
