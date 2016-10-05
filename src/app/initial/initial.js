@@ -5,7 +5,7 @@ import Ripple from './Ripple.js'
 document.addEventListener('DOMContentLoaded', () => {
     const coffee = document.getElementById('coffee');
     const myCanvas = document.getElementById('myCanvas');
-    const coffeeHolder = document.getElementById('coffee-holder');
+    const coffeeHolder = document.getElementById('coffee-holder-placeholder');
     const ctx = myCanvas.getContext('2d');
     ctx.drawImage(coffee, 0, 0);
 

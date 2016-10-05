@@ -69,7 +69,7 @@
 	document.addEventListener('DOMContentLoaded', function () {
 	    var coffee = document.getElementById('coffee');
 	    var myCanvas = document.getElementById('myCanvas');
-	    var coffeeHolder = document.getElementById('coffee-holder');
+	    var coffeeHolder = document.getElementById('coffee-holder-placeholder');
 	    var ctx = myCanvas.getContext('2d');
 	    ctx.drawImage(coffee, 0, 0);
 	

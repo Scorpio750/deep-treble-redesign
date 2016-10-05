@@ -1,10 +1,12 @@
 ul {
 	justify-content: space-around;
 	flex-flow: row wrap;
+	margin-bottom: 5em;
 	li {
 		// border: 1.25em inset dimgrey;
 		opacity: 0.8;
 		transition: 0.15s all ease-in-out;
+
 		&:hover {
 			opacity: 1;
 		}
@@ -14,18 +16,21 @@ ul {
 
 img {
 	height: 17vw;
+	cursor: pointer;
 }
 
 .description {
 	width: 19vw;
+
 	h2 {
-		margin-bottom: .5em;
+		margin-bottom: 0.5em;
 	}
+
 	h3 {
-		margin: .1em 0;
+		margin: 0.1em 0;
 	}
 }
 
 .selected {
-	opacity: 1;
+	opacity: 1 !important;
 }
