@@ -14,7 +14,7 @@ html {
   min-height: 100vh; }
 
 body {
-  font-family: Avenir, Avenir-Light;
+  font-family: Avenir-Light, sans-serif;
   background-color: black;
   color: white;
   display: -ms-flexbox;
