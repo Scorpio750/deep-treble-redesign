@@ -35451,7 +35451,7 @@
 /* 40 */
 /***/ function(module, exports) {
 
-	module.exports = "li {\n  cursor: pointer;\n  transition: 0.8s all ease-in-out; }\n\n.selected {\n  font-size: 1.5em;\n  margin: 2em; }\n"
+	module.exports = "li {\n  cursor: default;\n  transition: 0.8s all ease-in-out; }\n"
 
 /***/ },
 /* 41 */
