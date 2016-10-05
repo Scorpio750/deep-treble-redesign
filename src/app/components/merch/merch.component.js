@@ -13,6 +13,7 @@ const merch_service_1 = require('../../services/merch.service');
 let MerchComponent = class MerchComponent {
     constructor(merchService) {
         this.merchService = merchService;
+        this.placeholder = 'http://placehold.it/400';
     }
     ngOnInit() {
         this.getMerch();

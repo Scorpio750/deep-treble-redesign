@@ -128,7 +128,13 @@ app {
 	flex-flow: column nowrap;
 }
 
-aaru {
+history, media, merch, aaru {
 	display: -ms-flexbox;
 	display: flex;
+	margin-bottom: 5em;
+}
+
+history {
+	flex-flow: column nowrap;
+	justify-content: center;
 }

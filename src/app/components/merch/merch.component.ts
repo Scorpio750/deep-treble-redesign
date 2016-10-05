@@ -10,6 +10,7 @@ import { MerchService } from '../../services/merch.service'
 })
 export class MerchComponent implements OnInit {
 	merch: Merch[]
+	placeholder = 'http://placehold.it/400'
 	constructor(private merchService: MerchService) {}
 
 	ngOnInit(): void {

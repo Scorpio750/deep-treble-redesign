@@ -2,7 +2,7 @@
 	<li	*ngFor="let merchItem of merch">
 		<div class="merchItem">
 			<h2 class="heading">{{merchItem.heading}}:</h2>
-			<a href="{{merchItem.productUrl}}"><img src="{{merchItem.imgUrl}}" alt="" /></a>
+			<a href="{{merchItem.productUrl}}"><img [src]="merchItem.imgUrl ||  placeholder" alt="" /></a>
 		</div>
 	</li>
 </ul>
