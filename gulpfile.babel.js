@@ -36,11 +36,12 @@ gulp.task('frontend-build', () => {
 })
 
 gulp.task('babelify', ['frontend-build'], () => {
-    return gulp.src(config.bundledPath + '*.bundle.js')
+    return gulp.src(config.bundledPath + 'app.bundle.js')
         .pipe(babel({
             presets: 'es2015'
         }))
         .pipe(gulp.dest(config.bundledPath))
+        .pipe(livereload())
 })
 
 gulp.task('backend-build', () => {
@@ -52,7 +53,7 @@ gulp.task('backend-build', () => {
 
 gulp.task('webpack', ['frontend-build', 'backend-build'])
 
-gulp.task('server', ['webpack', 'sass'], (cb) => {
+gulp.task('serve', (cb) => {
     let called = false
     livereload.listen()
     nodemon({
@@ -77,4 +78,4 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
 	gulp.watch('./config/*.js', ['webpack'])
 })
 gulp.task('build', ['babelify'])
-gulp.task('default', ['server'])
+gulp.task('default', ['build', 'serve'])
