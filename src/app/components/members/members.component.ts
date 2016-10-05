@@ -9,6 +9,7 @@ import { MembersService } from '../../services/members.service'
     styleUrls: ['./members.component.scss'],
 })
 export class MembersComponent implements OnInit {
+    selectedMember: Member
     members: Member[]
     constructor(private membersService: MembersService) { }
 
@@ -19,5 +20,8 @@ export class MembersComponent implements OnInit {
     getMembers(): void {
         this.membersService.getMembers()
             .then((members: Member[]) => this.members = members)
+    }
+    onSelect(selectedMember): void {
+        this.selectedMember = selectedMember
     }
 }

@@ -21,6 +21,9 @@ let MembersComponent = class MembersComponent {
         this.membersService.getMembers()
             .then((members) => this.members = members);
     }
+    onSelect(selectedMember) {
+        this.selectedMember = selectedMember;
+    }
 };
 MembersComponent = __decorate([
     core_1.Component({
