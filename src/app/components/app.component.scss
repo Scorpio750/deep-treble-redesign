@@ -76,17 +76,7 @@ nav {
 		margin-top: 0.4em;
 		position: absolute;
 		z-index: -1;
-		box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-		// clearfix
-		&:after,
-		&:before {
-			content: "";
-			display: table;
-		}
-
-		&:after {
-			clear: both;
-		}
+		min-height: 15vh;
 
 		li {
 			font-size: 18px;
