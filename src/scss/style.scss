@@ -6,8 +6,6 @@
 	font-family: "Avenir-Light";
 	src: url("/assets/fonts/Avenir-Light.ttf") format("truetype");
 }
-$font-color: white;
-$coffee-background: #f5f4f2;
 
 body,
 html {
@@ -20,12 +18,12 @@ html {
 body {
 	font-family: Avenir, Avenir-Light;
 	background-color: black;
-	color: $font-color;
+	color: white;
+	display: -ms-flexbox;
 	display: flex;
-	// flex-flow: column nowrap;
 	text-align: center;
+	-ms-flex-align: stretch;
 	align-items: stretch;
-	// overflow: hidden;
 }
 
 h1 {
@@ -47,16 +45,19 @@ a {
 }
 
 ul {
+	-ms-flex: 1 0 auto;
 	flex: 1 0 auto;
 	list-style: none;
+	display: -ms-flexbox;
 	display: flex;
 	margin: 0;
 	padding: 0;
-	// flex-flow: row wrap;
+	-ms-flex-pack: distribute;
 	justify-content: space-around;
 }
 
 .flex-container {
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -66,62 +67,68 @@ ul {
 }
 /* Ripple Styles */
 #ripple {
+	background-color: #f5f4f2;
+	position: absolute;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-ms-flex-align: center;
 	align-items: center;
-	position: absolute;
-	z-index: 100;
-	width: 100vw;
-	height: 100vh;
-	// display: none;
-
-	canvas {
-		position: absolute;
-		z-index: 102;
-		opacity: 0;
-	}
-
-	#coffee-holder {
-		position: inherit;
-		border-radius: 100em;
-		width: 250px;
-		height: 250px;
-		cursor: pointer;
-		background-color: grey;
-		z-index: 103;
-		opacity: 0;
-	}
-
-	img {
-		display: none;
-	}
-}
-
-#black-space,
-#blank-space {
-	position: absolute;
+	z-index: 101;
 	width: 100vw;
 	height: 100vh;
 }
 
-#blank-space {
-	background-color: $coffee-background;
-	z-index: 100;
-	// display: none;
+#ripple canvas {
+	z-index: 102;
+	opacity: 0;
+}
+
+#ripple img {
+	display: none;
+}
+
+#coffee-holder-placeholder {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+#coffee-holder {
+	border-radius: 100em;
+	width: 250px;
+	height: 250px;
+	cursor: pointer;
+	background-color: grey;
+	z-index: 103;
+	opacity: 0;
 }
 
 #black-space {
+	position: absolute;
 	background-color: black;
+	width: 100vw;
+	height: 100vh;
 	z-index: 99;
-	// display: none;
 }
 
 app {
+	-ms-flex: 1 0 100%;
 	flex: 1 0 100%;
+	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-flow: column nowrap;
 	flex-flow: column nowrap;
 }
 
 aaru {
+	display: -ms-flexbox;
 	display: flex;
 }

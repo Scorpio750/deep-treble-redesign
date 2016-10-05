@@ -6,6 +6,7 @@ import webpack from 'webpack-stream'
 import wpConfig from './config/webpack.config.js'
 import sass from 'gulp-sass'
 import livereload from 'gulp-livereload'
+import babel from 'gulp-babel'
 import fs from 'fs'
 
 const config = {
@@ -32,6 +33,14 @@ gulp.task('frontend-build', () => {
 		.pipe(webpack(wpConfig['frontendConfig']))
 		.pipe(gulp.dest(config.bundledPath))
 		.pipe(livereload())
+})
+
+gulp.task('babelify', ['frontend-build'], () => {
+    return gulp.src(config.bundledPath + '*.bundle.js')
+        .pipe(babel({
+            presets: 'es2015'
+        }))
+        .pipe(gulp.dest(config.bundledPath))
 })
 
 gulp.task('backend-build', () => {
@@ -67,4 +76,5 @@ gulp.task('server', ['webpack', 'sass'], (cb) => {
 	gulp.watch('./server.js', ['backend-build'])
 	gulp.watch('./config/*.js', ['webpack'])
 })
+gulp.task('build', ['babelify'])
 gulp.task('default', ['server'])

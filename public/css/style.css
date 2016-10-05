@@ -58,44 +58,50 @@ ul {
 
 /* Ripple Styles */
 #ripple {
+  background-color: #f5f4f2;
+  position: absolute;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
   justify-content: center;
   -ms-flex-align: center;
   align-items: center;
-  position: absolute;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh; }
-  #ripple canvas {
-    position: absolute;
-    z-index: 102;
-    opacity: 0; }
-  #ripple #coffee-holder {
-    position: inherit;
-    border-radius: 100em;
-    width: 250px;
-    height: 250px;
-    cursor: pointer;
-    background-color: grey;
-    z-index: 103;
-    opacity: 0; }
-  #ripple img {
-    display: none; }
-
-#black-space,
-#blank-space {
-  position: absolute;
+  z-index: 101;
   width: 100vw;
   height: 100vh; }
 
-#blank-space {
-  background-color: #f5f4f2;
-  z-index: 100; }
+#ripple canvas {
+  z-index: 102;
+  opacity: 0; }
+
+#ripple img {
+  display: none; }
+
+#coffee-holder-placeholder {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+#coffee-holder {
+  border-radius: 100em;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+  background-color: grey;
+  z-index: 103;
+  opacity: 0; }
 
 #black-space {
+  position: absolute;
   background-color: black;
+  width: 100vw;
+  height: 100vh;
   z-index: 99; }
 
 app {
