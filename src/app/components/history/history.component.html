@@ -2,11 +2,7 @@
 	<li *ngFor="let event of timeline"
 		[class.selected]="event === selectedEvent"
 		(click)="onSelect(event)">
-		<p>
-			{{event.year}}
-		</p>
-		<p>
-			{{event.description}}
-		</p>
+		<h3>{{event.year}}</h3>
+		<h4>{{event.description}}</h4>
 	</li>
 </ul>
