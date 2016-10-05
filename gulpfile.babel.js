@@ -51,7 +51,7 @@ gulp.task('backend-build', () => {
         .pipe(livereload())
 })
 
-gulp.task('webpack', ['frontend-build', 'backend-build'])
+gulp.task('build', ['babelify', 'backend-build'])
 
 gulp.task('serve', (cb) => {
     let called = false
@@ -73,9 +73,8 @@ gulp.task('serve', (cb) => {
         })
 
     gulp.watch(config.sassPath, ['sass'])
-    gulp.watch(config.frontendPath, ['frontend-build'])
+    gulp.watch(config.frontendPath, ['babelify'])
 	gulp.watch('./server.js', ['backend-build'])
 	gulp.watch('./config/*.js', ['webpack'])
 })
-gulp.task('build', ['babelify'])
 gulp.task('default', ['build', 'serve'])

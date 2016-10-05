@@ -1,5 +1,6 @@
 ul {
 	justify-content: space-around;
+	flex-flow: row wrap;
 	li {
 		// border: 1.25em inset dimgrey;
 		opacity: 0.8;
@@ -7,19 +8,20 @@ ul {
 		&:hover {
 			opacity: 1;
 		}
-	}
-	li~li {
-		margin-left: 3em;
+		margin: 2em;
 	}
 }
 
 img {
-	height: 33vh;
+	height: 17vw;
 }
 
 .description {
-	width: 38vh;
+	width: 19vw;
+	h2 {
+		margin-bottom: .5em;
+	}
 	h3 {
-		margin: 0;
+		margin: .1em 0;
 	}
 }
