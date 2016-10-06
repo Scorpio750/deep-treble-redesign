@@ -115,7 +115,7 @@ app {
 history, media, merch, aaru {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 5em; }
+  }
 
 history {
   -ms-flex-flow: column nowrap;
