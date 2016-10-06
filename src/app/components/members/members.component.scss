@@ -1,6 +1,7 @@
 ul {
 	justify-content: space-around;
 	flex-flow: row wrap;
+	margin-bottom: 5em;
 	li {
 		// border: 1.25em inset dimgrey;
 		opacity: 0.8;
@@ -33,6 +34,6 @@ img {
 .selected {
 	opacity: 1 !important;
 	transition: .3s all ease-in-out !important;
-	transform: scale(1.05);
+	transform: scale(1.1);
 
 }
