@@ -7,9 +7,18 @@ ul {
 	flex: none;
 }
 
+@media all and (orientation:portrait) {
+	ul {
+		flex-flow: column nowrap;
+	}
+	h3 {
+
+	}
+}
+
 .selected {
 	// font-size: 1.5em;
 	// position: absolute;
-	// background-color: rgba(0,0,0,.5);	
+	// background-color: rgba(0,0,0,.5);
 	// margin: 2em;
 }

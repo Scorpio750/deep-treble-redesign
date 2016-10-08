@@ -74,7 +74,6 @@ nav {
 		position: absolute;
 		z-index: -1;
 		// min-height: 15vh;
-
 		li {
 			font-size: 18px;
 			text-align: left;
@@ -92,26 +91,6 @@ nav {
 
 	.dropdown:hover .dropdown-content {
 		display: block;
-	}
-	@media all and (min-width:800px) {
-
-		#logo-space {
-			flex: 1 0 30%;
-		}
-
-		li {
-			font-size: 2.75vmin;
-		}
-	}
-	@media all and (max-width:799px) {
-
-		#logo-space {
-			flex: 1 0 10%;
-		}
-
-		li {
-			font-size: 4vmin;
-		}
 	}
 }
 
@@ -203,5 +182,23 @@ footer {
 				}
 			}
 		}
+	}
+}
+@media all and (min-width:800px) {
+	#logo-space {
+		flex: 1 0 30%;
+	}
+
+	li {
+		font-size: 2.75vmin;
+	}
+}
+@media all and (max-width:799px) {
+	#logo-space {
+		flex: 1 0 10%;
+	}
+
+	li {
+		font-size: 4vmin;
 	}
 }
