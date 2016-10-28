@@ -2,6 +2,7 @@ ul {
 	justify-content: space-around;
 	flex-flow: row wrap;
 	margin-bottom: 10vh;
+
 	li {
 		// border: 1.25em inset dimgrey;
 		opacity: 0.8;
@@ -30,10 +31,26 @@ img {
 		margin: 0.1em 0;
 	}
 }
+/* hide on mobile to reduce clutter */
+@media screen and (max-width: 799px) {
+	img {
+		height: 24vw;
+	}
+
+	.description {
+		width: 24vw;
+
+		h3 {
+			display: none;
+		}
+	}
+}
 
 .selected {
 	opacity: 1 !important;
-	transition: .3s all ease-in-out !important;
+	transition: 0.3s all ease-in-out !important;
 	transform: scale(1.1);
-
+	// .description > h3 {
+	// 	display: block;
+	// }
 }
