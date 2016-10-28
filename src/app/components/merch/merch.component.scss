@@ -1,14 +1,26 @@
 ul {
 	text-align: left;
 }
+
 a {
 	opacity: 0.9;
+
 	&:hover {
 		opacity: 1;
 	}
 }
+
 img {
-	height: 50vh;
-	border: .75vw inset gainsboro;
+	border: 0.75vw inset gainsboro;
 	margin-left: 4vw;
+}
+@media screen and (min-width: 1371px) {
+	img {
+		height: 50vh;
+	}
+}
+@media screen and (max-width: 1370px) {
+	img {
+		height: 40vh;
+	}
 }

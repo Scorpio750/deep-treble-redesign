@@ -36,8 +36,6 @@ nav {
 			position: absolute;
 			background-image: url("/assets/logos/DE:EP white.png");
 			background-size: cover;
-			width: 10vmin;
-			height: 10vmin;
 			margin: 1vh;
 			cursor: pointer;
 			z-index: 99;
@@ -75,13 +73,12 @@ nav {
 		z-index: -1;
 		// min-height: 15vh;
 		li {
-			font-size: 18px;
+			font-size: 0.9em;
 			text-align: left;
 			background-color: #111;
 			border-left: 0.4em solid #333;
 			// padding-left: 0.5em;
 			border-bottom: none;
-			width: 120px;
 		}
 
 		&:after {
@@ -184,21 +181,39 @@ footer {
 		}
 	}
 }
-@media all and (min-width:800px) {
+@media screen and (min-width:800px) {
 	#logo-space {
 		flex: 1 0 30%;
+	}
+
+	#DT-logo {
+		width: 10vmin;
+		height: 10vmin;
 	}
 
 	li {
 		font-size: 2.75vmin;
 	}
+
+	.dropdown-content li {
+		width: 6.67em;
+	}
 }
-@media all and (max-width:799px) {
+@media screen and (max-width:799px) {
 	#logo-space {
 		flex: 1 0 10%;
 	}
 
+	#DT-logo {
+		width: 12.5vmin;
+		height: 12.5vmin;
+	}
+
 	li {
 		font-size: 4vmin;
+	}
+
+	.dropdown-content li {
+		width: 6em;
 	}
 }
