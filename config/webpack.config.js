@@ -47,10 +47,18 @@ const defaultLoader = {
 
 /* Configs */
 module.exports = {
+    initialConfig: {
+        entry: {
+            initial: ['./src/initial/initial']
+        },
+        output: {
+            filename: '[name].bundle.js'
+        },
+        module: defaultLoader
+    },
     frontendConfig: {
         debug: true,
         entry: {
-            initial: ['./src/app/initial/initial'],
             vendor: ['./src/app/vendor'],
             app: ['./src/app/index']
         },

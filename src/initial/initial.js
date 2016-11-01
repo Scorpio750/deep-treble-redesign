@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // initial animations on pageload
     (function aCupofCoffee() {
-        TweenMax.to(myCanvas, 3, {
+        TweenMax.to(myCanvas, 4, {
             opacity: 1,
             ease: Power3.easeInOut
         })

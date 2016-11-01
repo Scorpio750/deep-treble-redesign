@@ -12,7 +12,8 @@ import fs from 'fs'
 const config = {
     sassPath: './src/scss/**/*.scss',
     cssPath: './public/css/',
-    frontendPath: './src/**/*.*',
+    frontendPath: './src/app/**/*.*',
+    initialPath: './src/initial/*.js',
     bundledPath: './public/',
     htmlPath: './public/views/'
 }
@@ -28,11 +29,18 @@ gulp.task('sass', () => {
         .pipe(livereload())
 })
 
-gulp.task('frontend-build', () => {
+gulp.task('frontend-build', ['initial-build'], () => {
 	return gulp.src(config.frontendPath)
 		.pipe(webpack(wpConfig['frontendConfig']))
 		.pipe(gulp.dest(config.bundledPath))
 		.pipe(livereload())
+})
+
+gulp.task('initial-build', () => {
+    return gulp.src(config.initialPath)
+        .pipe(webpack(wpConfig['initialConfig']))
+        .pipe(gulp.dest(config.bundledPath))
+        .pipe(livereload())
 })
 
 gulp.task('babelify', ['frontend-build'], () => {
@@ -73,6 +81,7 @@ gulp.task('serve', (cb) => {
         })
 
     gulp.watch(config.sassPath, ['sass'])
+    gulp.watch(config.initialPath, ['initial-build'])
     gulp.watch(config.frontendPath, ['babelify'])
 	gulp.watch('./server.js', ['backend-build'])
 	gulp.watch('./config/*.js', ['webpack'])
