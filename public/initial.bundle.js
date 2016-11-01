@@ -86,7 +86,7 @@
 	        coffeeHolder.style.display = 'none';
 	        this.style.display = 'none';
 	        // ripple animations
-	        var r = new _Ripple2.default(ctx, 0, -15, 720);
+	        var r = new _Ripple2.default(ctx, 0, -14, 720);
 	
 	        _gsap2.default.to(document.getElementById('ripple'), 4, {
 	            opacity: 0,

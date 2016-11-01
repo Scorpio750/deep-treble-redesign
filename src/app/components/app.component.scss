@@ -181,7 +181,7 @@ footer {
 		}
 	}
 }
-@media screen and (min-width:800px) {
+@media screen and (min-width:421px) {
 	#logo-space {
 		flex: 1 0 30%;
 	}
@@ -199,7 +199,7 @@ footer {
 		width: 6.67em;
 	}
 }
-@media screen and (max-width:799px) {
+@media screen and (max-width: 420px) {
 	#logo-space {
 		flex: 1 0 10%;
 	}

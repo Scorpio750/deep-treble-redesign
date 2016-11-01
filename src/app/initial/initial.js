@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         coffeeHolder.style.display = 'none'
         this.style.display = 'none'
         // ripple animations
-        let r = new Ripple(ctx, 0, -15, 720)
+        let r = new Ripple(ctx, 0, -14, 720)
 
         TweenMax.to(document.getElementById('ripple'), 4, {
             opacity: 0,
