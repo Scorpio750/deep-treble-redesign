@@ -29,7 +29,7 @@ gulp.task('sass', () => {
         .pipe(livereload())
 })
 
-gulp.task('frontend-build', ['initial-build'], () => {
+gulp.task('frontend-build', () => {
 	return gulp.src(config.frontendPath)
 		.pipe(webpack(wpConfig['frontendConfig']))
 		.pipe(gulp.dest(config.bundledPath))

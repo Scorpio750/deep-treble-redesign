@@ -1,5 +1,6 @@
 import fs from 'fs'
 import HtmlWebpack from 'html-webpack-plugin'
+import ScriptExtHtmlWebpack from 'script-ext-html-webpack-plugin'
 
 // lets parser recognize node module filetypes
 let nodeModules = {}
@@ -47,18 +48,19 @@ const defaultLoader = {
 
 /* Configs */
 module.exports = {
-    initialConfig: {
-        entry: {
-            initial: ['./src/initial/initial']
-        },
-        output: {
-            filename: '[name].bundle.js'
-        },
-        module: defaultLoader
-    },
+    // initialConfig: {
+    //     entry: {
+    //         initial: ['./src/initial/initial']
+    //     },
+    //     output: {
+    //         filename: '[name].bundle.js'
+    //     },
+    //     module: defaultLoader
+    // },
     frontendConfig: {
         debug: true,
         entry: {
+            initial: ['./src/initial/initial'],
             vendor: ['./src/app/vendor'],
             app: ['./src/app/index']
         },
@@ -73,6 +75,9 @@ module.exports = {
             new HtmlWebpack({
                 inject: 'body',
                 template: './src/templates/index.html'
+            }),
+            new ScriptExtHtmlWebpack({
+                defaultAttribute: 'async'
             })
         ],
         module: frontendLoader
