@@ -5,7 +5,6 @@ import debug from 'gulp-debug'
 import webpack from 'webpack-stream'
 import wpConfig from './config/webpack.config.js'
 import sass from 'gulp-sass'
-import livereload from 'gulp-livereload'
 import babel from 'gulp-babel'
 import fs from 'fs'
 
@@ -26,14 +25,12 @@ gulp.task('sass', () => {
       		cascade: false
     		}))
         .pipe(gulp.dest(config.cssPath))
-        .pipe(livereload())
 })
 
 gulp.task('frontend-build', () => {
 	return gulp.src(config.frontendPath)
 		.pipe(webpack(wpConfig['frontendConfig']))
 		.pipe(gulp.dest(config.bundledPath))
-		.pipe(livereload())
 })
 
 gulp.task('babelify', ['frontend-build'], () => {
@@ -42,35 +39,31 @@ gulp.task('babelify', ['frontend-build'], () => {
             presets: 'es2015'
         }))
         .pipe(gulp.dest(config.bundledPath))
-        .pipe(livereload())
 })
 
 gulp.task('backend-build', () => {
     return gulp.src('./')
         .pipe(webpack(wpConfig['backendConfig']))
         .pipe(gulp.dest('./'))
-        .pipe(livereload())
 })
 
 gulp.task('build', ['babelify', 'backend-build'])
 
 gulp.task('serve', (cb) => {
     let called = false
-    livereload.listen()
     nodemon({
             script: 'server.bundle.js',
             ext: 'js html'
         })
         .on('start', () => {
 			// prevents nodemon from starting multiple times
-            if (!called) {
-                cb()
-                called = true
-            }
+            // if (!called) {
+            //     cb()
+            //     called = true
+            // }
         })
         .on('restart', () => {
 			gulp.src('./server.bundle.js')
-				.pipe(livereload())
         })
 
     gulp.watch(config.sassPath, ['sass'])
