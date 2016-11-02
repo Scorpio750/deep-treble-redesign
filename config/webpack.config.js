@@ -48,15 +48,6 @@ const defaultLoader = {
 
 /* Configs */
 module.exports = {
-    // initialConfig: {
-    //     entry: {
-    //         initial: ['./src/initial/initial']
-    //     },
-    //     output: {
-    //         filename: '[name].bundle.js'
-    //     },
-    //     module: defaultLoader
-    // },
     frontendConfig: {
         debug: true,
         entry: {
@@ -77,7 +68,8 @@ module.exports = {
                 template: './src/templates/index.html'
             }),
             new ScriptExtHtmlWebpack({
-                defaultAttribute: 'async'
+                // sync: ['vendor'],
+                defaultAttribute: 'defer'
             })
         ],
         module: frontendLoader
