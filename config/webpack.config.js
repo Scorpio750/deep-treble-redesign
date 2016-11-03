@@ -68,7 +68,6 @@ module.exports = {
                 template: './src/templates/index.html'
             }),
             new ScriptExtHtmlWebpack({
-                async: ['vendor'],
                 defer: ['initial']
             })
         ],
