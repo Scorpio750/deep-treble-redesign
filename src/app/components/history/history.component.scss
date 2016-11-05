@@ -1,4 +1,7 @@
 ul {
+	h3 {
+		font-size: 20px;
+	}
 	li {
 		cursor: default;
 		transition: 0.8s all ease-in-out;
@@ -7,13 +10,12 @@ ul {
 	flex: none;
 }
 
-@media all and (orientation:portrait) {
+@media screen and (orientation:portrait), screen and (max-width: 768px) {
 	ul {
 		flex-flow: column nowrap;
+		margin: 70vh 0 10vh 0;
 	}
-	h3 {
 
-	}
 }
 
 .selected {

@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
+
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-/******/
+
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-/******/
+
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-/******/
+
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
+
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-/******/
+
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/
-/******/
+
+
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-/******/
+
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-/******/
+
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-/******/
+
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -78,7 +78,7 @@
 	    typeof define === 'function' && define.amd ? define(factory) :
 	    (factory());
 	}(this, (function () { 'use strict';
-	
+
 	var Zone$1 = (function (global) {
 	    if (global.Zone) {
 	        throw new Error('Zone already loaded.');
@@ -652,7 +652,7 @@
 	    Promise[Zone.__symbol__('uncaughtPromiseErrors')] = _uncaughtPromiseErrors;
 	    return global.Zone = Zone;
 	})(typeof window === 'object' && window || typeof self === 'object' && self || global);
-	
+
 	/**
 	 * Suppress closure compiler errors about unknown 'process' variable
 	 * @fileoverview
@@ -668,7 +668,7 @@
 	    }
 	    return args;
 	}
-	
+
 	function patchPrototype(prototype, fnNames) {
 	    var source = prototype.constructor['name'];
 	    var _loop_1 = function(i) {
@@ -686,7 +686,7 @@
 	        _loop_1(i);
 	    }
 	}
-	
+
 	var isWebWorker = (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope);
 	var isNode = (typeof process !== 'undefined' && {}.toString.call(process) === '[object process]');
 	var isBrowser = !isNode && !isWebWorker && !!(typeof window !== 'undefined' && window['HTMLElement']);
@@ -729,7 +729,7 @@
 	    };
 	    Object.defineProperty(obj, prop, desc);
 	}
-	
+
 	function patchOnProperties(obj, properties) {
 	    var onProperties = [];
 	    for (var prop in obj) {
@@ -746,7 +746,7 @@
 	        }
 	    }
 	}
-	
+
 	var EVENT_TASKS = zoneSymbol('eventTasks');
 	// For EventTarget
 	var ADD_EVENT_LISTENER = 'addEventListener';
@@ -862,7 +862,7 @@
 	        }
 	    };
 	}
-	
+
 	var zoneAwareAddEventListener = makeZoneAwareAddListener(ADD_EVENT_LISTENER, REMOVE_EVENT_LISTENER);
 	var zoneAwareRemoveEventListener = makeZoneAwareRemoveListener(REMOVE_EVENT_LISTENER);
 	function patchEventTargetMethods(obj) {
@@ -937,7 +937,7 @@
 	        }
 	    }
 	}
-	
+
 	function createNamedFn(name, delegate) {
 	    try {
 	        return (Function('f', "return function " + name + "(){return f(this, arguments)}"))(delegate);
@@ -966,7 +966,7 @@
 	    }
 	    return delegate;
 	}
-	
+
 	var WTF_ISSUE_555 = 'Anchor,Area,Audio,BR,Base,BaseFont,Body,Button,Canvas,Content,DList,Directory,Div,Embed,FieldSet,Font,Form,Frame,FrameSet,HR,Head,Heading,Html,IFrame,Image,Input,Keygen,LI,Label,Legend,Link,Map,Marquee,Media,Menu,Meta,Meter,Mod,OList,Object,OptGroup,Option,Output,Paragraph,Pre,Progress,Quote,Script,Select,Source,Span,Style,TableCaption,TableCell,TableCol,Table,TableRow,TableSection,TextArea,Title,Track,UList,Unknown,Video';
 	var NO_EVENT_TARGET = 'ApplicationCache,EventSource,FileReader,InputMethodContext,MediaController,MessagePort,Node,Performance,SVGElementInstance,SharedWorker,TextTrack,TextTrackCue,TextTrackList,WebKitNamedFlow,Window,Worker,WorkerGlobalScope,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload,IDBRequest,IDBOpenDBRequest,IDBDatabase,IDBTransaction,IDBCursor,DBIndex'.split(',');
 	var EVENT_TARGET = 'EventTarget';
@@ -990,7 +990,7 @@
 	        patchEventTargetMethods(type && type.prototype);
 	    }
 	}
-	
+
 	/*
 	 * This is necessary for Chrome and Chrome mobile, to enable
 	 * things like redefining `createdCallback` on an element.
@@ -1032,13 +1032,13 @@
 	        return desc;
 	    };
 	}
-	
+
 	function _redefineProperty(obj, prop, desc) {
 	    var originalConfigurableFlag = desc.configurable;
 	    desc = rewriteDescriptor(obj, prop, desc);
 	    return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
 	}
-	
+
 	function isUnconfigurable(obj, prop) {
 	    return obj && obj[unconfigurablesKey] && obj[unconfigurablesKey][prop];
 	}
@@ -1084,7 +1084,7 @@
 	        }
 	    }
 	}
-	
+
 	function registerElementPatch(_global) {
 	    if (!isBrowser || !('registerElement' in _global.document)) {
 	        return;
@@ -1118,7 +1118,7 @@
 	        return _registerElement.apply(document, [name, opts]);
 	    };
 	}
-	
+
 	// we have to patch the instance since the proto is non-configurable
 	function apply(_global) {
 	    var WS = _global.WebSocket;
@@ -1151,7 +1151,7 @@
 	        _global.WebSocket[prop] = WS[prop];
 	    }
 	}
-	
+
 	var eventNames = 'copy cut paste abort blur focus canplay canplaythrough change click contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop durationchange emptied ended input invalid keydown keypress keyup load loadeddata loadedmetadata loadstart message mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup pause play playing progress ratechange reset scroll seeked seeking select show stalled submit suspend timeupdate volumechange waiting mozfullscreenchange mozfullscreenerror mozpointerlockchange mozpointerlockerror error webglcontextrestored webglcontextlost webglcontextcreationerror'.split(' ');
 	function propertyDescriptorPatch(_global) {
 	    if (isNode) {
@@ -1204,7 +1204,7 @@
 	    Object.defineProperty(XMLHttpRequest.prototype, 'onreadystatechange', {});
 	    return result;
 	}
-	
+
 	var unboundKey = zoneSymbol('unbound');
 	// Whenever any eventListener fires, we check the eventListener target and all parents
 	// for `onwhatever` properties and replace them with zone-bound functions
@@ -1236,7 +1236,7 @@
 	    }
 	    
 	}
-	
+
 	function patchTimer(window, setName, cancelName, nameSuffix) {
 	    var setNative = null;
 	    var clearNative = null;
@@ -1291,7 +1291,7 @@
 	        }
 	    }; });
 	}
-	
+
 	var set = 'set';
 	var clear = 'clear';
 	var blockingMethods = ['alert', 'prompt', 'confirm'];
@@ -1391,9 +1391,9 @@
 	        'watchPosition'
 	    ]);
 	}
-	
+
 	})));
-	
+
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(91)))
 
 /***/ },
@@ -1403,15 +1403,15 @@
 
 	// shim for using process in browser
 	var process = module.exports = {};
-	
+
 	// cached from whatever global is present so that test runners that stub it
 	// don't break things.  But we need to wrap it in a try catch in case it is
 	// wrapped in strict mode code which doesn't define any globals.  It's inside a
 	// function because try/catches deoptimize in certain engines.
-	
+
 	var cachedSetTimeout;
 	var cachedClearTimeout;
-	
+
 	function defaultSetTimout() {
 	    throw new Error('setTimeout has not been defined');
 	}
@@ -1460,8 +1460,8 @@
 	            return cachedSetTimeout.call(this, fun, 0);
 	        }
 	    }
-	
-	
+
+
 	}
 	function runClearTimeout(marker) {
 	    if (cachedClearTimeout === clearTimeout) {
@@ -1486,15 +1486,15 @@
 	            return cachedClearTimeout.call(this, marker);
 	        }
 	    }
-	
-	
-	
+
+
+
 	}
 	var queue = [];
 	var draining = false;
 	var currentQueue;
 	var queueIndex = -1;
-	
+
 	function cleanUpNextTick() {
 	    if (!draining || !currentQueue) {
 	        return;
@@ -1509,14 +1509,14 @@
 	        drainQueue();
 	    }
 	}
-	
+
 	function drainQueue() {
 	    if (draining) {
 	        return;
 	    }
 	    var timeout = runTimeout(cleanUpNextTick);
 	    draining = true;
-	
+
 	    var len = queue.length;
 	    while(len) {
 	        currentQueue = queue;
@@ -1533,7 +1533,7 @@
 	    draining = false;
 	    runClearTimeout(timeout);
 	}
-	
+
 	process.nextTick = function (fun) {
 	    var args = new Array(arguments.length - 1);
 	    if (arguments.length > 1) {
@@ -1546,7 +1546,7 @@
 	        runTimeout(drainQueue);
 	    }
 	};
-	
+
 	// v8 likes predictible objects
 	function Item(fun, array) {
 	    this.fun = fun;
@@ -1561,9 +1561,9 @@
 	process.argv = [];
 	process.version = ''; // empty string to avoid regexp issues
 	process.versions = {};
-	
+
 	function noop() {}
-	
+
 	process.on = noop;
 	process.addListener = noop;
 	process.once = noop;
@@ -1571,11 +1571,11 @@
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
-	
+
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
 	};
-	
+
 	process.cwd = function () { return '/' };
 	process.chdir = function (dir) {
 	    throw new Error('process.chdir is not supported');
@@ -1593,12 +1593,12 @@
 	Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 	this file except in compliance with the License. You may obtain a copy of the
 	License at http://www.apache.org/licenses/LICENSE-2.0
-	
+
 	THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 	KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
 	WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
 	MERCHANTABLITY OR NON-INFRINGEMENT.
-	
+
 	See the Apache Version 2.0 License for specific language governing permissions
 	and limitations under the License.
 	***************************************************************************** */
@@ -2542,4 +2542,3 @@
 /***/ }
 
 /******/ });
-//# sourceMappingURL=vendor.bundle.js.map

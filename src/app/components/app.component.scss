@@ -29,7 +29,7 @@ nav {
 	justify-content: center;
 
 	#logo-space {
-		height: 3.5em;
+		height: 4em;
 		background-color: black;
 
 		#DT-logo {
@@ -60,7 +60,9 @@ nav {
 
 		li {
 			flex: 1 0 auto;
-			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			padding: 0.8em;
 			border-bottom: 0.1em solid crimson;
 		}
@@ -148,7 +150,6 @@ footer {
 		li {
 			display: flex;
 			align-items: center;
-			font-size: 18px;
 			margin: 0 0.5em;
 		}
 	}
@@ -186,11 +187,6 @@ footer {
 		flex: 1 0 30%;
 	}
 
-	#DT-logo {
-		width: 10vmin;
-		height: 10vmin;
-	}
-
 	li {
 		font-size: 2.75vmin;
 	}
@@ -200,12 +196,26 @@ footer {
 	}
 }
 @media screen and (max-width: 768px) and (min-width: 421px) {
+	#logo-space {
+		flex: 1 0 15%;
+	}
+
 	.dropdown-content > li {
 		width: 5em;
 	}
 
 	nav li {
-		font-size: 4vmin;
+		font-size: 3vmin;
+	}
+}
+@media screen and (min-width: 421px) {
+	#DT-logo {
+		width: 10vmin;
+		height: 10vmin;
+	}
+
+	footer li {
+		font-size: 20px;
 	}
 }
 @media screen and (max-width: 420px) {
@@ -224,5 +234,9 @@ footer {
 
 	.dropdown-content > li {
 		width: 6em;
+	}
+
+	footer li {
+		font-size: 18px;
 	}
 }
