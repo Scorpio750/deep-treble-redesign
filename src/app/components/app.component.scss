@@ -181,7 +181,7 @@ footer {
 		}
 	}
 }
-@media screen and (min-width:421px) {
+@media screen and (min-width:769px) {
 	#logo-space {
 		flex: 1 0 30%;
 	}
@@ -195,8 +195,17 @@ footer {
 		font-size: 2.75vmin;
 	}
 
-	.dropdown-content li {
+	.dropdown-content > li {
 		width: 6.67em;
+	}
+}
+@media screen and (max-width: 768px) and (min-width: 421px) {
+	.dropdown-content > li {
+		width: 5em;
+	}
+
+	nav li {
+		font-size: 4vmin;
 	}
 }
 @media screen and (max-width: 420px) {
@@ -209,13 +218,11 @@ footer {
 		height: 12.5vmin;
 	}
 
-	nav {
-		li {
-			font-size: 4vmin;
-		}
+	nav li {
+		font-size: 4vmin;
 	}
 
-	.dropdown-content li {
+	.dropdown-content > li {
 		width: 6em;
 	}
 }
