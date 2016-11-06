@@ -14,6 +14,7 @@ html {
   min-height: 100vh; }
 
 body {
+  /*Avenir,*/
   font-family: Avenir-Light, sans-serif;
   background-color: black;
   color: white;
@@ -70,9 +71,13 @@ ul {
   width: 100vw;
   height: 100vh; }
 
-#ripple canvas {
+#coffee-canvas {
   z-index: 102;
   opacity: 0; }
+
+@media screen and (max-width: 420px) {
+  #coffee-canvas {
+    width: 400px; } }
 
 #ripple img {
   display: none; }
@@ -112,10 +117,13 @@ app {
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap; }
 
-history, media, merch, aaru {
+aaru,
+history,
+media,
+merch {
   display: -ms-flexbox;
   display: flex;
-  }
+  margin-bottom: 5em; }
 
 history {
   -ms-flex-flow: column nowrap;

@@ -16,7 +16,8 @@ html {
 }
 
 body {
-	font-family: /*Avenir,*/ Avenir-Light, sans-serif;
+	/*Avenir,*/
+	font-family: Avenir-Light, sans-serif;
 	background-color: black;
 	color: white;
 	display: -ms-flexbox;
@@ -80,9 +81,14 @@ ul {
 	height: 100vh;
 }
 
-#ripple canvas {
+#coffee-canvas {
 	z-index: 102;
 	opacity: 0;
+}
+@media screen and (max-width: 420px) {
+	#coffee-canvas {
+		width: 400px;
+	}
 }
 
 #ripple img {
@@ -128,7 +134,10 @@ app {
 	flex-flow: column nowrap;
 }
 
-history, media, merch, aaru {
+aaru,
+history,
+media,
+merch {
 	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 5em;

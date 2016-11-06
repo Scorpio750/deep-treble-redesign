@@ -68,6 +68,7 @@ gulp.task('serve', (cb) => {
 
     gulp.watch(config.sassPath, ['sass'])
     gulp.watch(config.frontendPath, ['babelify'])
+    gulp.watch(config.initialPath, ['babelify'])
 	gulp.watch('./server.js', ['backend-build'])
 	gulp.watch('./config/*.js', ['build'])
     gulp.watch('*.js', ['serve'])

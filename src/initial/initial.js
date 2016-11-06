@@ -4,7 +4,7 @@ import Ripple from './Ripple.js'
 // GSAP animations
 document.addEventListener('DOMContentLoaded', () => {
     const coffee = document.getElementById('coffee');
-    const myCanvas = document.getElementById('myCanvas');
+    const myCanvas = document.getElementById('coffee-canvas');
     const coffeeHolder = document.getElementById('coffee-holder-placeholder');
     const ctx = myCanvas.getContext('2d');
     ctx.drawImage(coffee, 0, 0);
