@@ -29,25 +29,25 @@ nav {
 	justify-content: center;
 
 	#logo-space {
-		height: 4em;
 		background-color: black;
+		height: 7vh;
+	}
 
-		#DT-logo {
-			position: absolute;
-			background-image: url("/assets/logos/DE:EP white.png");
-			background-size: cover;
-			margin: 1vh;
-			cursor: pointer;
-			z-index: 99;
-			// opacity: 0.9;
-			// transition: all .1s ease-in-out;
-			// &:hover {
-			// 	opacity: 1;
-			// }
-			&:after {
-				content: "";
-				background-color: black;
-			}
+	#DT-logo {
+		position: absolute;
+		background-color: black;
+		left: 0;
+		margin: 1vh;
+		cursor: pointer;
+		z-index: 99;
+		// opacity: 0.9;
+		// transition: all .1s ease-in-out;
+		// &:hover {
+		// 	opacity: 1;
+		// }
+		&:after {
+			content: "";
+			background-color: black;
 		}
 	}
 
@@ -60,9 +60,7 @@ nav {
 
 		li {
 			flex: 1 0 auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			text-align: center;
 			padding: 0.8em;
 			border-bottom: 0.1em solid crimson;
 		}
@@ -101,26 +99,6 @@ main {
 	padding: 0 5vw;
 }
 
-.flex-2-center {
-	justify-content: center;
-	align-items: center;
-}
-
-.flex-start-center {
-	justify-content: flex-start;
-	align-items: center;
-}
-
-.flex-center-start {
-	justify-content: center;
-	align-items: flex-start;
-}
-
-.flex-2-start {
-	justify-content: flex-start;
-	align-items: flex-start;
-}
-
 footer {
 	border-top: 0.2em solid darkred;
 	display: flex;
@@ -131,7 +109,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	box-sizing: border-box;
-	width: 100vw;
+	width: 100%;
 	z-index: 99;
 
 	section {
@@ -235,8 +213,8 @@ footer {
 	.dropdown-content > li {
 		width: 6em;
 	}
-
-	footer li {
-		font-size: 18px;
-	}
+	// 
+	// footer li {
+	// 	font-size: 18px;
+	// }
 }

@@ -121,10 +121,17 @@ app {
 aaru,
 history,
 media,
+members,
+merch {
+  height: 100%; }
+
+aaru,
+history,
+media,
 merch {
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 5em; }
+  padding-bottom: 15vh; }
 
 history {
   -ms-flex-flow: column nowrap;
