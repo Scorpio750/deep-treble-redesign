@@ -69,6 +69,7 @@ ul {
 /* Ripple Styles */
 #ripple {
 	background-color: #f5f4f2;
+	overflow: hidden;
 	position: absolute;
 	display: -ms-flexbox;
 	display: flex;
@@ -87,7 +88,7 @@ ul {
 }
 @media screen and (max-width: 420px) {
 	#coffee-canvas {
-		width: 400px;
+		width: 600px;
 	}
 }
 
