@@ -22,6 +22,10 @@ export class MembersComponent implements OnInit {
             .then((members: Member[]) => this.members = members)
     }
     onSelect(selectedMember): void {
+        if (this.selectedMember === selectedMember) {
+            this.selectedMember = undefined
+            return
+        }
         this.selectedMember = selectedMember
     }
 }

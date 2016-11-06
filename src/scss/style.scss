@@ -136,11 +136,18 @@ app {
 }
 
 aaru,
-history,
 media,
 members,
 merch {
 	height: 100%;
+}
+
+history {
+	height: 210%;
+}
+
+members {
+	padding-bottom: 5vh;
 }
 
 aaru,

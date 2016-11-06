@@ -66,6 +66,16 @@ nav {
 		}
 	}
 
+	.dropdown {
+		&:hover .dropdown-content {
+			display: block;
+		}
+
+		&:active .dropdown-content {
+			display: block;
+		}
+	}
+
 	.dropdown-content {
 		display: none;
 		margin-top: 0.4em;
@@ -84,10 +94,6 @@ nav {
 		&:after {
 			background-color: black;
 		}
-	}
-
-	.dropdown:hover .dropdown-content {
-		display: block;
 	}
 }
 
@@ -213,7 +219,7 @@ footer {
 	.dropdown-content > li {
 		width: 6em;
 	}
-	// 
+	//
 	// footer li {
 	// 	font-size: 18px;
 	// }

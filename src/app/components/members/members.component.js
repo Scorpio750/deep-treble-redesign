@@ -22,6 +22,10 @@ let MembersComponent = class MembersComponent {
             .then((members) => this.members = members);
     }
     onSelect(selectedMember) {
+        if (this.selectedMember === selectedMember) {
+            this.selectedMember = undefined;
+            return;
+        }
         this.selectedMember = selectedMember;
     }
 };
