@@ -1,6 +1,7 @@
 section {
 	flex: 1 0 50%;
 	text-align: left;
+
 	h2 {
 		margin: 0;
 	}
@@ -10,7 +11,6 @@ section {
 	line-height: 2.5;
 	cursor: default;
 }
-
 @media screen and (max-width: 768px) {
 	#description > h2 {
 		font-size: 4vmin;
@@ -18,24 +18,26 @@ section {
 }
 
 #list {
-	padding-left:10%;
+	padding-left: 10%;
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 
 	ul {
 		flex-flow: column wrap;
 		justify-content: center;
 		text-align: left;
 		list-style: square;
-		overflow: hidden;
 		padding-left: 10%;
 
 		li {
 			font-size: 4.5vmin;
-			padding: .3em 0;
+			padding: 0.3em 0;
+
 			a {
-				opacity: .8;
-				&:hover{
+				opacity: 0.8;
+
+				&:hover {
 					opacity: 1;
 				}
 			}
