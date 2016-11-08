@@ -45,21 +45,21 @@
 /***/ 0:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(85);
+	module.exports = __webpack_require__(86);
 
 
 /***/ },
 
-/***/ 85:
+/***/ 86:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _gsap = __webpack_require__(86);
+	var _gsap = __webpack_require__(87);
 	
 	var _gsap2 = _interopRequireDefault(_gsap);
 	
-	var _Ripple = __webpack_require__(88);
+	var _Ripple = __webpack_require__(89);
 	
 	var _Ripple2 = _interopRequireDefault(_Ripple);
 	
@@ -107,7 +107,7 @@
 
 /***/ },
 
-/***/ 86:
+/***/ 87:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -6099,7 +6099,7 @@
 							if (global) {
 								_globals[n] = _exports[n] = cl; //provides a way to avoid global namespace pollution. By default, the main classes like TweenLite, Power1, Strong, etc. are added to window unless a GreenSockGlobals is defined. So if you want to have things added to a custom object instead, just do something like window.GreenSockGlobals = {} before loading any GreenSock files. You can even set up an alias like window.GreenSockGlobals = windows.gs = {} so that you can access everything like gs.TweenLite. Also remember that ALL classes are added to the window.com.greensock object (in their respective packages, like com.greensock.easing.Power1, com.greensock.TweenLite, etc.)
 								hasModule = (typeof(module) !== "undefined" && module.exports);
-								if (!hasModule && "function" === "function" && __webpack_require__(87)){ //AMD
+								if (!hasModule && "function" === "function" && __webpack_require__(88)){ //AMD
 									!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() { return cl; }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 								} else if (hasModule){ //node
 									if (ns === moduleName) {
@@ -7914,7 +7914,7 @@
 
 /***/ },
 
-/***/ 87:
+/***/ 88:
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
@@ -7923,12 +7923,12 @@
 
 /***/ },
 
-/***/ 88:
+/***/ 89:
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _gsap = __webpack_require__(86);
+	var _gsap = __webpack_require__(87);
 	
 	var _gsap2 = _interopRequireDefault(_gsap);
 	

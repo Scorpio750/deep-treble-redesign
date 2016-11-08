@@ -14,8 +14,14 @@ let AppComponent = class AppComponent {
     constructor() {
         this.dropdownFlag = false;
     }
-    toggleDropdown() {
-        this.dropdownFlag = !this.dropdownFlag;
+    toggleDropdown(e) {
+        let display = e.target.children[0].style['display'];
+        if (display === 'block') {
+            this.dropdownFlag = false;
+        }
+        else if (display === 'none') {
+            this.dropdownFlag = true;
+        }
     }
     isTriggered() {
         return this.dropdownFlag === true;

@@ -4,9 +4,9 @@
             <img id="DT-logo" src="/assets/logos/DE:EP white.png" routerLink="/">
         </div>
         <ul #menu>
-            <li class="dropdown"  (click)="toggleDropdown()">
+            <li dropdown class="dropdown"  (click)="toggleDropdown($event)" [style.opacity]="isTriggered() ? 1 : 0.7">
                 About
-                <ul class="dropdown-content" [style.display]="isTriggered() ? 'block' : 'none'">
+                <ul dropdown-content class="dropdown-content" [style.display]="isTriggered() ? 'block' : 'none'">
                     <li routerLink="/members">Members</li>
                     <li routerLink="/history">History</li>
                 </ul>

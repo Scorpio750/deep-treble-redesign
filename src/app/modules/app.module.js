@@ -11,6 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const platform_browser_1 = require('@angular/platform-browser');
 const core_1 = require('@angular/core');
 const app_component_1 = require('../components/app.component');
+const dropdown_directive_1 = require('../components/dropdown.directive');
+const dropdown_directive_2 = require('../components/dropdown.directive');
 const home_component_1 = require('../components/home/home.component');
 const members_component_1 = require('../components/members/members.component');
 const history_component_1 = require('../components/history/history.component');
@@ -28,6 +30,8 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
+            dropdown_directive_1.DropdownDirective,
+            dropdown_directive_2.DropdownContentDirective,
             home_component_1.HomeComponent,
             members_component_1.MembersComponent,
             history_component_1.HistoryComponent,

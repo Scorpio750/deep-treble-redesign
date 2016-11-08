@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core'
 
 /* Components */
 import { AppComponent } from '../components/app.component'
+import { DropdownDirective } from '../components/dropdown.directive'
+import { DropdownContentDirective } from '../components/dropdown.directive'
 import { HomeComponent } from '../components/home/home.component'
 import { MembersComponent } from '../components/members/members.component'
 import { HistoryComponent } from '../components/history/history.component'
@@ -21,6 +23,8 @@ import { routing } from '../routing/app.routing'
 	],
 	declarations: [
 		AppComponent,
+		DropdownDirective,
+		DropdownContentDirective,
 		HomeComponent,
 		MembersComponent,
 		HistoryComponent,
