@@ -7,6 +7,7 @@ import { MembersService } from '../../services/members.service'
     selector: 'members',
     templateUrl: './members.component.html',
     styleUrls: ['./members.component.scss'],
+    providers: [MembersService]
 })
 export class MembersComponent implements OnInit {
     selectedMember: Member

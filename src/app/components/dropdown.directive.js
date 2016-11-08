@@ -14,18 +14,30 @@ let DropdownDirective = class DropdownDirective {
         this.el = el;
         this.renderer = renderer;
     }
-    onClick() {
-        this.toggleDropdown();
+    onMouseEnter() {
+        this.setOpacity(1);
+        console.log('inside dropdown');
     }
-    toggleDropdown() {
+    onMouseLeave() {
+        this.setOpacity(0.7);
+        console.log('exiting dropdown');
+    }
+    setOpacity(degree) {
+        this.renderer.setElementStyle(this.el.nativeElement, 'opacity', degree);
     }
 };
 __decorate([
-    core_1.HostListener(''), 
+    core_1.HostListener('mouseenter'), 
     __metadata('design:type', Function), 
     __metadata('design:paramtypes', []), 
     __metadata('design:returntype', void 0)
-], DropdownDirective.prototype, "onClick", null);
+], DropdownDirective.prototype, "onMouseEnter", null);
+__decorate([
+    core_1.HostListener('mouseleave'), 
+    __metadata('design:type', Function), 
+    __metadata('design:paramtypes', []), 
+    __metadata('design:returntype', void 0)
+], DropdownDirective.prototype, "onMouseLeave", null);
 DropdownDirective = __decorate([
     core_1.Directive({ selector: 'dropdown' }), 
     __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])

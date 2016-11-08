@@ -34,6 +34,7 @@ MembersComponent = __decorate([
         selector: 'members',
         templateUrl: './members.component.html',
         styleUrls: ['./members.component.scss'],
+        providers: [members_service_1.MembersService]
     }), 
     __metadata('design:paramtypes', [members_service_1.MembersService])
 ], MembersComponent);

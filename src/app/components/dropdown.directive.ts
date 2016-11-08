@@ -4,11 +4,16 @@ import { Directive, ElementRef, HostListener, Input, Renderer } from '@angular/c
 export class DropdownDirective {
 
     constructor(private el: ElementRef, private renderer: Renderer) { }
-    @HostListener('') onClick() {
-        this.toggleDropdown();
+    @HostListener('mouseenter') onMouseEnter() {
+        this.setOpacity(1);
+		console.log('inside dropdown')
     }
-	private toggleDropdown(): void {
-
+    @HostListener('mouseleave') onMouseLeave() {
+        this.setOpacity(0.7);
+		console.log('exiting dropdown')
+	}
+	private setOpacity(degree): void {
+		this.renderer.setElementStyle(this.el.nativeElement, 'opacity', degree)
 	}
 }
 

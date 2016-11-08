@@ -1,11 +1,9 @@
 import { Component } from '@angular/core'
-import { MembersService } from '../services/members.service'
 
 @Component({
     selector: 'app',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    providers: [MembersService]
 })
 export class AppComponent {
     public dropdownFlag: boolean = false
@@ -14,7 +12,7 @@ export class AppComponent {
         if (display === 'block') {
             this.dropdownFlag = false
         }
-		else if (display === 'none'){
+		else {
 			this.dropdownFlag = true
 		}
     }

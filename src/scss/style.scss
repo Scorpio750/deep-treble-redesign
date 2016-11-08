@@ -145,14 +145,15 @@ merch {
 	history {
 		height: 210%;
 	}
+	aaru {
+		padding-bottom: 40vh;
+	}
 }
 
 members {
 	padding-bottom: 5vh;
 }
 
-aaru,
-history,
 media,
 merch {
 	display: flex;

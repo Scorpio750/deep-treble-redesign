@@ -3,8 +3,8 @@
         <div id="logo-space">
             <img id="DT-logo" src="/assets/logos/DE:EP white.png" routerLink="/">
         </div>
-        <ul #menu>
-            <li dropdown class="dropdown"  (click)="toggleDropdown($event)" [style.opacity]="isTriggered() ? 1 : 0.7">
+        <ul id="menu">
+            <li dropdown class="dropdown"  (click)="toggleDropdown($event)">
                 About
                 <ul dropdown-content class="dropdown-content" [style.display]="isTriggered() ? 'block' : 'none'">
                     <li routerLink="/members">Members</li>

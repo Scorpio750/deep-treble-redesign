@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const members_service_1 = require('../services/members.service');
 let AppComponent = class AppComponent {
     constructor() {
         this.dropdownFlag = false;
@@ -19,7 +18,7 @@ let AppComponent = class AppComponent {
         if (display === 'block') {
             this.dropdownFlag = false;
         }
-        else if (display === 'none') {
+        else {
             this.dropdownFlag = true;
         }
     }
@@ -32,7 +31,6 @@ AppComponent = __decorate([
         selector: 'app',
         templateUrl: './app.component.html',
         styleUrls: ['./app.component.scss'],
-        providers: [members_service_1.MembersService]
     }), 
     __metadata('design:paramtypes', [])
 ], AppComponent);

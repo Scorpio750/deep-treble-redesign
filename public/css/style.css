@@ -126,13 +126,13 @@ merch {
 
 @media screen and (max-width: 768px) {
   history {
-    height: 210%; } }
+    height: 210%; }
+  aaru {
+    padding-bottom: 40vh; } }
 
 members {
   padding-bottom: 5vh; }
 
-aaru,
-history,
 media,
 merch {
   display: -ms-flexbox;
