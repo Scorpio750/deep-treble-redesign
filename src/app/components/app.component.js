@@ -11,6 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 const core_1 = require('@angular/core');
 const members_service_1 = require('../services/members.service');
 let AppComponent = class AppComponent {
+    constructor() {
+        this.dropdownFlag = false;
+    }
+    toggleDropdown() {
+        this.dropdownFlag = !this.dropdownFlag;
+    }
+    isTriggered() {
+        return this.dropdownFlag === true;
+    }
 };
 AppComponent = __decorate([
     core_1.Component({

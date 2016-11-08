@@ -124,8 +124,9 @@ members,
 merch {
   height: 100%; }
 
-history {
-  height: 210%; }
+@media screen and (max-width: 768px) {
+  history {
+    height: 210%; } }
 
 members {
   padding-bottom: 5vh; }

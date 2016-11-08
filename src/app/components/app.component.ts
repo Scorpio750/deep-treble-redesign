@@ -8,5 +8,11 @@ import { MembersService } from '../services/members.service'
 	providers: [MembersService]
 })
 export class AppComponent {
-
+	dropdownFlag: boolean = false
+	toggleDropdown(): void {
+		this.dropdownFlag = !this.dropdownFlag
+	}
+	isTriggered(): boolean {
+		return this.dropdownFlag === true
+	}
 }
