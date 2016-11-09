@@ -127,12 +127,16 @@ ul {
 }
 
 app {
-	-ms-flex: 1 0 100%;
 	flex: 1 0 100%;
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-flow: column nowrap;
 	flex-flow: column nowrap;
+}
+
+aaru,
+history,
+media,
+merch {
+	display: flex;
 }
 
 aaru,
@@ -145,6 +149,7 @@ merch {
 	history {
 		height: 210%;
 	}
+
 	aaru {
 		padding-bottom: 40vh;
 	}
@@ -154,13 +159,11 @@ members {
 	padding-bottom: 5vh;
 }
 
-media,
-merch {
-	display: flex;
-	padding-bottom: 15vh;
-}
-
 history {
 	flex-flow: column nowrap;
 	justify-content: center;
+}
+
+aaru {
+	padding-bottom: 15vh;
 }

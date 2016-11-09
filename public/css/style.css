@@ -119,6 +119,13 @@ app {
   flex-flow: column nowrap; }
 
 aaru,
+history,
+media,
+merch {
+  display: -ms-flexbox;
+  display: flex; }
+
+aaru,
 media,
 members,
 merch {
@@ -133,14 +140,11 @@ merch {
 members {
   padding-bottom: 5vh; }
 
-media,
-merch {
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 15vh; }
-
 history {
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
   -ms-flex-pack: center;
   justify-content: center; }
+
+aaru {
+  padding-bottom: 15vh; }
