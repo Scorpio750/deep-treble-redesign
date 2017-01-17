@@ -1,2 +1,7 @@
 <h1>{{greeting.header}}</h1>
-<h3>{{greeting.body}}</h3>
+<h2>{{greeting.body}}</h2>
+
+<ul>
+	<li *ngFor="let post of posts"
+		[class.selected]="post === selectedPost"></li>
+</ul>
