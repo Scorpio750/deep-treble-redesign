@@ -4,11 +4,10 @@ import { Component } from '@angular/core'
     selector: 'home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
-
 })
 export class HomeComponent {
     greeting = {
-        header: "Welcome to Deep Treble's Webpage",
-        body: "Please excuse our appearance as we build our new website!"
+        header: "Welcome to Deep Treble's New Webpage",
+        body: "We're excited to have you here!"
     }
 }

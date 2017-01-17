@@ -1,6 +1,7 @@
 /* Modules */
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
+import { PathLocationStrategy, LocationStrategy } from '@angular/common'
 
 /* Components */
 import { AppComponent } from '../components/app.component'
@@ -32,7 +33,7 @@ import { routing } from '../routing/app.routing'
 		MerchComponent,
 		AARUComponent
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
 })
 
 export class AppModule {}

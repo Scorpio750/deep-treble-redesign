@@ -2,7 +2,7 @@
 	<li	*ngFor="let merchItem of merch">
 		<div class="merchItem">
 			<h2 class="heading">{{merchItem.heading}}:</h2>
-			<a href="{{merchItem.productUrl}}"><img [src]="merchItem.imgUrl ||  placeholder" alt="41 Jones: the Basement Sessions" /></a>
+			<a href="{{merchItem.productUrl}}"><img [src]="merchItem.imgUrl ||  placeholder" alt="41 Jones: the Basement Sessions" onerror="this.src='http://placehold.it/400'"/></a>
 		</div>
 	</li>
 </ul>
