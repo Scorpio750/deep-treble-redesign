@@ -73,13 +73,6 @@ export const MEMBERS: Member[] = [
         headshotUrl: './assets/img/headshots/placeholder-min.jpg'
     },
     {
-        name: 'Kenny Bambridge',
-        year: 2018,
-        voicePart: 'Tenor',
-        position: undefined,
-        headshotUrl: './assets/img/headshots/KennyHeadShot-min.jpg'
-    },
-    {
         name: 'Yoku Crentsil',
         year: 2018,
         voicePart: 'Tenor',
