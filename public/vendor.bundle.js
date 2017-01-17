@@ -40,30 +40,31 @@
 /******/ 	return __webpack_require__(0);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(92);
+	module.exports = __webpack_require__(5);
 
 
 /***/ },
-
-/***/ 92:
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	__webpack_require__(93);
-	__webpack_require__(95);
+	__webpack_require__(6);
+	__webpack_require__(8);
 	// import 'es6-shim'
 	// import 'rxjs'
 	// import '@angular/platform-browser'
 
 
 /***/ },
-
-/***/ 93:
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -1394,11 +1395,10 @@
 	
 	})));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(94)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(7)))
 
 /***/ },
-
-/***/ 94:
+/* 7 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -1584,8 +1584,7 @@
 
 
 /***/ },
-
-/***/ 95:
+/* 8 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! *****************************************************************************
@@ -2540,6 +2539,5 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }
-
-/******/ });
+/******/ ]);
 //# sourceMappingURL=vendor.bundle.js.map
