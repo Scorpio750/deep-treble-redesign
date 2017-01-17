@@ -1,6 +1,6 @@
 <ul>
 	<li *ngFor="let medium of media">
 		<h3>{{medium.name}}</h3>
-		<iframe src="{{medium.link}}" frameborder="0"></iframe>
+		<iframe [src]="medium.link" frameborder="0"></iframe>
 	</li>
 </ul>
