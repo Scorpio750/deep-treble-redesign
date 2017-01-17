@@ -1,0 +1,14 @@
+h1 {
+	transform: translate(-13%, 40%) rotate(-5deg);
+	left: 5vw;
+}
+a {
+	opacity: 0.9;
+	&:hover {
+		opacity: 1;
+	}
+}
+#auditions {
+	width: 60%;
+	margin: 3% 5% 10%;
+}
