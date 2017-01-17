@@ -18,8 +18,7 @@ import { routing } from '../routing/app.routing'
 @NgModule({
 	imports: [
 		BrowserModule,
-		routing,
-		RouterModule.forRoot(routes, { useHash: true })
+		routing
 	],
 	declarations: [
 		AppComponent,
