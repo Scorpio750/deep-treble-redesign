@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Media } from './Media'
 import { MediaService } from '../../services/media.service'
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
 	selector: 'media',
@@ -18,5 +19,5 @@ export class MediaComponent {
 		this.mediaService.getMedia()
 			.then((media: Media[]) => this.media = media)
 	}
-
-}
+	baseUrl:string = '//www.youtube.com/embed/';
+	constructor(private sanitizer: Domsanitizer);
