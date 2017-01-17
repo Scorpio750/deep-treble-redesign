@@ -52,7 +52,8 @@ module.exports = {
         debug: true,
         entry: {
             initial: ['./src/initial/initial'],
-            vendor: ['./src/app/vendor']
+            vendor: ['./src/app/vendor'],
+            app: ['./src/app/index']
         },
         resolve: {
             extensions: ['', '.ts', '.js']
@@ -65,6 +66,9 @@ module.exports = {
             new HtmlWebpack({
                 inject: 'body',
                 template: './src/templates/index.html'
+            }),
+            new ScriptExtHtmlWebpack({
+                defer: ['initial']
             })
         ],
         module: frontendLoader
