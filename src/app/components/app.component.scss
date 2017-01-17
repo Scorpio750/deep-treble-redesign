@@ -29,26 +29,26 @@ nav {
 	justify-content: center;
 
 	#logo-space {
+		height: 3.5em;
 		background-color: black;
-		height: 7vh;
-	}
 
-	#DT-logo {
-		position: absolute;
-		background-color: black;
-		left: 0;
-		margin: 1vh;
-		cursor: pointer;
-		z-index: 99;
-		box-shadow: 7px 7px 0.75em rgba(0, 0, 0, .5);
-		// opacity: 0.9;
-		// transition: all .1s ease-in-out;
-		// &:hover {
-		// 	opacity: 1;
-		// }
-		&:after {
-			content: "";
-			background-color: black;
+		#DT-logo {
+			position: absolute;
+			background-image: url("/assets/logos/DE:EP white.png");
+			background-size: cover;
+			margin: 1vh;
+			left: 1vh;
+			cursor: pointer;
+			z-index: 99;
+			// opacity: 0.9;
+			// transition: all .1s ease-in-out;
+			// &:hover {
+			// 	opacity: 1;
+			// }
+			&:after {
+				content: "";
+				background-color: black;
+			}
 		}
 	}
 
@@ -64,17 +64,6 @@ nav {
 			text-align: center;
 			padding: 0.8em;
 			border-bottom: 0.1em solid crimson;
-			opacity: 1;
-		}
-	}
-
-	.dropdown {
-		&:hover > .dropdown-content {
-			display: block;
-		}
-
-		&:active > .dropdown-content {
-			display: block;
 		}
 	}
 
@@ -97,6 +86,10 @@ nav {
 			background-color: black;
 		}
 	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
 }
 
 main {
@@ -105,6 +98,26 @@ main {
 	display: flex;
 	justify-content: center;
 	padding: 0 5vw;
+}
+
+.flex-2-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-start-center {
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.flex-center-start {
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.flex-2-start {
+	justify-content: flex-start;
+	align-items: flex-start;
 }
 
 footer {
@@ -117,7 +130,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
 	z-index: 99;
 
 	section {
@@ -136,6 +149,7 @@ footer {
 		li {
 			display: flex;
 			align-items: center;
+			font-size: 18px;
 			margin: 0 0.5em;
 		}
 	}
@@ -168,43 +182,25 @@ footer {
 		}
 	}
 }
-@media screen and (min-width:769px) {
+@media screen and (min-width:800px) {
 	#logo-space {
 		flex: 1 0 30%;
+	}
+
+	#DT-logo {
+		width: 10vmin;
+		height: 10vmin;
 	}
 
 	li {
 		font-size: 2.75vmin;
 	}
 
-	.dropdown-content > li {
+	.dropdown-content li {
 		width: 6.67em;
 	}
 }
-@media screen and (max-width: 768px) and (min-width: 421px) {
-	#logo-space {
-		flex: 1 0 15%;
-	}
-
-	.dropdown-content > li {
-		width: 5em;
-	}
-
-	nav li {
-		font-size: 3vmin;
-	}
-}
-@media screen and (min-width: 421px) {
-	#DT-logo {
-		width: 10vmin;
-		height: 10vmin;
-	}
-
-	footer li {
-		font-size: 20px;
-	}
-}
-@media screen and (max-width: 420px) {
+@media screen and (max-width:799px) {
 	#logo-space {
 		flex: 1 0 10%;
 	}
@@ -214,15 +210,11 @@ footer {
 		height: 12.5vmin;
 	}
 
-	nav li {
+	li {
 		font-size: 4vmin;
 	}
 
-	.dropdown-content > li {
+	.dropdown-content li {
 		width: 6em;
 	}
-	//
-	// footer li {
-	// 	font-size: 18px;
-	// }
 }
