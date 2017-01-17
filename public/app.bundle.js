@@ -35192,7 +35192,7 @@
 	    constructor() {
 	        this.greeting = {
 	            header: "Welcome to Deep Treble's New Webpage",
-	            body: "Announcements:"
+	            body: "Announcements"
 	        };
 	    }
 	};
@@ -35211,13 +35211,13 @@
 /* 30 */
 /***/ function(module, exports) {
 
-	module.exports = "<h1>{{greeting.header}}</h1>\n<!-- <h2>{{greeting.body}}</h2> -->\n\n<a href=\"https://www.facebook.com/events/242030456235411/\"><img id=\"auditions\" src=\"./assets/img/dt spring auditions.png\" alt=\"\">\n\t</a>\n<!--TODO: flesh out this model-->\n<ul>\n\t<li *ngFor=\"let post of posts\"\n\t\t[class.selected]=\"post === selectedPost\"></li>\n</ul>\n"
+	module.exports = "<h1>{{greeting.header}}</h1>\n<h2>{{greeting.body}}</h2>\n\n<a href=\"https://www.facebook.com/events/242030456235411/\"><img id=\"auditions\" src=\"./assets/img/dt spring auditions.png\" alt=\"\">\n\t</a>\n<!--TODO: flesh out this model-->\n<ul>\n\t<li *ngFor=\"let post of posts\"\n\t\t[class.selected]=\"post === selectedPost\"></li>\n</ul>\n"
 
 /***/ },
 /* 31 */
 /***/ function(module, exports) {
 
-	module.exports = "h1 {\n  transform: translate(-13%, 40%) rotate(-5deg);\n  left: 5vw; }\n\na {\n  opacity: 0.9; }\n  a:hover {\n    opacity: 1; }\n\n#auditions {\n  width: 60%;\n  margin: 3% 5% 10%; }\n"
+	module.exports = "a {\n  opacity: 0.9; }\n  a:hover {\n    opacity: 1; }\n\n#auditions {\n  width: 60%;\n  margin: 3% 5% 10%; }\n"
 
 /***/ },
 /* 32 */
