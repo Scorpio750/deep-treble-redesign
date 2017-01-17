@@ -35635,7 +35635,7 @@
 /* 45 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- <ul>\n\t<li *ngFor=\"let medium of media\">\n\t\t<h3>{{medium.name}}</h3>\n\t\t<iframe [src]=\"medium.link\" frameborder=\"0\"></iframe>\n\t</li>\n</ul> -->\nNothing here to see yet!\n"
+	module.exports = "<!-- <ul>\n\t<li *ngFor=\"let medium of media\">\n\t\t<h3>{{medium.name}}</h3>\n\t\t<iframe [src]=\"medium.link\" frameborder=\"0\"></iframe>\n\t</li>\n</ul> -->\n<h2>Nothing here to see yet!</h2>\n"
 
 /***/ },
 /* 46 */
