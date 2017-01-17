@@ -66,7 +66,7 @@ module.exports = {
             new HtmlWebpack({
                 inject: 'body',
                 template: './src/templates/index.html'
-            })
+            }),
             new ScriptExtHtmlWebpack({
                 defer: ['initial']
             })
