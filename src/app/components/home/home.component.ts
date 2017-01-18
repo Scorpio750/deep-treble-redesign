@@ -7,7 +7,6 @@ import { Component } from '@angular/core'
 })
 export class HomeComponent {
     greeting = {
-        header: "Welcome to Deep Treble's New Webpage!",
-        body: "Announcements"
+        header: "Welcome to Deep Treble's New Webpage!"
     }
 }
