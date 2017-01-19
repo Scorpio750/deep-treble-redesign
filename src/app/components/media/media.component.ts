@@ -20,4 +20,4 @@ export class MediaComponent {
 			.then((media: Media[]) => this.media = media)
 	}
 	baseUrl:string = '//www.youtube.com/embed/';
-	constructor(private sanitizer: DomSanitizer);
+}
