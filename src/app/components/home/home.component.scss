@@ -1,4 +1,7 @@
-h1 {}
+#flex-container {
+	display: flex;
+	flex-flow: column;
+}
 
 a {
 	flex: 1 0 auto;
@@ -15,11 +18,12 @@ a {
 li {
 	display: flex;
 	justify-content: space-between;
-	padding: 1em;
-	border: 1px dashed rgba(255, 255, 255, 0.5);
+	padding: 2em;
+	border: 1px dotted rgba(255, 255, 255, 0.2);
 
 	p {
 		font-size: 4vmin;
 		flex: 1 0 40%;
+		text-align: left;
 	}
 }

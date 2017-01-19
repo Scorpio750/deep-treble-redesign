@@ -1,11 +1,13 @@
-<h1>{{greeting.header}}</h1>
-<h2>{{greeting.body}}</h2>
+<div id="flex-container">
+	<h1>{{greeting.header}}</h1>
+	<h2>{{greeting.body}}</h2>
 
-<ul>
-	<li *ngFor="let post of posts" [class.selected]="post === selectedPost"></li>
-	<li>
-		<p>We're holding auditions this week! Click this image for details.</p>
-		<a href="https://www.facebook.com/events/242030456235411/"><img id="auditions" src="./assets/img/dt spring auditions.png" alt="">
-		</a>
-	</li>
-</ul>
+	<ul>
+		<li *ngFor="let post of posts" [class.selected]="post === selectedPost"></li>
+		<li>
+			<p>We're holding auditions this week!<br /> Click the image for details.</p>
+			<a href="https://www.facebook.com/events/242030456235411/"><img id="auditions" src="./assets/img/dt spring auditions.png" alt="">
+			</a>
+		</li>
+	</ul>
+</div>
