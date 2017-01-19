@@ -1,0 +1,10 @@
+.flex-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    align-content: center;
+    text-align: left;
+    &:nth-child(2) {
+        margin-left: 30%;
+    }
+}
