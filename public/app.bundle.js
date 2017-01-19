@@ -35013,11 +35013,11 @@
 	const home_component_1 = __webpack_require__(29);
 	const members_component_1 = __webpack_require__(32);
 	const history_component_1 = __webpack_require__(37);
-	const media_component_1 = __webpack_require__(42);
-	const merch_component_1 = __webpack_require__(47);
-	const aaru_component_1 = __webpack_require__(52);
+	const media_component_1 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../components/media/media.component\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	const merch_component_1 = __webpack_require__(43);
+	const aaru_component_1 = __webpack_require__(48);
 	/* Routing */
-	const app_routing_1 = __webpack_require__(57);
+	const app_routing_1 = __webpack_require__(53);
 	let AppModule = class AppModule {
 	};
 	AppModule = __decorate([
@@ -35546,47 +35546,7 @@
 	module.exports = "ul {\n  flex: none; }\n  ul h3 {\n    font-size: 20px; }\n  ul li {\n    cursor: default;\n    transition: 0.8s all ease-in-out; }\n\n@media screen and (orientation: portrait), screen and (max-width: 768px) {\n  ul {\n    flex-flow: column nowrap; } }\n"
 
 /***/ },
-/* 42 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	const core_1 = __webpack_require__(4);
-	const media_service_1 = __webpack_require__(43);
-	let MediaComponent = class MediaComponent {
-	    constructor(mediaService) {
-	        this.mediaService = mediaService;
-	        this.baseUrl = '//www.youtube.com/embed/';
-	    }
-	    ngOnInit() {
-	        this.getMedia();
-	    }
-	    getMedia() {
-	        this.mediaService.getMedia()
-	            .then((media) => this.media = media);
-	    }
-	};
-	MediaComponent = __decorate([
-	    core_1.Component({
-	        selector: 'media',
-	        template: __webpack_require__(45),
-	        styles: [__webpack_require__(46)],
-	        providers: [media_service_1.MediaService]
-	    }), 
-	    __metadata('design:paramtypes', [media_service_1.MediaService])
-	], MediaComponent);
-	exports.MediaComponent = MediaComponent;
-
-
-/***/ },
+/* 42 */,
 /* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -35601,64 +35561,7 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	const core_1 = __webpack_require__(4);
-	const mediaSeed_1 = __webpack_require__(44);
-	let MediaService = class MediaService {
-	    getMedia() {
-	        return Promise.resolve(mediaSeed_1.MEDIA);
-	    }
-	};
-	MediaService = __decorate([
-	    core_1.Injectable(), 
-	    __metadata('design:paramtypes', [])
-	], MediaService);
-	exports.MediaService = MediaService;
-
-
-/***/ },
-/* 44 */
-/***/ function(module, exports) {
-
-	"use strict";
-	exports.MEDIA = [
-	    {
-	        name: 'Adele - When We Were Young',
-	        link: '3mBkuk87Pqs'
-	    },
-	    {
-	        name: 'Estelle ft. Kanye West - American Boy',
-	        link: 'v=qAcYYK5zqdU'
-	    }
-	];
-
-
-/***/ },
-/* 45 */
-/***/ function(module, exports) {
-
-	module.exports = "<!-- <ul>\n\t<li *ngFor=\"let medium of media\">\n\t\t<h3>{{medium.name}}</h3>\n\t\t<iframe [src]=\"medium.link\" frameborder=\"0\"></iframe>\n\t</li>\n</ul> -->\n<h2>Nothing here to see yet!</h2>\n"
-
-/***/ },
-/* 46 */
-/***/ function(module, exports) {
-
-	module.exports = ""
-
-/***/ },
-/* 47 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	const core_1 = __webpack_require__(4);
-	const merch_service_1 = __webpack_require__(48);
+	const merch_service_1 = __webpack_require__(44);
 	let MerchComponent = class MerchComponent {
 	    constructor(merchService) {
 	        this.merchService = merchService;
@@ -35675,14 +35578,70 @@
 	MerchComponent = __decorate([
 	    core_1.Component({
 	        selector: 'merch',
-	        template: __webpack_require__(50),
-	        styles: [__webpack_require__(51)],
+	        template: __webpack_require__(46),
+	        styles: [__webpack_require__(47)],
 	        providers: [merch_service_1.MerchService]
 	    }), 
 	    __metadata('design:paramtypes', [merch_service_1.MerchService])
 	], MerchComponent);
 	exports.MerchComponent = MerchComponent;
 
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+	    return c > 3 && r && Object.defineProperty(target, key, r), r;
+	};
+	var __metadata = (this && this.__metadata) || function (k, v) {
+	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+	};
+	const core_1 = __webpack_require__(4);
+	const merchSeed_1 = __webpack_require__(45);
+	let MerchService = class MerchService {
+	    getMerch() {
+	        return Promise.resolve(merchSeed_1.MERCH);
+	    }
+	};
+	MerchService = __decorate([
+	    core_1.Injectable(), 
+	    __metadata('design:paramtypes', [])
+	], MerchService);
+	exports.MerchService = MerchService;
+
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	"use strict";
+	//TODO: pull img urls from src side
+	exports.MERCH = [
+	    {
+	        name: 'CD',
+	        heading: 'Buy our new CD',
+	        imgUrl: '/assets/img/merch/41 Jones (Leah).jpg',
+	        productUrl: 'http://www.cdbaby.com/cd/deeptreble1'
+	    }
+	];
+
+
+/***/ },
+/* 46 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul>\n\t<li\t*ngFor=\"let merchItem of merch\">\n\t\t<div class=\"merchItem\">\n\t\t\t<h2 class=\"heading\">{{merchItem.heading}}:</h2>\n\t\t\t<a href=\"{{merchItem.productUrl}}\" target=\"_blank\"><img [src]=\"merchItem.imgUrl ||  placeholder\" alt=\"41 Jones: the Basement Sessions\" onerror=\"this.src='http://placehold.it/400'\"/></a>\n\t\t</div>\n\t</li>\n</ul>\n"
+
+/***/ },
+/* 47 */
+/***/ function(module, exports) {
+
+	module.exports = "ul {\n  text-align: left; }\n\na {\n  opacity: 0.9; }\n  a:hover {\n    opacity: 1; }\n\nimg {\n  border: 0.75vw inset gainsboro;\n  margin-left: 4vw; }\n\n@media screen and (min-width: 421px) {\n  img {\n    height: 50vh; } }\n\n@media screen and (max-width: 420px) {\n  img {\n    height: 40vh; } }\n"
 
 /***/ },
 /* 48 */
@@ -35699,63 +35658,7 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	const core_1 = __webpack_require__(4);
-	const merchSeed_1 = __webpack_require__(49);
-	let MerchService = class MerchService {
-	    getMerch() {
-	        return Promise.resolve(merchSeed_1.MERCH);
-	    }
-	};
-	MerchService = __decorate([
-	    core_1.Injectable(), 
-	    __metadata('design:paramtypes', [])
-	], MerchService);
-	exports.MerchService = MerchService;
-
-
-/***/ },
-/* 49 */
-/***/ function(module, exports) {
-
-	"use strict";
-	//TODO: pull img urls from src side
-	exports.MERCH = [
-	    {
-	        name: 'CD',
-	        heading: 'Buy our new CD',
-	        imgUrl: '/assets/img/merch/41 Jones (Leah).jpg',
-	        productUrl: 'http://www.cdbaby.com/cd/deeptreble1'
-	    }
-	];
-
-
-/***/ },
-/* 50 */
-/***/ function(module, exports) {
-
-	module.exports = "<ul>\n\t<li\t*ngFor=\"let merchItem of merch\">\n\t\t<div class=\"merchItem\">\n\t\t\t<h2 class=\"heading\">{{merchItem.heading}}:</h2>\n\t\t\t<a href=\"{{merchItem.productUrl}}\" target=\"_blank\"><img [src]=\"merchItem.imgUrl ||  placeholder\" alt=\"41 Jones: the Basement Sessions\" onerror=\"this.src='http://placehold.it/400'\"/></a>\n\t\t</div>\n\t</li>\n</ul>\n"
-
-/***/ },
-/* 51 */
-/***/ function(module, exports) {
-
-	module.exports = "ul {\n  text-align: left; }\n\na {\n  opacity: 0.9; }\n  a:hover {\n    opacity: 1; }\n\nimg {\n  border: 0.75vw inset gainsboro;\n  margin-left: 4vw; }\n\n@media screen and (min-width: 421px) {\n  img {\n    height: 50vh; } }\n\n@media screen and (max-width: 420px) {\n  img {\n    height: 40vh; } }\n"
-
-/***/ },
-/* 52 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-	    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-	    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-	    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-	    return c > 3 && r && Object.defineProperty(target, key, r), r;
-	};
-	var __metadata = (this && this.__metadata) || function (k, v) {
-	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-	};
-	const core_1 = __webpack_require__(4);
-	const aaru_service_1 = __webpack_require__(53);
+	const aaru_service_1 = __webpack_require__(49);
 	let AARUComponent = class AARUComponent {
 	    constructor(aaruService) {
 	        this.aaruService = aaruService;
@@ -35771,8 +35674,8 @@
 	AARUComponent = __decorate([
 	    core_1.Component({
 	        selector: 'aaru',
-	        template: __webpack_require__(55),
-	        styles: [__webpack_require__(56)],
+	        template: __webpack_require__(51),
+	        styles: [__webpack_require__(52)],
 	        providers: [aaru_service_1.AARUService]
 	    }), 
 	    __metadata('design:paramtypes', [aaru_service_1.AARUService])
@@ -35781,7 +35684,7 @@
 
 
 /***/ },
-/* 53 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -35795,7 +35698,7 @@
 	    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 	};
 	const core_1 = __webpack_require__(4);
-	const aaruSeed_1 = __webpack_require__(54);
+	const aaruSeed_1 = __webpack_require__(50);
 	let AARUService = class AARUService {
 	    getOrgs() {
 	        return Promise.resolve(aaruSeed_1.ORGS);
@@ -35809,7 +35712,7 @@
 
 
 /***/ },
-/* 54 */
+/* 50 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -35839,30 +35742,30 @@
 
 
 /***/ },
-/* 55 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = "<section id=\"description\">\n    <h2>\n        We the Acapella Association of Rutgers University (AARU) are a loose collective of A Capella organizations who engage in collaboration and friendly competition, in the spirit of music making at Rutgers.\n        Visit some of our friends:\n    </h2>\n</section>\n<section id=\"list\">\n    <ul>\n        <li *ngFor=\"let org of aaru\">\n            <a href=\"{{org.site}}\" target=\"_blank\">{{org.name}}</a>\n        </li>\n    </ul>\n</section>\n"
 
 /***/ },
-/* 56 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = "section {\n  flex: 1 0 50%;\n  text-align: left; }\n  section h2 {\n    margin: 0; }\n\n#description {\n  line-height: 2.5;\n  cursor: default; }\n\n@media screen and (max-width: 768px) {\n  #description > h2 {\n    font-size: 4vmin; } }\n\n#list {\n  padding-left: 10%;\n  display: flex;\n  align-items: center;\n  overflow: hidden; }\n  #list ul {\n    flex-flow: column wrap;\n    justify-content: center;\n    text-align: left;\n    list-style: square;\n    padding-left: 10%; }\n    #list ul li {\n      font-size: 4.5vmin;\n      padding: 0.3em 0; }\n      #list ul li a {\n        opacity: 0.8; }\n        #list ul li a:hover {\n          opacity: 1; }\n"
 
 /***/ },
-/* 57 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	const router_1 = __webpack_require__(58);
+	const router_1 = __webpack_require__(54);
 	/* Components */
 	const home_component_1 = __webpack_require__(29);
 	const members_component_1 = __webpack_require__(32);
 	const history_component_1 = __webpack_require__(37);
-	const media_component_1 = __webpack_require__(42);
-	const merch_component_1 = __webpack_require__(47);
-	const aaru_component_1 = __webpack_require__(52);
+	const media_component_1 = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../components/media/media.component\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	const merch_component_1 = __webpack_require__(43);
+	const aaru_component_1 = __webpack_require__(48);
 	const appRoutes = [
 	    {
 	        path: '',
@@ -35893,7 +35796,7 @@
 
 
 /***/ },
-/* 58 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -35902,7 +35805,7 @@
 	 * License: MIT
 	 */
 	(function (global, factory) {
-	     true ? factory(exports, __webpack_require__(23), __webpack_require__(4), __webpack_require__(5), __webpack_require__(59), __webpack_require__(72), __webpack_require__(73), __webpack_require__(74), __webpack_require__(75), __webpack_require__(79), __webpack_require__(80), __webpack_require__(6), __webpack_require__(81), __webpack_require__(82), __webpack_require__(83), __webpack_require__(84), __webpack_require__(85), __webpack_require__(86), __webpack_require__(87)) :
+	     true ? factory(exports, __webpack_require__(23), __webpack_require__(4), __webpack_require__(5), __webpack_require__(55), __webpack_require__(68), __webpack_require__(69), __webpack_require__(70), __webpack_require__(71), __webpack_require__(75), __webpack_require__(76), __webpack_require__(6), __webpack_require__(77), __webpack_require__(78), __webpack_require__(79), __webpack_require__(80), __webpack_require__(81), __webpack_require__(82), __webpack_require__(83)) :
 	    typeof define === 'function' && define.amd ? define(['exports', '@angular/common', '@angular/core', 'rxjs/Subject', 'rxjs/observable/from', 'rxjs/observable/of', 'rxjs/operator/every', 'rxjs/operator/map', 'rxjs/operator/mergeAll', 'rxjs/operator/mergeMap', 'rxjs/operator/reduce', 'rxjs/Observable', 'rxjs/operator/catch', 'rxjs/operator/concatAll', 'rxjs/operator/first', 'rxjs/util/EmptyError', 'rxjs/observable/fromPromise', 'rxjs/operator/last', 'rxjs/BehaviorSubject'], factory) :
 	    (factory((global.ng = global.ng || {}, global.ng.router = global.ng.router || {}),global.ng.common,global.ng.core,global.Rx,global.Rx.Observable,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx.Observable.prototype,global.Rx,global.Rx.Observable,global.Rx.Observable.prototype,global.Rx));
 	}(this, function (exports,_angular_common,_angular_core,rxjs_Subject,rxjs_observable_from,rxjs_observable_of,rxjs_operator_every,rxjs_operator_map,rxjs_operator_mergeAll,rxjs_operator_mergeMap,rxjs_operator_reduce,rxjs_Observable,rxjs_operator_catch,rxjs_operator_concatAll,rxjs_operator_first,rxjs_util_EmptyError,rxjs_observable_fromPromise,l,rxjs_BehaviorSubject) { 'use strict';
@@ -39602,16 +39505,16 @@
 
 
 /***/ },
-/* 59 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var FromObservable_1 = __webpack_require__(60);
+	var FromObservable_1 = __webpack_require__(56);
 	exports.from = FromObservable_1.FromObservable.create;
 	//# sourceMappingURL=from.js.map
 
 /***/ },
-/* 60 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39621,14 +39524,14 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var isArray_1 = __webpack_require__(12);
-	var isPromise_1 = __webpack_require__(61);
-	var PromiseObservable_1 = __webpack_require__(62);
-	var IteratorObservable_1 = __webpack_require__(63);
-	var ArrayObservable_1 = __webpack_require__(65);
-	var ArrayLikeObservable_1 = __webpack_require__(69);
-	var iterator_1 = __webpack_require__(64);
+	var isPromise_1 = __webpack_require__(57);
+	var PromiseObservable_1 = __webpack_require__(58);
+	var IteratorObservable_1 = __webpack_require__(59);
+	var ArrayObservable_1 = __webpack_require__(61);
+	var ArrayLikeObservable_1 = __webpack_require__(65);
+	var iterator_1 = __webpack_require__(60);
 	var Observable_1 = __webpack_require__(6);
-	var observeOn_1 = __webpack_require__(70);
+	var observeOn_1 = __webpack_require__(66);
 	var observable_1 = __webpack_require__(19);
 	var isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
 	/**
@@ -39732,7 +39635,7 @@
 	//# sourceMappingURL=FromObservable.js.map
 
 /***/ },
-/* 61 */
+/* 57 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -39743,7 +39646,7 @@
 	//# sourceMappingURL=isPromise.js.map
 
 /***/ },
-/* 62 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39869,7 +39772,7 @@
 	//# sourceMappingURL=PromiseObservable.js.map
 
 /***/ },
-/* 63 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -39880,7 +39783,7 @@
 	};
 	var root_1 = __webpack_require__(7);
 	var Observable_1 = __webpack_require__(6);
-	var iterator_1 = __webpack_require__(64);
+	var iterator_1 = __webpack_require__(60);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -40031,7 +39934,7 @@
 	//# sourceMappingURL=IteratorObservable.js.map
 
 /***/ },
-/* 64 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40068,7 +39971,7 @@
 	//# sourceMappingURL=iterator.js.map
 
 /***/ },
-/* 65 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40078,9 +39981,9 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(6);
-	var ScalarObservable_1 = __webpack_require__(66);
-	var EmptyObservable_1 = __webpack_require__(67);
-	var isScheduler_1 = __webpack_require__(68);
+	var ScalarObservable_1 = __webpack_require__(62);
+	var EmptyObservable_1 = __webpack_require__(63);
+	var isScheduler_1 = __webpack_require__(64);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -40195,7 +40098,7 @@
 	//# sourceMappingURL=ArrayObservable.js.map
 
 /***/ },
-/* 66 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40258,7 +40161,7 @@
 	//# sourceMappingURL=ScalarObservable.js.map
 
 /***/ },
-/* 67 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40338,7 +40241,7 @@
 	//# sourceMappingURL=EmptyObservable.js.map
 
 /***/ },
-/* 68 */
+/* 64 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -40349,7 +40252,7 @@
 	//# sourceMappingURL=isScheduler.js.map
 
 /***/ },
-/* 69 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40359,8 +40262,8 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Observable_1 = __webpack_require__(6);
-	var ScalarObservable_1 = __webpack_require__(66);
-	var EmptyObservable_1 = __webpack_require__(67);
+	var ScalarObservable_1 = __webpack_require__(62);
+	var EmptyObservable_1 = __webpack_require__(63);
 	/**
 	 * We need this JSDoc comment for affecting ESDoc.
 	 * @extends {Ignored}
@@ -40424,7 +40327,7 @@
 	//# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ },
-/* 70 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40434,7 +40337,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(9);
-	var Notification_1 = __webpack_require__(71);
+	var Notification_1 = __webpack_require__(67);
 	/**
 	 * @see {@link Notification}
 	 *
@@ -40504,7 +40407,7 @@
 	//# sourceMappingURL=observeOn.js.map
 
 /***/ },
-/* 71 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40636,16 +40539,16 @@
 	//# sourceMappingURL=Notification.js.map
 
 /***/ },
-/* 72 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var ArrayObservable_1 = __webpack_require__(65);
+	var ArrayObservable_1 = __webpack_require__(61);
 	exports.of = ArrayObservable_1.ArrayObservable.of;
 	//# sourceMappingURL=of.js.map
 
 /***/ },
-/* 73 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40718,7 +40621,7 @@
 	//# sourceMappingURL=every.js.map
 
 /***/ },
-/* 74 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40810,7 +40713,7 @@
 	//# sourceMappingURL=map.js.map
 
 /***/ },
-/* 75 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40819,8 +40722,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(76);
-	var subscribeToResult_1 = __webpack_require__(77);
+	var OuterSubscriber_1 = __webpack_require__(72);
+	var subscribeToResult_1 = __webpack_require__(73);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable which
 	 * concurrently delivers all values that are emitted on the inner Observables.
@@ -40926,7 +40829,7 @@
 	//# sourceMappingURL=mergeAll.js.map
 
 /***/ },
-/* 76 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -40961,16 +40864,16 @@
 	//# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ },
-/* 77 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	var root_1 = __webpack_require__(7);
 	var isArray_1 = __webpack_require__(12);
-	var isPromise_1 = __webpack_require__(61);
+	var isPromise_1 = __webpack_require__(57);
 	var Observable_1 = __webpack_require__(6);
-	var iterator_1 = __webpack_require__(64);
-	var InnerSubscriber_1 = __webpack_require__(78);
+	var iterator_1 = __webpack_require__(60);
+	var InnerSubscriber_1 = __webpack_require__(74);
 	var observable_1 = __webpack_require__(19);
 	function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
 	    var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
@@ -41040,7 +40943,7 @@
 	//# sourceMappingURL=subscribeToResult.js.map
 
 /***/ },
-/* 78 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41081,7 +40984,7 @@
 	//# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ },
-/* 79 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41090,8 +40993,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var subscribeToResult_1 = __webpack_require__(77);
-	var OuterSubscriber_1 = __webpack_require__(76);
+	var subscribeToResult_1 = __webpack_require__(73);
+	var OuterSubscriber_1 = __webpack_require__(72);
 	/**
 	 * Projects each source value to an Observable which is merged in the output
 	 * Observable.
@@ -41247,7 +41150,7 @@
 	//# sourceMappingURL=mergeMap.js.map
 
 /***/ },
-/* 80 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41364,7 +41267,7 @@
 	//# sourceMappingURL=reduce.js.map
 
 /***/ },
-/* 81 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41373,8 +41276,8 @@
 	    function __() { this.constructor = d; }
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
-	var OuterSubscriber_1 = __webpack_require__(76);
-	var subscribeToResult_1 = __webpack_require__(77);
+	var OuterSubscriber_1 = __webpack_require__(72);
+	var subscribeToResult_1 = __webpack_require__(73);
 	/**
 	 * Catches errors on the observable to be handled by returning a new observable or throwing an error.
 	 * @param {function} selector a function that takes as arguments `err`, which is the error, and `caught`, which
@@ -41434,11 +41337,11 @@
 	//# sourceMappingURL=catch.js.map
 
 /***/ },
-/* 82 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var mergeAll_1 = __webpack_require__(75);
+	var mergeAll_1 = __webpack_require__(71);
 	/**
 	 * Converts a higher-order Observable into a first-order Observable by
 	 * concatenating the inner Observables in order.
@@ -41488,7 +41391,7 @@
 	//# sourceMappingURL=concatAll.js.map
 
 /***/ },
-/* 83 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41498,7 +41401,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(9);
-	var EmptyError_1 = __webpack_require__(84);
+	var EmptyError_1 = __webpack_require__(80);
 	/**
 	 * Emits only the first value (or the first value that meets some condition)
 	 * emitted by the source Observable.
@@ -41641,7 +41544,7 @@
 	//# sourceMappingURL=first.js.map
 
 /***/ },
-/* 84 */
+/* 80 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -41674,16 +41577,16 @@
 	//# sourceMappingURL=EmptyError.js.map
 
 /***/ },
-/* 85 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-	var PromiseObservable_1 = __webpack_require__(62);
+	var PromiseObservable_1 = __webpack_require__(58);
 	exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 	//# sourceMappingURL=fromPromise.js.map
 
 /***/ },
-/* 86 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -41693,7 +41596,7 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var Subscriber_1 = __webpack_require__(9);
-	var EmptyError_1 = __webpack_require__(84);
+	var EmptyError_1 = __webpack_require__(80);
 	/**
 	 * Returns an Observable that emits only the last item emitted by the source Observable.
 	 * It optionally takes a predicate function as a parameter, in which case, rather than emitting
@@ -41806,7 +41709,7 @@
 	//# sourceMappingURL=last.js.map
 
 /***/ },
-/* 87 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
