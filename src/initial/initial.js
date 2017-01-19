@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function showMain() {
-        TweenMax.to(document.getElementById('black-space'), 2, {
+        TweenMax.to(document.getElementById('black-space'), 1.5, {
             opacity: 0,
             display: 'none',
             ease: Power2.easeInOut,

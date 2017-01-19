@@ -133,7 +133,7 @@
 	    });
 	
 	    function showMain() {
-	        _gsap2.default.to(document.getElementById('black-space'), 2, {
+	        _gsap2.default.to(document.getElementById('black-space'), 1.5, {
 	            opacity: 0,
 	            display: 'none',
 	            ease: Power2.easeInOut,

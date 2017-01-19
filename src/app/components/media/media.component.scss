@@ -1,10 +1,14 @@
-.flex-container {
+#flex-container {
+    margin-top: 20%;
+	border: 1px dashed rgba(255, 255, 255, 0.3);
+    padding: 2em;
     display: flex;
     flex-flow: column;
-    align-items: center;
     align-content: center;
     text-align: left;
-    &:nth-child(2) {
-        margin-left: 30%;
+
+    a {
+        color: red;
+        opacity: 0.85;
     }
 }
