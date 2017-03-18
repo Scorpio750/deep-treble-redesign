@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-const core_1 = require('@angular/core');
-const media_service_1 = require('../../services/media.service');
+const core_1 = require("@angular/core");
+const media_service_1 = require("../../services/media.service");
 let MediaComponent = class MediaComponent {
     constructor(mediaService) {
         this.mediaService = mediaService;
+        this.baseUrl = '//www.youtube.com/embed/';
     }
     ngOnInit() {
         this.getMedia();
@@ -28,8 +29,8 @@ MediaComponent = __decorate([
         templateUrl: './media.component.html',
         styleUrls: ['./media.component.scss'],
         providers: [media_service_1.MediaService]
-    }), 
-    __metadata('design:paramtypes', [media_service_1.MediaService])
+    }),
+    __metadata("design:paramtypes", [media_service_1.MediaService])
 ], MediaComponent);
 exports.MediaComponent = MediaComponent;
 //# sourceMappingURL=media.component.js.map

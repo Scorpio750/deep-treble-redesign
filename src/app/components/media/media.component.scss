@@ -1,0 +1,14 @@
+#flex-container {
+    margin-top: 20%;
+	border: 1px dashed rgba(255, 255, 255, 0.3);
+    padding: 2em;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    text-align: left;
+
+    a {
+        color: red;
+        opacity: 0.85;
+    }
+}

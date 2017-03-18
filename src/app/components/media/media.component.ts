@@ -11,8 +11,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class MediaComponent {
     media: Media[]
-    fullVids: []
-    baseUrl: string = 'http://www.youtube.com/embed/'
+    baseUrl: string = '//www.youtube.com/embed/'
     constructor(private mediaService: MediaService) { }
     ngOnInit(): void {
         this.getMedia()
