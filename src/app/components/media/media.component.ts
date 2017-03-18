@@ -12,7 +12,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class MediaComponent {
     media: Media[]
     fullVids: []
-    baseUrl: string = '//www.youtube.com/embed/'
+    baseUrl: string = 'http://www.youtube.com/embed/'
     constructor(private mediaService: MediaService) { }
     ngOnInit(): void {
         this.getMedia()
@@ -21,11 +21,4 @@ export class MediaComponent {
         this.mediaService.getMedia()
             .then((media: Media[]) => this.media = media)
     }
-    for (item of media) {
-        constructor(private sanitizer: DomSanitizer) {
-            this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + this.video.id)
-        }
-        item.link = url
-            fullVids.push({ item })
-    });
 }
