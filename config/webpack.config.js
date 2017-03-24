@@ -1,16 +1,21 @@
-import fs from 'fs'
-import HtmlWebpack from 'html-webpack-plugin'
-import ScriptExtHtmlWebpack from 'script-ext-html-webpack-plugin'
+const webpack = require('webpack');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const helpers = require('./helpers');
 
 // lets parser recognize node module filetypes
-let nodeModules = {}
+const nodeModules = {}
+
 fs.readdirSync('node_modules')
-    .filter((x) => {
-        return ['.bin'].indexOf(x) === -1
-    })
-    .forEach((mod) => {
-        nodeModules[mod] = 'commonjs ' + mod
-    })
+.filter((x) => {
+    return ['.bin'].indexOf(x) === -1
+})
+.forEach((mod) => {
+    nodeModules[mod] = 'commonjs ' + mod
+});
 
 /* Loaders */
 const frontendLoader = {
@@ -18,31 +23,40 @@ const frontendLoader = {
         test: /\.ts$/,
         loader: 'tslint'
     },
-    loaders: [{
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loaders: ['ts', 'angular2-template']
-    }, {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
-    }, {
-        test: /\.html$/,
-        loader: 'raw'
-    }, {
-        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-        loader: 'file?name=assets/[name].[hash].[ext]'
-    }, {
-        test: /\.scss$/,
-        loader: 'raw!sass'
-    }]
+    resolve: {
+        extensions: ['.ts', '.js']
+    },
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                loaders: ['ts', 'angular2-template']
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.html$/,
+                loader: 'raw'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+                loader: 'file?name=assets/[name].[hash].[ext]'
+            },
+            {
+                test: /\.scss$/,
+                loader: 'raw!sass'
+            }
+        ]
+    }
 }
 
-const defaultLoader = {
+const backendLoader = {
     loaders: [{
         test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel'
+        exclude: /node_modules/
     }]
 }
 
@@ -84,6 +98,6 @@ module.exports = {
             __filename: true
         },
         externals: nodeModules,
-        module: defaultLoader
+        module: backendLoader
     }
 }
