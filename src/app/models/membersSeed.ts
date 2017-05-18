@@ -3,13 +3,6 @@ import { Member } from '../components/members/Member'
 //TODO: pull img urls from src side
 export const MEMBERS: Member[] = [
     {
-        name: 'Ally Winter',
-        year: 2020,
-        voicePart: 'Soprano',
-        position: undefined,
-        headshotUrl: './assets/img/headshots/ally winter.jpg'
-    },
-    {
         name: 'Kathryna Caparino',
         year: 2020,
         voicePart: 'Soprano',
@@ -24,8 +17,8 @@ export const MEMBERS: Member[] = [
         headshotUrl: './assets/img/headshots/leah rozario.jpg'
     },
     {
-        name: 'RJ ',
-        year: 2018,
+        name: 'RJ Coxe',
+        year: 2020,
         voicePart: 'Tenor',
         position: undefined,
         headshotUrl: './assets/img/headshots/rj.jpg'
