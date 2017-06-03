@@ -7,6 +7,7 @@ import wpConfig from './config/webpack.config.js'
 import sass from 'gulp-sass'
 import babel from 'gulp-babel'
 import fs from 'fs'
+import rimraf from 'rimraf'
 
 const config = {
     sassPath: './src/scss/**/*.scss',
@@ -73,4 +74,9 @@ gulp.task('serve', (cb) => {
 	gulp.watch('./config/*.js', ['build'])
     gulp.watch('*.js', ['serve'])
 })
+
+gulp.task('clean', (cb) => {
+    rimraf('public/*.bundle.*', cb)
+})
+
 gulp.task('default', ['build', 'serve'])
