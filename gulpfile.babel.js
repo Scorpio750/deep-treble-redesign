@@ -77,7 +77,6 @@ gulp.task('serve', (cb) => {
 
 gulp.task('clean', (cb) => {
     rimraf('public/*.bundle.*', cb)
-    rimraf('public/*.html', cb)
 })
 
 gulp.task('default', ['build', 'serve'])
