@@ -1,32 +1,16 @@
 import TweenMax from 'gsap'
 import Ripple from './Ripple.js'
 
-const ripple = document.getElementById('ripple');
-const blackSpace = document.getElementById('black-space')
-const coffee = document.getElementById('coffee');
-const myCanvas = document.getElementById('coffee-canvas');
-const coffeeHolder = document.getElementById('coffee-holder-placeholder');
-const ctx = myCanvas.getContext('2d');
-
-// check localStorage to see if coffee animation has been played already
-var visited = localStorage.getItem('visited');
-if (visited == undefined) { localStorage.setItem('visited', 'true'); }
-else if (visited == 'true') {
-    console.log('hiding panels');
-    ripple.style.display = 'none';
-    blackSpace.style.display = 'none';
-}
-
 // disable/enable scrolling
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
 
 function preventDefault(e) {
-    e = e || window.event;
-    if (e.preventDefault)
-        e.preventDefault();
-    e.returnValue = false;
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;
 }
 
 function preventDefaultForScrollKeys(e) {
@@ -37,12 +21,12 @@ function preventDefaultForScrollKeys(e) {
 }
 
 function disableScroll() {
-    if (window.addEventListener) // older FF
-        window.addEventListener('DOMMouseScroll', preventDefault, false);
-    window.onwheel = preventDefault; // modern standard
-    window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
-    window.ontouchmove = preventDefault; // mobile
-    document.onkeydown = preventDefaultForScrollKeys;
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
 }
 
 function enableScroll() {
@@ -56,9 +40,13 @@ function enableScroll() {
 
 // GSAP animations
 document.addEventListener('DOMContentLoaded', () => {
-
     disableScroll();
+    const coffee = document.getElementById('coffee');
+    const myCanvas = document.getElementById('coffee-canvas');
+    const coffeeHolder = document.getElementById('coffee-holder-placeholder');
+    const ctx = myCanvas.getContext('2d');
     ctx.drawImage(coffee, 0, 0);
+
 
     // initial animations on pageload
     (function aCupofCoffee() {
@@ -76,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ripple animations
         let r = new Ripple(ctx, 0, -14, 720)
 
-        TweenMax.to(ripple, 4, {
+        TweenMax.to(document.getElementById('ripple'), 4, {
             opacity: 0,
             display: 'none',
             ease: Power2.easeInOut,
@@ -85,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function showMain() {
-        TweenMax.to(blackSpace, 1.5, {
+        TweenMax.to(document.getElementById('black-space'), 1.5, {
             opacity: 0,
             display: 'none',
             ease: Power2.easeInOut,

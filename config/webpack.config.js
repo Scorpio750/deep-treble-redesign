@@ -68,7 +68,7 @@ module.exports = {
                 template: './src/templates/index.html'
             }),
             new ScriptExtHtmlWebpack({
-                async: ['initial']
+                defer: ['initial']
             })
         ],
         module: frontendLoader
